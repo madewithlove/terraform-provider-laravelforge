@@ -31,7 +31,7 @@ type ResourceServer struct {
 // ServerResourceModel describes the resource data model.
 type ServerResourceModel struct {
 	Id           types.Int64  `tfsdk:"id"`
-	Platform     types.String `tfsdk:"platform"`
+	Provider     types.String `tfsdk:"provider"`
 	Type         types.String `tfsdk:"type"`
 	CredentialId types.Int64  `tfsdk:"credential_id"`
 }
@@ -52,7 +52,7 @@ func (r *ResourceServer) Schema(ctx context.Context, req resource.SchemaRequest,
 					int64planmodifier.UseStateForUnknown(),
 				},
 			},
-			"platform": schema.StringAttribute{
+			"provider": schema.StringAttribute{
 				MarkdownDescription: "The server provider. Valid values are `ocean2` for Digital Ocean, `linode4`, `vultr2`, `aws`, `hetzner` and `custom`.",
 				Required:            true,
 				Validators: []validator.String{
@@ -104,9 +104,9 @@ func (r *ResourceServer) Create(ctx context.Context, req resource.CreateRequest,
 		return
 	}
 
-	server, _, err := r.client.DefaultApi.CreateServer(ctx, forge.ServersBody{
+	server, _, err := r.client.DefaultApi.CreateServer(ctx, forge.CreateServer{
 		Type_:        data.Type.String(),
-		Provider:     data.Platform.String(),
+		Provider:     data.Provider.String(),
 		CredentialId: data.CredentialId.String(),
 	})
 
