@@ -25,7 +25,6 @@ type DaemonDataSource struct {
 // DaemonDataSourceModel describes the data source data model.
 type DaemonDataSourceModel struct {
 	Id           types.Int64  `tfsdk:"id"`
-	ServerId     types.Int64  `tfsdk:"server_id"`
 	Command      types.String `tfsdk:"command"`
 	User         types.String `tfsdk:"user"`
 	Directory    types.String `tfsdk:"directory"`
@@ -35,6 +34,7 @@ type DaemonDataSourceModel struct {
 	Stopsignal   types.String `tfsdk:"stopsignal"`
 	Status       types.String `tfsdk:"status"`
 	CreatedAt    types.String `tfsdk:"created_at"`
+	ServerId     types.Int64  `tfsdk:"serverId"`
 }
 
 func (d *DaemonDataSource) Metadata(ctx context.Context, req datasource.MetadataRequest, resp *datasource.MetadataResponse) {
@@ -48,7 +48,6 @@ func (d *DaemonDataSource) Schema(ctx context.Context, req datasource.SchemaRequ
 
 		Attributes: map[string]schema.Attribute{
 			"Id":           schema.Int64Attribute{},
-			"ServerId":     schema.Int64Attribute{},
 			"Command":      schema.StringAttribute{},
 			"User":         schema.StringAttribute{},
 			"Directory":    schema.StringAttribute{},
@@ -58,6 +57,7 @@ func (d *DaemonDataSource) Schema(ctx context.Context, req datasource.SchemaRequ
 			"Stopsignal":   schema.StringAttribute{},
 			"Status":       schema.StringAttribute{},
 			"CreatedAt":    schema.StringAttribute{},
+			"ServerId":     schema.Int64Attribute{},
 		},
 	}
 }
@@ -92,7 +92,7 @@ func (d *DaemonDataSource) Read(ctx context.Context, req datasource.ReadRequest,
 		return
 	}
 
-	daemon, err, _ := d.client.DefaultApi.GetDaemon(ctx, int32(data.Id.ValueInt64()), int32(data.ServerId.ValueInt64()))
+	daemon, err, _ := d.client.DefaultApi.GetDaemon(ctx, int32(data.ServerId.ValueInt64()), int32(data.Id.ValueInt64()))
 
 	if err != nil {
 		resp.Diagnostics.AddError("Client Error", fmt.Sprintf("Unable to read daemon, got error: %s", err))
@@ -111,7 +111,7 @@ func (d *DaemonDataSource) Read(ctx context.Context, req datasource.ReadRequest,
 
 	// Write logs using the tflog package
 	// Documentation: https://terraform.io/plugin/log
-	tflog.Trace(ctx, "Read a data source")
+	tflog.Trace(ctx, "read a data source")
 
 	// Save data into Terraform state
 	resp.Diagnostics.Append(resp.State.Set(ctx, &data)...)
