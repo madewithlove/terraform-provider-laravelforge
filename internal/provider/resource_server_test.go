@@ -30,7 +30,7 @@ func TestAccServerResource(t *testing.T) {
 func testServerConfig(resourceName string, platformName string) string {
 	return fmt.Sprintf(`
 resource "forge_server" "%[1]s" {
-  platform = %[1]q
+  platform = %[2]q
 }
 `, resourceName, platformName)
 }

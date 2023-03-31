@@ -70,7 +70,7 @@ func (p *LaravelForgeProvider) Configure(ctx context.Context, req provider.Confi
 	}
 
 	client := ForgeClient.NewAPIClient(ForgeClient.NewConfiguration())
-	
+
 	tflog.Trace(ctx, data.Token.String())
 
 	resp.DataSourceData = client

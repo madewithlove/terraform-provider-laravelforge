@@ -3,8 +3,6 @@ package provider
 import (
 	"context"
 	"fmt"
-	"net/http"
-
 	"github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
 	"github.com/hashicorp/terraform-plugin-framework/path"
 	"github.com/hashicorp/terraform-plugin-framework/resource"
@@ -14,6 +12,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/schema/validator"
 	"github.com/hashicorp/terraform-plugin-framework/types"
 	"github.com/hashicorp/terraform-plugin-log/tflog"
+	"github.com/madewithlove/forge-go-sdk"
 )
 
 // Ensure provider defined types fully satisfy framework interfaces.
@@ -26,14 +25,15 @@ func NewResourceServer() resource.Resource {
 
 // ResourceServer defines the resource implementation.
 type ResourceServer struct {
-	client *http.Client
+	client *forge.APIClient
 }
 
 // ServerResourceModel describes the resource data model.
 type ServerResourceModel struct {
 	Id           types.Int64  `tfsdk:"id"`
 	Platform     types.String `tfsdk:"platform"`
-	CredentialId types.String `tfsdk:"credential_id"`
+	Type         types.String `tfsdk:"type"`
+	CredentialId types.Int64  `tfsdk:"credential_id"`
 }
 
 func (r *ResourceServer) Metadata(ctx context.Context, req resource.MetadataRequest, resp *resource.MetadataResponse) {
@@ -54,7 +54,7 @@ func (r *ResourceServer) Schema(ctx context.Context, req resource.SchemaRequest,
 			},
 			"platform": schema.StringAttribute{
 				MarkdownDescription: "The server provider. Valid values are `ocean2` for Digital Ocean, `linode4`, `vultr2`, `aws`, `hetzner` and `custom`.",
-				Optional:            false,
+				Required:            true,
 				Validators: []validator.String{
 					stringvalidator.OneOf("ocean2", "linode4", "vultr2", "aws", "hetzner", "custom"),
 				},
@@ -66,6 +66,10 @@ func (r *ResourceServer) Schema(ctx context.Context, req resource.SchemaRequest,
 					stringvalidator.OneOf("app", "web", "loadbalancer", "cache", "database", "worker", "meilisearch"),
 				},
 			},
+			"credential_id": schema.Int64Attribute{
+				MarkdownDescription: "This is only required when the provider is not custom.",
+				Optional:            true,
+			},
 		},
 	}
 }
@@ -76,7 +80,7 @@ func (r *ResourceServer) Configure(ctx context.Context, req resource.ConfigureRe
 		return
 	}
 
-	client, ok := req.ProviderData.(*http.Client)
+	client, ok := req.ProviderData.(*forge.APIClient)
 
 	if !ok {
 		resp.Diagnostics.AddError(
