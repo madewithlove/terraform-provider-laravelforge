@@ -54,27 +54,61 @@ func (d *ServerDataSource) Schema(ctx context.Context, req datasource.SchemaRequ
 		MarkdownDescription: "Server data source",
 
 		Attributes: map[string]schema.Attribute{
-			"Id":               schema.Int64Attribute{},
-			"CredentialId":     schema.Int64Attribute{},
-			"Name":             schema.StringAttribute{},
-			"Size":             schema.StringAttribute{},
-			"Region":           schema.StringAttribute{},
-			"PhpVersion":       schema.StringAttribute{},
-			"PhpCliVersion":    schema.StringAttribute{},
-			"OpcacheStatus":    schema.StringAttribute{},
-			"DatabaseType":     schema.StringAttribute{},
-			"IpAddress":        schema.StringAttribute{},
-			"PrivateIpAddress": schema.StringAttribute{},
-			"BlackfireStatus":  schema.StringAttribute{},
-			"PapertrailStatus": schema.StringAttribute{},
-			"Revoked":          schema.StringAttribute{},
-			"CreatedAt":        schema.StringAttribute{},
-			"IsReady":          schema.StringAttribute{},
+			"Id": schema.Int64Attribute{
+				MarkdownDescription: "",
+			},
+			"CredentialId": schema.Int64Attribute{
+				MarkdownDescription: "",
+			},
+			"Name": schema.StringAttribute{
+				MarkdownDescription: "",
+			},
+			"Size": schema.StringAttribute{
+				MarkdownDescription: "",
+			},
+			"Region": schema.StringAttribute{
+				MarkdownDescription: "",
+			},
+			"PhpVersion": schema.StringAttribute{
+				MarkdownDescription: "",
+			},
+			"PhpCliVersion": schema.StringAttribute{
+				MarkdownDescription: "",
+			},
+			"OpcacheStatus": schema.StringAttribute{
+				MarkdownDescription: "",
+			},
+			"DatabaseType": schema.StringAttribute{
+				MarkdownDescription: "",
+			},
+			"IpAddress": schema.StringAttribute{
+				MarkdownDescription: "",
+			},
+			"PrivateIpAddress": schema.StringAttribute{
+				MarkdownDescription: "",
+			},
+			"BlackfireStatus": schema.StringAttribute{
+				MarkdownDescription: "",
+			},
+			"PapertrailStatus": schema.StringAttribute{
+				MarkdownDescription: "",
+			},
+			"Revoked": schema.StringAttribute{
+				MarkdownDescription: "",
+			},
+			"CreatedAt": schema.StringAttribute{
+				MarkdownDescription: "",
+			},
+			"IsReady": schema.StringAttribute{
+				MarkdownDescription: "",
+			},
 			"Network": schema.ListAttribute{
-				ElementType: types.Int64Type,
+				ElementType:         types.Int64Type,
+				MarkdownDescription: "",
 			},
 			"Tags": schema.ListAttribute{
-				ElementType: types.StringType,
+				ElementType:         types.StringType,
+				MarkdownDescription: "",
 			},
 		},
 	}
@@ -117,7 +151,6 @@ func (d *ServerDataSource) Read(ctx context.Context, req datasource.ReadRequest,
 		return
 	}
 
-	data.Id = types.Int64Value(int64(server.Id))
 	data.CredentialId = types.Int64Value(int64(server.CredentialId))
 	data.Name = types.StringValue(string(server.Name))
 	data.Size = types.StringValue(string(server.Size))

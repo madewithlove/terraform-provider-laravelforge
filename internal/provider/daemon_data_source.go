@@ -47,17 +47,39 @@ func (d *DaemonDataSource) Schema(ctx context.Context, req datasource.SchemaRequ
 		MarkdownDescription: "Daemon data source",
 
 		Attributes: map[string]schema.Attribute{
-			"Id":           schema.Int64Attribute{},
-			"Command":      schema.StringAttribute{},
-			"User":         schema.StringAttribute{},
-			"Directory":    schema.StringAttribute{},
-			"Processes":    schema.Int64Attribute{},
-			"Startsecs":    schema.Int64Attribute{},
-			"Stopwaitsecs": schema.Int64Attribute{},
-			"Stopsignal":   schema.StringAttribute{},
-			"Status":       schema.StringAttribute{},
-			"CreatedAt":    schema.StringAttribute{},
-			"ServerId":     schema.Int64Attribute{},
+			"Id": schema.Int64Attribute{
+				MarkdownDescription: "",
+			},
+			"Command": schema.StringAttribute{
+				MarkdownDescription: "",
+			},
+			"User": schema.StringAttribute{
+				MarkdownDescription: "",
+			},
+			"Directory": schema.StringAttribute{
+				MarkdownDescription: "",
+			},
+			"Processes": schema.Int64Attribute{
+				MarkdownDescription: "",
+			},
+			"Startsecs": schema.Int64Attribute{
+				MarkdownDescription: "",
+			},
+			"Stopwaitsecs": schema.Int64Attribute{
+				MarkdownDescription: "",
+			},
+			"Stopsignal": schema.StringAttribute{
+				MarkdownDescription: "",
+			},
+			"Status": schema.StringAttribute{
+				MarkdownDescription: "",
+			},
+			"CreatedAt": schema.StringAttribute{
+				MarkdownDescription: "",
+			},
+			"ServerId": schema.Int64Attribute{
+				MarkdownDescription: "",
+			},
 		},
 	}
 }
