@@ -31,6 +31,7 @@ func testServerConfig(resourceName string, platformName string) string {
 	return fmt.Sprintf(`
 resource "forge_server" "%[1]s" {
   platform = %[2]q
+  credential_id = 1
 }
 `, resourceName, platformName)
 }

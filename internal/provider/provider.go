@@ -7,7 +7,6 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/provider/schema"
 	"github.com/hashicorp/terraform-plugin-framework/resource"
 	"github.com/hashicorp/terraform-plugin-framework/types"
-	"github.com/hashicorp/terraform-plugin-log/tflog"
 	"os"
 
 	ForgeClient "github.com/madewithlove/forge-go-sdk"
@@ -69,9 +68,10 @@ func (p *LaravelForgeProvider) Configure(ctx context.Context, req provider.Confi
 		)
 	}
 
-	client := ForgeClient.NewAPIClient(ForgeClient.NewConfiguration())
+	config := ForgeClient.NewConfiguration()
+	config.AddDefaultHeader("Authorization", "Bearer "+apiToken)
 
-	tflog.Trace(ctx, data.Token.String())
+	client := ForgeClient.NewAPIClient(config)
 
 	resp.DataSourceData = client
 	resp.ResourceData = client
