@@ -5,6 +5,7 @@ import (
 
 	"github.com/hashicorp/terraform-plugin-framework/providerserver"
 	"github.com/hashicorp/terraform-plugin-go/tfprotov6"
+	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/acctest"
 )
 
 // testAccProtoV6ProviderFactories are used to instantiate a provider during
@@ -19,4 +20,8 @@ func testAccPreCheck(t *testing.T) {
 	// You can add code here to run prior to any test case execution, for example assertions
 	// about the appropriate environment variables being set are common to see in a pre-check
 	// function.
+}
+
+func generateRandomResourceName() string {
+	return acctest.RandStringFromCharSet(10, acctest.CharSetAlpha)
 }
