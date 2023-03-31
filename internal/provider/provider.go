@@ -8,6 +8,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/resource"
 	"github.com/hashicorp/terraform-plugin-framework/types"
 	"github.com/hashicorp/terraform-plugin-log/tflog"
+	"os"
 
 	ForgeClient "github.com/madewithlove/forge-go-sdk"
 )
@@ -38,7 +39,7 @@ func (p *LaravelForgeProvider) Schema(ctx context.Context, req provider.SchemaRe
 		Attributes: map[string]schema.Attribute{
 			"token": schema.StringAttribute{
 				MarkdownDescription: "Laravel Forge API token.",
-				Optional:            false,
+				Optional:            true,
 			},
 		},
 	}
@@ -47,14 +48,29 @@ func (p *LaravelForgeProvider) Schema(ctx context.Context, req provider.SchemaRe
 func (p *LaravelForgeProvider) Configure(ctx context.Context, req provider.ConfigureRequest, resp *provider.ConfigureResponse) {
 	var data LaravelForgeProviderModel
 
+	apiToken := os.Getenv("FORGE_API_TOKEN")
+
 	resp.Diagnostics.Append(req.Config.Get(ctx, &data)...)
 
 	if resp.Diagnostics.HasError() {
 		return
 	}
 
+	if data.Token.ValueString() != "" {
+		apiToken = data.Token.ValueString()
+	}
+
+	if apiToken == "" {
+		resp.Diagnostics.AddError(
+			"Missing API Token Configuration",
+			"While configuring the provider, the API token was not found in "+
+				"the FORGE_API_TOKEN environment variable or provider "+
+				"configuration block token attribute.",
+		)
+	}
+
 	client := ForgeClient.NewAPIClient(ForgeClient.NewConfiguration())
-	//data.Token
+	
 	tflog.Trace(ctx, data.Token.String())
 
 	resp.DataSourceData = client
