@@ -8,7 +8,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/resource"
 	"github.com/hashicorp/terraform-plugin-framework/types"
 
-	ForgeClient "github.com/madwithlove/forge-go-sdk/client"
+	ForgeClient "github.com/madewithlove/forge-go-sdk"
 )
 
 // Ensure LaravelForgeProvider satisfies various provider interfaces.
@@ -52,9 +52,8 @@ func (p *LaravelForgeProvider) Configure(ctx context.Context, req provider.Confi
 		return
 	}
 
-	client := ForgeClient.NewAPIClient()
+	client := ForgeClient.NewAPIClient(ForgeClient.NewConfiguration())
 
-	client.cliet.set_default_header("Authorization", "Bearer YOUR_BEARER_TOKEN")
 	resp.DataSourceData = client
 	resp.ResourceData = client
 }
