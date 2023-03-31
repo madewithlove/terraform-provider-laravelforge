@@ -27,7 +27,7 @@ var (
 	// goreleaser can pass other information to the main package, such as the specific commit
 	// https://goreleaser.com/cookbooks/using-main.version/
 )
-gpg --armor --export-secret-keys "Andreas Creten <andreas@madewithlove.com>"
+
 func main() {
 	var debug bool
 
@@ -38,7 +38,7 @@ func main() {
 		Address: "registry.terraform.io/madewithlove/terraform-laravel-forge",
 		Debug:   debug,
 	}
-gpg --armor --export-secret-keys "Andreas Creten <operations@madewithlove.com>" | pbcopy
+
 	err := providerserver.Serve(context.Background(), provider.New(version), opts)
 
 	if err != nil {

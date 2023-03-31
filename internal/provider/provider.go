@@ -7,6 +7,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/provider/schema"
 	"github.com/hashicorp/terraform-plugin-framework/resource"
 	"github.com/hashicorp/terraform-plugin-framework/types"
+	"github.com/hashicorp/terraform-plugin-log/tflog"
 
 	ForgeClient "github.com/madewithlove/forge-go-sdk"
 )
@@ -24,7 +25,7 @@ type LaravelForgeProvider struct {
 
 // LaravelForgeProviderModel describes the provider data model.
 type LaravelForgeProviderModel struct {
-	Endpoint types.String `tfsdk:"token"`
+	Token types.String `tfsdk:"token"`
 }
 
 func (p *LaravelForgeProvider) Metadata(ctx context.Context, req provider.MetadataRequest, resp *provider.MetadataResponse) {
@@ -53,6 +54,8 @@ func (p *LaravelForgeProvider) Configure(ctx context.Context, req provider.Confi
 	}
 
 	client := ForgeClient.NewAPIClient(ForgeClient.NewConfiguration())
+	//data.Token
+	tflog.Trace(ctx, data.Token.String())
 
 	resp.DataSourceData = client
 	resp.ResourceData = client

@@ -108,11 +108,9 @@ func (r *ResourceServer) Create(ctx context.Context, req resource.CreateRequest,
 	//     return
 	// }
 
-	context.Context().Value()
-
 	// For the purposes of this example code, hardcoding a response value to
 	// save into the Terraform state.
-	data.Id = types.Int64Value("example-id")
+	data.Id = types.Int64Value(123)
 
 	// Write logs using the tflog package
 	// Documentation: https://terraform.io/plugin/log
