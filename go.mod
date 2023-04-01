@@ -1,4 +1,4 @@
-module github.com/madewithlove/terraform-laravel-forge
+module github.com/madewithlove/terraform-provider-forge
 
 go 1.19
 
@@ -58,9 +58,7 @@ require (
 	github.com/shopspring/decimal v1.3.1 // indirect
 	github.com/spf13/cast v1.5.0 // indirect
 	github.com/vmihailenco/msgpack v4.0.4+incompatible // indirect
-	github.com/vmihailenco/msgpack/v4 v4.3.12 // indirect
 	github.com/vmihailenco/msgpack/v5 v5.3.5 // indirect
-	github.com/vmihailenco/tagparser v0.1.2 // indirect
 	github.com/vmihailenco/tagparser/v2 v2.0.0 // indirect
 	github.com/zclconf/go-cty v1.13.1 // indirect
 	golang.org/x/crypto v0.7.0 // indirect

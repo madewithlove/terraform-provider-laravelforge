@@ -6,7 +6,7 @@ import (
 	"log"
 
 	"github.com/hashicorp/terraform-plugin-framework/providerserver"
-	"github.com/madewithlove/terraform-laravel-forge/internal/provider"
+	"github.com/madewithlove/terraform-provider-forge/internal/provider"
 )
 
 // Run "go generate" to format example terraform files and generate the docs for the registry/website
@@ -35,7 +35,7 @@ func main() {
 	flag.Parse()
 
 	opts := providerserver.ServeOpts{
-		Address: "registry.terraform.io/madewithlove/terraform-laravel-forge",
+		Address: "registry.terraform.io/madewithlove/terraform-provider-forge",
 		Debug:   debug,
 	}
 
