@@ -54,61 +54,79 @@ func (d *ServerDataSource) Schema(ctx context.Context, req datasource.SchemaRequ
 		MarkdownDescription: "Server data source",
 
 		Attributes: map[string]schema.Attribute{
-			"Id": schema.Int64Attribute{
+			"id": schema.Int64Attribute{
 				MarkdownDescription: "",
+				Computed:            true,
 			},
-			"CredentialId": schema.Int64Attribute{
+			"credential_id": schema.Int64Attribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"Name": schema.StringAttribute{
+			"name": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"Size": schema.StringAttribute{
+			"size": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"Region": schema.StringAttribute{
+			"region": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"PhpVersion": schema.StringAttribute{
+			"php_version": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"PhpCliVersion": schema.StringAttribute{
+			"php_cli_version": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"OpcacheStatus": schema.StringAttribute{
+			"opcache_status": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"DatabaseType": schema.StringAttribute{
+			"database_type": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"IpAddress": schema.StringAttribute{
+			"ip_address": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"PrivateIpAddress": schema.StringAttribute{
+			"private_ip_address": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"BlackfireStatus": schema.StringAttribute{
+			"blackfire_status": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"PapertrailStatus": schema.StringAttribute{
+			"papertrail_status": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"Revoked": schema.StringAttribute{
+			"revoked": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"CreatedAt": schema.StringAttribute{
+			"created_at": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"IsReady": schema.StringAttribute{
+			"is_ready": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"Network": schema.ListAttribute{
+			"network": schema.ListAttribute{
 				ElementType:         types.Int64Type,
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"Tags": schema.ListAttribute{
+			"tags": schema.ListAttribute{
 				ElementType:         types.StringType,
 				MarkdownDescription: "",
+				Optional:            true,
 			},
 		},
 	}
@@ -144,7 +162,7 @@ func (d *ServerDataSource) Read(ctx context.Context, req datasource.ReadRequest,
 		return
 	}
 
-	server, err, _ := d.client.DefaultApi.GetServer(ctx, int32(data.Id.ValueInt64()))
+	server, _, err := d.client.DefaultApi.GetServer(ctx, int32(data.Id.ValueInt64()))
 
 	if err != nil {
 		resp.Diagnostics.AddError("Client Error", fmt.Sprintf("Unable to read server, got error: %s", err))

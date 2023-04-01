@@ -45,7 +45,7 @@ type SiteDataSourceModel struct {
 	DeploymentUrl      types.String   `tfsdk:"deployment_url"`
 	CreatedAt          types.String   `tfsdk:"created_at"`
 	Tags               types.ListType `tfsdk:"tags"`
-	ServerId           types.Int64    `tfsdk:"serverId"`
+	ServerId           types.Int64    `tfsdk:"server_id"`
 }
 
 func (d *SiteDataSource) Metadata(ctx context.Context, req datasource.MetadataRequest, resp *datasource.MetadataResponse) {
@@ -58,73 +58,95 @@ func (d *SiteDataSource) Schema(ctx context.Context, req datasource.SchemaReques
 		MarkdownDescription: "Site data source",
 
 		Attributes: map[string]schema.Attribute{
-			"Id": schema.Int64Attribute{
+			"id": schema.Int64Attribute{
 				MarkdownDescription: "",
+				Computed:            true,
 			},
-			"Name": schema.StringAttribute{
+			"name": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"Aliases": schema.ListAttribute{
+			"aliases": schema.ListAttribute{
 				ElementType:         types.StringType,
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"Username": schema.StringAttribute{
+			"username": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"Directory": schema.StringAttribute{
+			"directory": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"Wildcards": schema.StringAttribute{
+			"wildcards": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"Status": schema.StringAttribute{
+			"status": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"Repository": schema.StringAttribute{
+			"repository": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"RepositoryProvider": schema.StringAttribute{
+			"repository_provider": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"RepositoryBranch": schema.StringAttribute{
+			"repository_branch": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"RepositoryStatus": schema.StringAttribute{
+			"repository_status": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"QuickDeploy": schema.StringAttribute{
+			"quick_deploy": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"ProjectType": schema.StringAttribute{
+			"project_type": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"App": schema.StringAttribute{
+			"app": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"AppStatus": schema.StringAttribute{
+			"app_status": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"SlackChannel": schema.StringAttribute{
+			"slack_channel": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"TelegramChatId": schema.StringAttribute{
+			"telegram_chat_id": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"TelegramChatTitle": schema.StringAttribute{
+			"telegram_chat_title": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"DeploymentUrl": schema.StringAttribute{
+			"deployment_url": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"CreatedAt": schema.StringAttribute{
+			"created_at": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"Tags": schema.ListAttribute{
+			"tags": schema.ListAttribute{
 				ElementType:         types.Int64Type,
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"ServerId": schema.Int64Attribute{
+			"server_id": schema.Int64Attribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
 		},
 	}
@@ -160,7 +182,7 @@ func (d *SiteDataSource) Read(ctx context.Context, req datasource.ReadRequest, r
 		return
 	}
 
-	site, err, _ := d.client.DefaultApi.GetSite(ctx, int32(data.ServerId.ValueInt64()), int32(data.Id.ValueInt64()))
+	site, _, err := d.client.DefaultApi.GetSite(ctx, int32(data.ServerId.ValueInt64()), int32(data.Id.ValueInt64()))
 
 	if err != nil {
 		resp.Diagnostics.AddError("Client Error", fmt.Sprintf("Unable to read site, got error: %s", err))

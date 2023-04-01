@@ -34,7 +34,7 @@ type DaemonDataSourceModel struct {
 	Stopsignal   types.String `tfsdk:"stopsignal"`
 	Status       types.String `tfsdk:"status"`
 	CreatedAt    types.String `tfsdk:"created_at"`
-	ServerId     types.Int64  `tfsdk:"serverId"`
+	ServerId     types.Int64  `tfsdk:"server_id"`
 }
 
 func (d *DaemonDataSource) Metadata(ctx context.Context, req datasource.MetadataRequest, resp *datasource.MetadataResponse) {
@@ -47,38 +47,49 @@ func (d *DaemonDataSource) Schema(ctx context.Context, req datasource.SchemaRequ
 		MarkdownDescription: "Daemon data source",
 
 		Attributes: map[string]schema.Attribute{
-			"Id": schema.Int64Attribute{
+			"id": schema.Int64Attribute{
 				MarkdownDescription: "",
+				Required:            true,
 			},
-			"Command": schema.StringAttribute{
+			"command": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"User": schema.StringAttribute{
+			"user": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"Directory": schema.StringAttribute{
+			"directory": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"Processes": schema.Int64Attribute{
+			"processes": schema.Int64Attribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"Startsecs": schema.Int64Attribute{
+			"startsecs": schema.Int64Attribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"Stopwaitsecs": schema.Int64Attribute{
+			"stopwaitsecs": schema.Int64Attribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"Stopsignal": schema.StringAttribute{
+			"stopsignal": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"Status": schema.StringAttribute{
+			"status": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"CreatedAt": schema.StringAttribute{
+			"created_at": schema.StringAttribute{
 				MarkdownDescription: "",
+				Optional:            true,
 			},
-			"ServerId": schema.Int64Attribute{
+			"server_id": schema.Int64Attribute{
 				MarkdownDescription: "",
+				Required:            true,
 			},
 		},
 	}
@@ -114,7 +125,7 @@ func (d *DaemonDataSource) Read(ctx context.Context, req datasource.ReadRequest,
 		return
 	}
 
-	daemon, err, _ := d.client.DefaultApi.GetDaemon(ctx, int32(data.ServerId.ValueInt64()), int32(data.Id.ValueInt64()))
+	daemon, _, err := d.client.DefaultApi.GetDaemon(ctx, int32(data.ServerId.ValueInt64()), int32(data.Id.ValueInt64()))
 
 	if err != nil {
 		resp.Diagnostics.AddError("Client Error", fmt.Sprintf("Unable to read daemon, got error: %s", err))

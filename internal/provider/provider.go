@@ -84,7 +84,9 @@ func (p *LaravelForgeProvider) Resources(ctx context.Context) []func() resource.
 }
 
 func (p *LaravelForgeProvider) DataSources(ctx context.Context) []func() datasource.DataSource {
-	return []func() datasource.DataSource{}
+	return []func() datasource.DataSource{
+		NewDaemonDataSource,
+	}
 }
 
 func New(version string) func() provider.Provider {
