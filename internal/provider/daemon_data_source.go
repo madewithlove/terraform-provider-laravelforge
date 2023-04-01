@@ -52,15 +52,15 @@ func (d *DaemonDataSource) Schema(ctx context.Context, req datasource.SchemaRequ
 				Required:            true,
 			},
 			"command": schema.StringAttribute{
-				MarkdownDescription: "",
+				MarkdownDescription: "Undocumented parameter, example: `COMMAND`.",
 				Computed:            true,
 			},
 			"user": schema.StringAttribute{
-				MarkdownDescription: "",
+				MarkdownDescription: "Undocumented parameter, example: `root`.",
 				Computed:            true,
 			},
 			"directory": schema.StringAttribute{
-				MarkdownDescription: "",
+				MarkdownDescription: "Undocumented parameter, example: `/home/forge/foo.com`.",
 				Computed:            true,
 			},
 			"processes": schema.Int64Attribute{
@@ -88,7 +88,7 @@ func (d *DaemonDataSource) Schema(ctx context.Context, req datasource.SchemaRequ
 				Computed:            true,
 			},
 			"server_id": schema.Int64Attribute{
-				MarkdownDescription: "",
+				MarkdownDescription: "The ID of the server.",
 				Required:            true,
 			},
 		},
