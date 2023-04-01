@@ -53,39 +53,39 @@ func (d *DaemonDataSource) Schema(ctx context.Context, req datasource.SchemaRequ
 			},
 			"command": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"user": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"directory": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"processes": schema.Int64Attribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"startsecs": schema.Int64Attribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"stopwaitsecs": schema.Int64Attribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"stopsignal": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"status": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"created_at": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"server_id": schema.Int64Attribute{
 				MarkdownDescription: "",
