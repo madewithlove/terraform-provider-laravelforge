@@ -55,11 +55,11 @@ func (d *ServerDataSource) Schema(ctx context.Context, req datasource.SchemaRequ
 
 		Attributes: map[string]schema.Attribute{
 			"id": schema.Int64Attribute{
-				MarkdownDescription: "",
+				MarkdownDescription: "The ID of the resource.",
 				Required:            true,
 			},
 			"credential_id": schema.Int64Attribute{
-				MarkdownDescription: "",
+				MarkdownDescription: "This is only required when the provider is not `custom`.",
 				Computed:            true,
 			},
 			"name": schema.StringAttribute{
@@ -71,11 +71,11 @@ func (d *ServerDataSource) Schema(ctx context.Context, req datasource.SchemaRequ
 				Computed:            true,
 			},
 			"region": schema.StringAttribute{
-				MarkdownDescription: "",
+				MarkdownDescription: "The name of the region where the server will be created. This value is not required you are building a Custom VPS server. [Valid region identifiers](/api-documentation#regions).",
 				Computed:            true,
 			},
 			"php_version": schema.StringAttribute{
-				MarkdownDescription: "",
+				MarkdownDescription: "Valid values are `php82`, `php81`, `php80`, `php74`, `php73`,`php72`,`php82`, `php70`, and `php56`.",
 				Computed:            true,
 			},
 			"php_cli_version": schema.StringAttribute{
@@ -87,15 +87,15 @@ func (d *ServerDataSource) Schema(ctx context.Context, req datasource.SchemaRequ
 				Computed:            true,
 			},
 			"database_type": schema.StringAttribute{
-				MarkdownDescription: "",
+				MarkdownDescription: "Valid values are `mysql8`,`mariadb`,`postgres`, `postgres13`, `postgres14` or `postgres15`.",
 				Computed:            true,
 			},
 			"ip_address": schema.StringAttribute{
-				MarkdownDescription: "",
+				MarkdownDescription: "The IP Address of the server. Only required when the provider is `custom`.",
 				Computed:            true,
 			},
 			"private_ip_address": schema.StringAttribute{
-				MarkdownDescription: "",
+				MarkdownDescription: "The Private IP Address of the server. Only required when the provider is `custom`.",
 				Computed:            true,
 			},
 			"blackfire_status": schema.StringAttribute{
@@ -120,7 +120,7 @@ func (d *ServerDataSource) Schema(ctx context.Context, req datasource.SchemaRequ
 			},
 			"network": schema.ListAttribute{
 				ElementType:         types.Int64Type,
-				MarkdownDescription: "",
+				MarkdownDescription: "An array of server IDs that the server should be able to connect to.",
 				Computed:            true,
 			},
 			"tags": schema.ListAttribute{
