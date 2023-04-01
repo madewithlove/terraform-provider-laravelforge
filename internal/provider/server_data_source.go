@@ -56,77 +56,77 @@ func (d *ServerDataSource) Schema(ctx context.Context, req datasource.SchemaRequ
 		Attributes: map[string]schema.Attribute{
 			"id": schema.Int64Attribute{
 				MarkdownDescription: "",
-				Computed:            true,
+				Required:            true,
 			},
 			"credential_id": schema.Int64Attribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"name": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"size": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"region": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"php_version": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"php_cli_version": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"opcache_status": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"database_type": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"ip_address": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"private_ip_address": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"blackfire_status": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"papertrail_status": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"revoked": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"created_at": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"is_ready": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"network": schema.ListAttribute{
 				ElementType:         types.Int64Type,
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"tags": schema.ListAttribute{
 				ElementType:         types.StringType,
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 		},
 	}
