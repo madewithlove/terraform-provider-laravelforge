@@ -35,7 +35,7 @@ func main() {
 	flag.Parse()
 
 	opts := providerserver.ServeOpts{
-		Address: "registry.terraform.io/madewithlove/terraform-provider-forge",
+		Address: "registry.terraform.io/madewithlove/forge",
 		Debug:   debug,
 	}
 
