@@ -1,3 +1,3 @@
-provider "scaffolding" {
-  # example configuration here
+provider "forge" {
+  token = "API_TOKEN"
 }
