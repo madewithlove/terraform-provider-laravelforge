@@ -1,4 +1,4 @@
-module github.com/madewithlove/terraform-provider-forge
+module github.com/madewithlove/terraform-provider-laravelforge
 
 go 1.19
 

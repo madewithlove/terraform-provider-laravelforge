@@ -9,7 +9,7 @@ import (
 
 func TestAccDaemonDataSource(t *testing.T) {
 	rnd := generateRandomResourceName()
-	name := "data.forge_daemon." + rnd
+	name := "data.laravelforge_daemon." + rnd
 
 	resource.Test(t, resource.TestCase{
 		PreCheck:                 func() { testAccPreCheck(t) },
@@ -29,7 +29,7 @@ func TestAccDaemonDataSource(t *testing.T) {
 
 func testAccDaemonDataSourceConfig(resourceName string) string {
 	return fmt.Sprintf(`
-data "forge_daemon" "%[1]s" {
+data "laravelforge_daemon" "%[1]s" {
 	id = "123"
 	server_id = "123"
 }

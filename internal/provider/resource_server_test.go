@@ -9,7 +9,7 @@ import (
 
 func TestAccServerResource(t *testing.T) {
 	rnd := generateRandomResourceName()
-	name := "forge_server." + rnd
+	name := "laravelforge_server." + rnd
 
 	resource.Test(t, resource.TestCase{
 		PreCheck:                 func() { testAccPreCheck(t) },
@@ -29,7 +29,7 @@ func TestAccServerResource(t *testing.T) {
 
 func testServerConfig(resourceName string, platformName string) string {
 	return fmt.Sprintf(`
-resource "forge_server" "%[1]s" {
+resource "laravelforge_server" "%[1]s" {
   platform = %[2]q
   credential_id = 1
 }
