@@ -55,78 +55,78 @@ func (d *ServerDataSource) Schema(ctx context.Context, req datasource.SchemaRequ
 
 		Attributes: map[string]schema.Attribute{
 			"id": schema.Int64Attribute{
-				MarkdownDescription: "",
-				Computed:            true,
+				MarkdownDescription: "The ID of the resource.",
+				Required:            true,
 			},
 			"credential_id": schema.Int64Attribute{
-				MarkdownDescription: "",
-				Optional:            true,
+				MarkdownDescription: "This is only required when the provider is not `custom`.",
+				Computed:            true,
 			},
 			"name": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"size": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"region": schema.StringAttribute{
-				MarkdownDescription: "",
-				Optional:            true,
+				MarkdownDescription: "The name of the region where the server will be created. This value is not required you are building a Custom VPS server. [Valid region identifiers](/api-documentation#regions).",
+				Computed:            true,
 			},
 			"php_version": schema.StringAttribute{
-				MarkdownDescription: "",
-				Optional:            true,
+				MarkdownDescription: "Valid values are `php82`, `php81`, `php80`, `php74`, `php73`,`php72`,`php82`, `php70`, and `php56`.",
+				Computed:            true,
 			},
 			"php_cli_version": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"opcache_status": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"database_type": schema.StringAttribute{
-				MarkdownDescription: "",
-				Optional:            true,
+				MarkdownDescription: "Valid values are `mysql8`,`mariadb`,`postgres`, `postgres13`, `postgres14` or `postgres15`.",
+				Computed:            true,
 			},
 			"ip_address": schema.StringAttribute{
-				MarkdownDescription: "",
-				Optional:            true,
+				MarkdownDescription: "The IP Address of the server. Only required when the provider is `custom`.",
+				Computed:            true,
 			},
 			"private_ip_address": schema.StringAttribute{
-				MarkdownDescription: "",
-				Optional:            true,
+				MarkdownDescription: "The Private IP Address of the server. Only required when the provider is `custom`.",
+				Computed:            true,
 			},
 			"blackfire_status": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"papertrail_status": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"revoked": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"created_at": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"is_ready": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"network": schema.ListAttribute{
 				ElementType:         types.Int64Type,
-				MarkdownDescription: "",
-				Optional:            true,
+				MarkdownDescription: "An array of server IDs that the server should be able to connect to.",
+				Computed:            true,
 			},
 			"tags": schema.ListAttribute{
 				ElementType:         types.StringType,
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 		},
 	}
