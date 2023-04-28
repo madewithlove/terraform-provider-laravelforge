@@ -17,7 +17,7 @@ func TestAccSiteDataSource(t *testing.T) {
 		Steps: []resource.TestStep{
 			// Read testing
 			{
-				Config: testAccDaemonDataSourceConfig(rnd),
+				Config: testAccSiteDataSourceConfig(rnd),
 				Check: resource.ComposeAggregateTestCheckFunc(
 					resource.TestCheckResourceAttr(name, "id", "123"),
 					resource.TestCheckResourceAttr(name, "server_id", "123"),
@@ -27,7 +27,7 @@ func TestAccSiteDataSource(t *testing.T) {
 	})
 }
 
-func testAccDaemonDataSourceConfig(resourceName string) string {
+func testAccSiteDataSourceConfig(resourceName string) string {
 	return fmt.Sprintf(`
 data "forge_site" "%[1]s" {
 	id = "123"
