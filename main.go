@@ -6,7 +6,7 @@ import (
 	"log"
 
 	"github.com/hashicorp/terraform-plugin-framework/providerserver"
-	"github.com/madewithlove/terraform-provider-forge/internal/provider"
+	"github.com/madewithlove/terraform-provider-laravelforge/internal/provider"
 )
 
 // Run "go generate" to format example terraform files and generate the docs for the registry/website
@@ -17,7 +17,7 @@ import (
 
 // Run the docs generation tool, check its repository for more information on how it works and how docs
 // can be customized.
-//go:generate go run github.com/hashicorp/terraform-plugin-docs/cmd/tfplugindocs
+//go:generate go run github.com/hashicorp/terraform-plugin-docs/cmd/tfplugindocs generate --provider-name laravelforge
 
 var (
 	// these will be set by the goreleaser configuration
@@ -35,7 +35,7 @@ func main() {
 	flag.Parse()
 
 	opts := providerserver.ServeOpts{
-		Address: "registry.terraform.io/madewithlove/terraform-provider-forge",
+		Address: "registry.terraform.io/madewithlove/laravelforge",
 		Debug:   debug,
 	}
 
