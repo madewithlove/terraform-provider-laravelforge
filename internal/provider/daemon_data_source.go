@@ -132,15 +132,15 @@ func (d *DaemonDataSource) Read(ctx context.Context, req datasource.ReadRequest,
 		return
 	}
 
-	data.Command = types.StringValue(string(daemon.Command))
-	data.User = types.StringValue(string(daemon.User))
-	data.Directory = types.StringValue(string(daemon.Directory))
+	data.Command = types.StringValue(daemon.Command)
+	data.User = types.StringValue(daemon.User)
+	data.Directory = types.StringValue(daemon.Directory)
 	data.Processes = types.Int64Value(int64(daemon.Processes))
 	data.Startsecs = types.Int64Value(int64(daemon.Startsecs))
 	data.Stopwaitsecs = types.Int64Value(int64(daemon.Stopwaitsecs))
-	data.Stopsignal = types.StringValue(string(daemon.Stopsignal))
-	data.Status = types.StringValue(string(daemon.Status))
-	data.CreatedAt = types.StringValue(string(daemon.CreatedAt))
+	data.Stopsignal = types.StringValue(daemon.Stopsignal)
+	data.Status = types.StringValue(daemon.Status)
+	data.CreatedAt = types.StringValue(daemon.CreatedAt)
 
 	// Write logs using the tflog package
 	// Documentation: https://terraform.io/plugin/log
