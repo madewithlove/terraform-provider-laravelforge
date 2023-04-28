@@ -29,7 +29,7 @@ type ForgeProviderModel struct {
 }
 
 func (p *ForgeProvider) Metadata(ctx context.Context, req provider.MetadataRequest, resp *provider.MetadataResponse) {
-	resp.TypeName = "forge"
+	resp.TypeName = "laravelforge"
 	resp.Version = p.version
 }
 
