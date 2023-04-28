@@ -60,93 +60,93 @@ func (d *SiteDataSource) Schema(ctx context.Context, req datasource.SchemaReques
 		Attributes: map[string]schema.Attribute{
 			"id": schema.Int64Attribute{
 				MarkdownDescription: "",
-				Computed:            true,
+				Required:            true,
 			},
 			"name": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"aliases": schema.ListAttribute{
 				ElementType:         types.StringType,
-				MarkdownDescription: "",
-				Optional:            true,
+				MarkdownDescription: "Undocumented parameter in array format, example: `[\"alias1.com\",\"alias2.com\"]`.",
+				Computed:            true,
 			},
 			"username": schema.StringAttribute{
-				MarkdownDescription: "",
-				Optional:            true,
+				MarkdownDescription: "Undocumented parameter, example: `laravel`.",
+				Computed:            true,
 			},
 			"directory": schema.StringAttribute{
-				MarkdownDescription: "",
-				Optional:            true,
+				MarkdownDescription: "Undocumented parameter, example: `/test`.",
+				Computed:            true,
 			},
 			"wildcards": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"status": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"repository": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"repository_provider": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"repository_branch": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"repository_status": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"quick_deploy": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"project_type": schema.StringAttribute{
-				MarkdownDescription: "",
-				Optional:            true,
+				MarkdownDescription: "Undocumented parameter, example: `php`.",
+				Computed:            true,
 			},
 			"app": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"app_status": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"slack_channel": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"telegram_chat_id": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"telegram_chat_title": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"deployment_url": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"created_at": schema.StringAttribute{
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"tags": schema.ListAttribute{
 				ElementType:         types.Int64Type,
 				MarkdownDescription: "",
-				Optional:            true,
+				Computed:            true,
 			},
 			"server_id": schema.Int64Attribute{
-				MarkdownDescription: "",
-				Optional:            true,
+				MarkdownDescription: "The ID of the server.",
+				Required:            true,
 			},
 		},
 	}

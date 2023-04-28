@@ -86,6 +86,7 @@ func (p *ForgeProvider) Resources(ctx context.Context) []func() resource.Resourc
 func (p *ForgeProvider) DataSources(ctx context.Context) []func() datasource.DataSource {
 	return []func() datasource.DataSource{
 		NewDaemonDataSource,
+		NewSiteDataSource,
 	}
 }
 
