@@ -17,19 +17,19 @@ Daemon data source
 
 ### Required
 
-- `server_id` (Number)
+- `server_id` (Number) The ID of the server.
 
 ### Read-Only
 
-- `command` (String)
+- `command` (String) Undocumented parameter, example: `COMMAND`.
 - `created_at` (String)
-- `directory` (String)
+- `directory` (String) Undocumented parameter, example: `/home/forge/foo.com`.
 - `id` (Number) The ID of this resource.
 - `processes` (Number)
 - `startsecs` (Number)
 - `status` (String)
 - `stopsignal` (String)
 - `stopwaitsecs` (Number)
-- `user` (String)
+- `user` (String) Undocumented parameter, example: `root`.
 
 
