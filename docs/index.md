@@ -13,14 +13,6 @@ description: |-
 ## Example Usage
 
 ```terraform
-terraform {
-  required_providers {
-    laravelforge = {
-      source = "registry.terraform.io/madewithlove/laravelforge"
-    }
-  }
-}
-
 provider "laravelforge" {
   token = "API_TOKEN"
 }
