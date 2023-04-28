@@ -12,28 +12,28 @@ import (
 	ForgeClient "github.com/madewithlove/forge-go-sdk"
 )
 
-// Ensure LaravelForgeProvider satisfies various provider interfaces.
-var _ provider.Provider = &LaravelForgeProvider{}
+// Ensure ForgeProvider satisfies various provider interfaces.
+var _ provider.Provider = &ForgeProvider{}
 
-// LaravelForgeProvider defines the provider implementation.
-type LaravelForgeProvider struct {
+// ForgeProvider defines the provider implementation.
+type ForgeProvider struct {
 	// version is set to the provider version on release, "dev" when the
 	// provider is built and ran locally, and "test" when running acceptance
 	// testing.
 	version string
 }
 
-// LaravelForgeProviderModel describes the provider data model.
-type LaravelForgeProviderModel struct {
+// ForgeProviderModel describes the provider data model.
+type ForgeProviderModel struct {
 	Token types.String `tfsdk:"token"`
 }
 
-func (p *LaravelForgeProvider) Metadata(ctx context.Context, req provider.MetadataRequest, resp *provider.MetadataResponse) {
-	resp.TypeName = "forge"
+func (p *ForgeProvider) Metadata(ctx context.Context, req provider.MetadataRequest, resp *provider.MetadataResponse) {
+	resp.TypeName = "laravelforge"
 	resp.Version = p.version
 }
 
-func (p *LaravelForgeProvider) Schema(ctx context.Context, req provider.SchemaRequest, resp *provider.SchemaResponse) {
+func (p *ForgeProvider) Schema(ctx context.Context, req provider.SchemaRequest, resp *provider.SchemaResponse) {
 	resp.Schema = schema.Schema{
 		Attributes: map[string]schema.Attribute{
 			"token": schema.StringAttribute{
@@ -44,8 +44,8 @@ func (p *LaravelForgeProvider) Schema(ctx context.Context, req provider.SchemaRe
 	}
 }
 
-func (p *LaravelForgeProvider) Configure(ctx context.Context, req provider.ConfigureRequest, resp *provider.ConfigureResponse) {
-	var data LaravelForgeProviderModel
+func (p *ForgeProvider) Configure(ctx context.Context, req provider.ConfigureRequest, resp *provider.ConfigureResponse) {
+	var data ForgeProviderModel
 
 	apiToken := os.Getenv("FORGE_API_TOKEN")
 
@@ -77,13 +77,13 @@ func (p *LaravelForgeProvider) Configure(ctx context.Context, req provider.Confi
 	resp.ResourceData = client
 }
 
-func (p *LaravelForgeProvider) Resources(ctx context.Context) []func() resource.Resource {
+func (p *ForgeProvider) Resources(ctx context.Context) []func() resource.Resource {
 	return []func() resource.Resource{
 		NewResourceServer,
 	}
 }
 
-func (p *LaravelForgeProvider) DataSources(ctx context.Context) []func() datasource.DataSource {
+func (p *ForgeProvider) DataSources(ctx context.Context) []func() datasource.DataSource {
 	return []func() datasource.DataSource{
 		NewDaemonDataSource,
 	}
@@ -91,7 +91,7 @@ func (p *LaravelForgeProvider) DataSources(ctx context.Context) []func() datasou
 
 func New(version string) func() provider.Provider {
 	return func() provider.Provider {
-		return &LaravelForgeProvider{
+		return &ForgeProvider{
 			version: version,
 		}
 	}
