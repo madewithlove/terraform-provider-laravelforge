@@ -102,9 +102,9 @@ func (d *DatabaseDataSource) Read(ctx context.Context, req datasource.ReadReques
 		return
 	}
 
-	data.Name = types.StringValue(string(database.Name))
-	data.Status = types.StringValue(string(database.Status))
-	data.CreatedAt = types.StringValue(string(database.CreatedAt))
+	data.Name = types.StringValue(database.Name)
+	data.Status = types.StringValue(database.Status)
+	data.CreatedAt = types.StringValue(database.CreatedAt)
 
 	// Write logs using the tflog package
 	// Documentation: https://terraform.io/plugin/log
