@@ -2208,6 +2208,132 @@
 			}
 		},
 		{
+			"name": "php_opcache",
+			"schema": {
+				"attributes": [
+					{
+						"name": "data",
+						"single_nested": {
+							"computed_optional_required": "required",
+							"attributes": [
+								{
+									"name": "attributes",
+									"single_nested": {
+										"computed_optional_required": "required",
+										"attributes": [
+											{
+												"name": "opcache_enabled",
+												"bool": {
+													"computed_optional_required": "required"
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "type",
+									"string": {
+										"computed_optional_required": "required",
+										"validators": [
+											{
+												"custom": {
+													"imports": [
+														{
+															"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+														}
+													],
+													"schema_definition": "stringvalidator.OneOf(\n\"phpOpcaches\",\n)"
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								},
+								{
+									"name": "links",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "self",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "describedby",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "href",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "hreflang",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "Language of the target link"
+															}
+														},
+														{
+															"name": "meta",
+															"single_nested": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "rel",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "title",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "type",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "organization",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The organization slug"
+						}
+					},
+					{
+						"name": "server",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The server ID"
+						}
+					}
+				]
+			}
+		},
+		{
 			"name": "php_versions",
 			"schema": {
 				"attributes": [
