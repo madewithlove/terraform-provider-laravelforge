@@ -1,0 +1,6415 @@
+{
+	"provider": {
+		"name": "laravelforge"
+	},
+	"resources": [
+		{
+			"name": "background_processes",
+			"schema": {
+				"attributes": [
+					{
+						"name": "command",
+						"string": {
+							"computed_optional_required": "required",
+							"description": "The command to run."
+						}
+					},
+					{
+						"name": "directory",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The directory to run the background process from."
+						}
+					},
+					{
+						"name": "name",
+						"string": {
+							"computed_optional_required": "required",
+							"description": "The name of the background process."
+						}
+					},
+					{
+						"name": "processes",
+						"int64": {
+							"computed_optional_required": "required",
+							"description": "The number of processes to run.",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/int64validator"
+											}
+										],
+										"schema_definition": "int64validator.AtLeast(1)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "startsecs",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The number of seconds to wait before starting the process.",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/int64validator"
+											}
+										],
+										"schema_definition": "int64validator.AtLeast(0)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "stopsignal",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The signal to send to stop the process."
+						}
+					},
+					{
+						"name": "stopwaitsecs",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The number of seconds to wait before stopping the process.",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/int64validator"
+											}
+										],
+										"schema_definition": "int64validator.AtLeast(0)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "user",
+						"string": {
+							"computed_optional_required": "required",
+							"description": "The user to run the background process as.",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.OneOf(\n\"root\",\n\"forge\",\n)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "data",
+						"single_nested": {
+							"computed_optional_required": "computed",
+							"attributes": [
+								{
+									"name": "attributes",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "command",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The command that the background process is running."
+												}
+											},
+											{
+												"name": "created_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date and time the background process was created."
+												}
+											},
+											{
+												"name": "directory",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The directory that the background process is running in."
+												}
+											},
+											{
+												"name": "processes",
+												"int64": {
+													"computed_optional_required": "computed",
+													"description": "The number of processes that the background process is running."
+												}
+											},
+											{
+												"name": "status",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The status of the background process."
+												}
+											},
+											{
+												"name": "user",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The user that the background process is running as."
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								},
+								{
+									"name": "type",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "organization",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The organization slug"
+						}
+					},
+					{
+						"name": "server",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The server ID"
+						}
+					},
+					{
+						"name": "background_process",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The background process ID"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "composer_credentials",
+			"schema": {
+				"attributes": [
+					{
+						"name": "password",
+						"string": {
+							"computed_optional_required": "required"
+						}
+					},
+					{
+						"name": "repository",
+						"string": {
+							"computed_optional_required": "required"
+						}
+					},
+					{
+						"name": "username",
+						"string": {
+							"computed_optional_required": "required"
+						}
+					},
+					{
+						"name": "data",
+						"single_nested": {
+							"computed_optional_required": "computed",
+							"attributes": [
+								{
+									"name": "attributes",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "password",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "repository",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "username",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								},
+								{
+									"name": "links",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "self",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "describedby",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "href",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "hreflang",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "Language of the target link"
+															}
+														},
+														{
+															"name": "meta",
+															"single_nested": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "rel",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "title",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "type",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "type",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "organization",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The organization slug"
+						}
+					},
+					{
+						"name": "server",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The server ID"
+						}
+					},
+					{
+						"name": "site",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The site ID"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "database_schemas",
+			"schema": {
+				"attributes": [
+					{
+						"name": "name",
+						"string": {
+							"computed_optional_required": "required",
+							"description": "The name of the database to create.",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.LengthAtMost(63)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "password",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The password for the database user. Only used if the user is provided.",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.LengthAtMost(255)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "user",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The name of the database user to create. Only needed if a new user should be created alongside the database."
+						}
+					},
+					{
+						"name": "data",
+						"single_nested": {
+							"computed_optional_required": "computed",
+							"attributes": [
+								{
+									"name": "attributes",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "created_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date and time the database schema was created."
+												}
+											},
+											{
+												"name": "name",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The name of the database schema."
+												}
+											},
+											{
+												"name": "status",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The status of the database schema."
+												}
+											},
+											{
+												"name": "updated_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date and time the database schema was last updated."
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								},
+								{
+									"name": "links",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "self",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "describedby",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "href",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "hreflang",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "Language of the target link"
+															}
+														},
+														{
+															"name": "meta",
+															"single_nested": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "rel",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "title",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "type",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "type",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "organization",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The organization slug"
+						}
+					},
+					{
+						"name": "server",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The server ID"
+						}
+					},
+					{
+						"name": "database",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The database ID"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "database_users",
+			"schema": {
+				"attributes": [
+					{
+						"name": "database_ids",
+						"list": {
+							"computed_optional_required": "computed_optional",
+							"element_type": {
+								"int64": {}
+							},
+							"description": "The IDs of the databases to assign the user to."
+						}
+					},
+					{
+						"name": "name",
+						"string": {
+							"computed_optional_required": "required",
+							"description": "The name of the database user to create."
+						}
+					},
+					{
+						"name": "password",
+						"string": {
+							"computed_optional_required": "required",
+							"description": "The password for the database user.",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.LengthAtMost(255)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "read_only",
+						"bool": {
+							"computed_optional_required": "computed_optional",
+							"description": "Whether the user should have read-only access to the databases."
+						}
+					},
+					{
+						"name": "data",
+						"single_nested": {
+							"computed_optional_required": "computed",
+							"attributes": [
+								{
+									"name": "attributes",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "created_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date and time the database user was created."
+												}
+											},
+											{
+												"name": "name",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The name of the database user."
+												}
+											},
+											{
+												"name": "status",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The status of the database user."
+												}
+											},
+											{
+												"name": "updated_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date and time the database user was last updated."
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								},
+								{
+									"name": "links",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "self",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "describedby",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "href",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "hreflang",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "Language of the target link"
+															}
+														},
+														{
+															"name": "meta",
+															"single_nested": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "rel",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "title",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "type",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "type",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "organization",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The organization slug"
+						}
+					},
+					{
+						"name": "server",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The server ID"
+						}
+					},
+					{
+						"name": "database_user",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The database user ID"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "deployment_webhooks",
+			"schema": {
+				"attributes": [
+					{
+						"name": "url",
+						"string": {
+							"computed_optional_required": "required"
+						}
+					},
+					{
+						"name": "data",
+						"single_nested": {
+							"computed_optional_required": "computed",
+							"attributes": [
+								{
+									"name": "attributes",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "created_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date and time the deployment webhook was created."
+												}
+											},
+											{
+												"name": "updated_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date and time the deployment webhook was last updated."
+												}
+											},
+											{
+												"name": "url",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The URL of the deployment webhook."
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								},
+								{
+									"name": "links",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "self",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "describedby",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "href",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "hreflang",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "Language of the target link"
+															}
+														},
+														{
+															"name": "meta",
+															"single_nested": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "rel",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "title",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "type",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "type",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "organization",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The organization slug"
+						}
+					},
+					{
+						"name": "server",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The server ID"
+						}
+					},
+					{
+						"name": "site",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The site ID"
+						}
+					},
+					{
+						"name": "deployment_webhook",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The deployment webhook ID"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "deployments",
+			"schema": {
+				"attributes": [
+					{
+						"name": "data",
+						"single_nested": {
+							"computed_optional_required": "computed",
+							"attributes": [
+								{
+									"name": "attributes",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "commit",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "author",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "The commit author."
+															}
+														},
+														{
+															"name": "branch",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "The commit branch."
+															}
+														},
+														{
+															"name": "hash",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "The commit hash."
+															}
+														},
+														{
+															"name": "message",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "The commit message."
+															}
+														}
+													],
+													"description": "The commit information for the deployment."
+												}
+											},
+											{
+												"name": "created_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date and time the deployment was created."
+												}
+											},
+											{
+												"name": "ended_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date and time the deployment ended."
+												}
+											},
+											{
+												"name": "started_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date and time the deployment started."
+												}
+											},
+											{
+												"name": "status",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "type",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "updated_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date and time the deployment was last updated."
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								},
+								{
+									"name": "type",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "organization",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The organization slug"
+						}
+					},
+					{
+						"name": "server",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The server ID"
+						}
+					},
+					{
+						"name": "site",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The site ID"
+						}
+					},
+					{
+						"name": "deployment",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The deployment ID"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "domain_certificates",
+			"schema": {
+				"attributes": [
+					{
+						"name": "clone",
+						"single_nested": {
+							"computed_optional_required": "computed_optional",
+							"attributes": [
+								{
+									"name": "certificate_id",
+									"int64": {
+										"computed_optional_required": "computed_optional",
+										"description": "The ID of the certificate to clone."
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "csr",
+						"single_nested": {
+							"computed_optional_required": "computed_optional",
+							"attributes": [
+								{
+									"name": "city",
+									"string": {
+										"computed_optional_required": "computed_optional",
+										"description": "The city for the CSR."
+									}
+								},
+								{
+									"name": "country",
+									"string": {
+										"computed_optional_required": "computed_optional",
+										"description": "The country for the CSR."
+									}
+								},
+								{
+									"name": "department",
+									"string": {
+										"computed_optional_required": "computed_optional",
+										"description": "The department for the CSR."
+									}
+								},
+								{
+									"name": "domain",
+									"string": {
+										"computed_optional_required": "computed_optional",
+										"description": "The domain to generate a CSR for."
+									}
+								},
+								{
+									"name": "organization",
+									"string": {
+										"computed_optional_required": "computed_optional",
+										"description": "The organization for the CSR."
+									}
+								},
+								{
+									"name": "sans",
+									"string": {
+										"computed_optional_required": "computed_optional",
+										"description": "The SANs for the CSR, comma-separated."
+									}
+								},
+								{
+									"name": "state",
+									"string": {
+										"computed_optional_required": "computed_optional",
+										"description": "The state for the CSR."
+									}
+								}
+							],
+							"description": "The configuration for a CSR (Certificate Signing Request)."
+						}
+					},
+					{
+						"name": "existing",
+						"single_nested": {
+							"computed_optional_required": "computed_optional",
+							"attributes": [
+								{
+									"name": "certificate",
+									"string": {
+										"computed_optional_required": "computed_optional",
+										"description": "The certificate chain for an existing certificate."
+									}
+								},
+								{
+									"name": "key",
+									"string": {
+										"computed_optional_required": "computed_optional",
+										"description": "The private key for an existing certificate."
+									}
+								}
+							],
+							"description": "The configuration for an existing certificate."
+						}
+					},
+					{
+						"name": "letsencrypt",
+						"single_nested": {
+							"computed_optional_required": "computed_optional",
+							"attributes": [
+								{
+									"name": "key_type",
+									"string": {
+										"computed_optional_required": "computed_optional",
+										"validators": [
+											{
+												"custom": {
+													"imports": [
+														{
+															"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+														}
+													],
+													"schema_definition": "stringvalidator.OneOf(\n\"ecdsa\",\n\"rsa\",\n)"
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "preferred_chain",
+									"string": {
+										"computed_optional_required": "computed_optional",
+										"description": "The preferred chain for the Let's Encrypt certificate.",
+										"validators": [
+											{
+												"custom": {
+													"imports": [
+														{
+															"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+														}
+													],
+													"schema_definition": "stringvalidator.OneOf(\n\"ISRG Root X1\",\n)"
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "verification_method",
+									"string": {
+										"computed_optional_required": "computed_optional",
+										"validators": [
+											{
+												"custom": {
+													"imports": [
+														{
+															"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+														}
+													],
+													"schema_definition": "stringvalidator.OneOf(\n\"http-01\",\n\"dns-01\",\n)"
+												}
+											}
+										]
+									}
+								}
+							],
+							"description": "The configuration for a Let's Encrypt certificate."
+						}
+					},
+					{
+						"name": "type",
+						"string": {
+							"computed_optional_required": "required",
+							"description": "The type of certificate to create.",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.OneOf(\n\"letsencrypt\",\n\"csr\",\n\"existing\",\n\"clone\",\n)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "data",
+						"single_nested": {
+							"computed_optional_required": "computed",
+							"attributes": [
+								{
+									"name": "attributes",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "created_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date and time the certificate was created."
+												}
+											},
+											{
+												"name": "key_type",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "preferred_chain",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The preferred chain for Let's Encrypt certificates."
+												}
+											},
+											{
+												"name": "request_status",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "status",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "type",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "updated_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date and time the certificate was last updated."
+												}
+											},
+											{
+												"name": "verification_method",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								},
+								{
+									"name": "links",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "self",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "describedby",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "href",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "hreflang",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "Language of the target link"
+															}
+														},
+														{
+															"name": "meta",
+															"single_nested": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "rel",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "title",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "type",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "type",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "organization",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The organization slug"
+						}
+					},
+					{
+						"name": "server",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The server ID"
+						}
+					},
+					{
+						"name": "site",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The site ID"
+						}
+					},
+					{
+						"name": "domain_record",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The domain record ID"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "firewall_rules",
+			"schema": {
+				"attributes": [
+					{
+						"name": "ip_address",
+						"single_nested": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "name",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.LengthAtMost(50)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "port",
+						"string": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "type",
+						"string": {
+							"computed_optional_required": "required",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.OneOf(\n\"allow\",\n\"deny\",\n)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "data",
+						"single_nested": {
+							"computed_optional_required": "computed",
+							"attributes": [
+								{
+									"name": "attributes",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "created_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date and time the firewall rule was created."
+												}
+											},
+											{
+												"name": "ip_address",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The IP address or subnet for the firewall rule."
+												}
+											},
+											{
+												"name": "name",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The name of the firewall rule."
+												}
+											},
+											{
+												"name": "port",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The port or port range for the firewall rule."
+												}
+											},
+											{
+												"name": "status",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The status of the firewall rule."
+												}
+											},
+											{
+												"name": "type",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The type of the firewall rule."
+												}
+											},
+											{
+												"name": "updated_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date and time the firewall rule was last updated."
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								},
+								{
+									"name": "links",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "self",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "describedby",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "href",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "hreflang",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "Language of the target link"
+															}
+														},
+														{
+															"name": "meta",
+															"single_nested": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "rel",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "title",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "type",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "type",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "organization",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The organization slug"
+						}
+					},
+					{
+						"name": "server",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The server ID"
+						}
+					},
+					{
+						"name": "rule",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The rule ID"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "heartbeats",
+			"schema": {
+				"attributes": [
+					{
+						"name": "custom_frequency",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "A cron expression representing the custom frequency at which the client is expected to send a ping, if the frequency is set to -1."
+						}
+					},
+					{
+						"name": "frequency",
+						"int64": {
+							"computed_optional_required": "required",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/int64validator"
+											}
+										],
+										"schema_definition": "int64validator.OneOf(\n1,\n5,\n10,\n30,\n60,\n1440,\n10080,\n312480,\n-1,\n)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "grace_period",
+						"int64": {
+							"computed_optional_required": "required",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/int64validator"
+											}
+										],
+										"schema_definition": "int64validator.OneOf(\n1,\n2,\n5,\n10,\n30,\n60,\n)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "name",
+						"string": {
+							"computed_optional_required": "required",
+							"description": "The name of the heartbeat.",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.LengthAtMost(255)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "data",
+						"single_nested": {
+							"computed_optional_required": "computed",
+							"attributes": [
+								{
+									"name": "attributes",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "custom_frequency",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "frequency",
+												"int64": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "grace_period",
+												"int64": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "name",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The name of the heartbeat."
+												}
+											},
+											{
+												"name": "ping_url",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "status",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								},
+								{
+									"name": "links",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "self",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "describedby",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "href",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "hreflang",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "Language of the target link"
+															}
+														},
+														{
+															"name": "meta",
+															"single_nested": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "rel",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "title",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "type",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "type",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "organization",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The organization slug"
+						}
+					},
+					{
+						"name": "server",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The server ID"
+						}
+					},
+					{
+						"name": "site",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The site ID"
+						}
+					},
+					{
+						"name": "heartbeat",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The heartbeat ID"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "monitors",
+			"schema": {
+				"attributes": [
+					{
+						"name": "minutes",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The frequency in minutes to evaluate the monitor.",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/int64validator"
+											}
+										],
+										"schema_definition": "int64validator.Between(1, 60)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "notify",
+						"string": {
+							"computed_optional_required": "required",
+							"description": "The email address to notify when the monitor is in an alert state."
+						}
+					},
+					{
+						"name": "operator",
+						"string": {
+							"computed_optional_required": "required",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.OneOf(\n\"gte\",\n\"lte\",\n)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "threshold",
+						"number": {
+							"computed_optional_required": "required",
+							"description": "The threshold to alert on once breached."
+						}
+					},
+					{
+						"name": "type",
+						"string": {
+							"computed_optional_required": "required",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.OneOf(\n\"cpu_load\",\n\"disk\",\n\"free_memory\",\n\"used_memory\",\n)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "data",
+						"single_nested": {
+							"computed_optional_required": "computed",
+							"attributes": [
+								{
+									"name": "attributes",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "created_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date and time the monitor was created."
+												}
+											},
+											{
+												"name": "minutes",
+												"int64": {
+													"computed_optional_required": "computed",
+													"description": "The frequency in minutes to evaluate the monitor."
+												}
+											},
+											{
+												"name": "notify",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The email address to notify when the monitor is in an alert state."
+												}
+											},
+											{
+												"name": "operator",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "state",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "state_changed_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date and time the monitor state was last changed."
+												}
+											},
+											{
+												"name": "status",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "threshold",
+												"number": {
+													"computed_optional_required": "computed",
+													"description": "The threshold to alert on once breached."
+												}
+											},
+											{
+												"name": "type",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "updated_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date and time the monitor was last updated."
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								},
+								{
+									"name": "links",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "self",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "describedby",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "href",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "hreflang",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "Language of the target link"
+															}
+														},
+														{
+															"name": "meta",
+															"single_nested": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "rel",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "title",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "type",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "type",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "organization",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The organization slug"
+						}
+					},
+					{
+						"name": "server",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The server ID"
+						}
+					},
+					{
+						"name": "monitor",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The monitor ID"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "nginx_templates",
+			"schema": {
+				"attributes": [
+					{
+						"name": "content",
+						"string": {
+							"computed_optional_required": "required",
+							"description": "The content of the Nginx template."
+						}
+					},
+					{
+						"name": "name",
+						"string": {
+							"computed_optional_required": "required",
+							"description": "The name of the Nginx template."
+						}
+					},
+					{
+						"name": "data",
+						"single_nested": {
+							"computed_optional_required": "computed",
+							"attributes": [
+								{
+									"name": "attributes",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "content",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "created_at",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "name",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "updated_at",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								},
+								{
+									"name": "links",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "self",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "describedby",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "href",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "hreflang",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "Language of the target link"
+															}
+														},
+														{
+															"name": "meta",
+															"single_nested": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "rel",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "title",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "type",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "type",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "organization",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The organization slug"
+						}
+					},
+					{
+						"name": "server",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The server ID"
+						}
+					},
+					{
+						"name": "nginx_template",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The nginx template ID"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "php_versions",
+			"schema": {
+				"attributes": [
+					{
+						"name": "cli_default",
+						"bool": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "site_default",
+						"bool": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "version",
+						"string": {
+							"computed_optional_required": "required",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.OneOf(\n\"php5\",\n\"php56-old\",\n\"php56\",\n\"php70\",\n\"php71\",\n\"php72\",\n\"php73\",\n\"php74\",\n\"php80\",\n\"php81\",\n\"php82\",\n\"php83\",\n\"php84\",\n\"php85\",\n)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "data",
+						"single_nested": {
+							"computed_optional_required": "computed",
+							"attributes": [
+								{
+									"name": "attributes",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "binary_name",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "created_at",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "status",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "updated_at",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "version",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								},
+								{
+									"name": "links",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "self",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "describedby",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "href",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "hreflang",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "Language of the target link"
+															}
+														},
+														{
+															"name": "meta",
+															"single_nested": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "rel",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "title",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "type",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "type",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "organization",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The organization slug"
+						}
+					},
+					{
+						"name": "server",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The server ID"
+						}
+					},
+					{
+						"name": "php_version",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The php version ID"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "recipe_runs",
+			"schema": {
+				"attributes": [
+					{
+						"name": "email",
+						"bool": {
+							"computed_optional_required": "computed_optional",
+							"description": "Whether to send an email notification when the recipe has completed."
+						}
+					},
+					{
+						"name": "servers",
+						"list": {
+							"computed_optional_required": "required",
+							"element_type": {
+								"int64": {}
+							},
+							"description": "The servers on which to run the recipe on."
+						}
+					},
+					{
+						"name": "data",
+						"single_nested": {
+							"computed_optional_required": "computed",
+							"attributes": [
+								{
+									"name": "attributes",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "executed_by",
+												"int64": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "finished_at",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "output",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "recipe_id",
+												"int64": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "server_id",
+												"int64": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "started_at",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "status",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								},
+								{
+									"name": "links",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "self",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "describedby",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "href",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "hreflang",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "Language of the target link"
+															}
+														},
+														{
+															"name": "meta",
+															"single_nested": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "rel",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "title",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "type",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "type",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "organization",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The organization slug"
+						}
+					},
+					{
+						"name": "recipe",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The recipe ID"
+						}
+					},
+					{
+						"name": "log",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The log ID"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "recipes",
+			"schema": {
+				"attributes": [
+					{
+						"name": "name",
+						"string": {
+							"computed_optional_required": "required",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.LengthAtMost(255)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "script",
+						"string": {
+							"computed_optional_required": "required"
+						}
+					},
+					{
+						"name": "team_id",
+						"string": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "user",
+						"string": {
+							"computed_optional_required": "required",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.OneOf(\n\"root\",\n\"forge\",\n)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "data",
+						"single_nested": {
+							"computed_optional_required": "computed",
+							"attributes": [
+								{
+									"name": "attributes",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "created_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date the Recipe was created."
+												}
+											},
+											{
+												"name": "name",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The name of the Recipe."
+												}
+											},
+											{
+												"name": "script",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The script that should be executed."
+												}
+											},
+											{
+												"name": "updated_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date the Recipe was last updated."
+												}
+											},
+											{
+												"name": "user",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The user that the Recipe should be executed as."
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								},
+								{
+									"name": "links",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "self",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "describedby",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "href",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "hreflang",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "Language of the target link"
+															}
+														},
+														{
+															"name": "meta",
+															"single_nested": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "rel",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "title",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "type",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "type",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "organization",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The organization slug"
+						}
+					},
+					{
+						"name": "recipe",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The recipe ID"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "redirect_rules",
+			"schema": {
+				"attributes": [
+					{
+						"name": "from",
+						"string": {
+							"computed_optional_required": "required",
+							"description": "The source URL path for the redirect rule.",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.LengthAtMost(1000)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "to",
+						"string": {
+							"computed_optional_required": "required",
+							"description": "The destination URL path for the redirect rule.",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.LengthAtMost(1000)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "type",
+						"string": {
+							"computed_optional_required": "required",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.OneOf(\n\"redirect\",\n\"permanent\",\n)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "data",
+						"single_nested": {
+							"computed_optional_required": "computed",
+							"attributes": [
+								{
+									"name": "attributes",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "created_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date and time the redirect rule was created."
+												}
+											},
+											{
+												"name": "from",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The source URL path for the redirect rule."
+												}
+											},
+											{
+												"name": "status",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The status of the redirect rule."
+												}
+											},
+											{
+												"name": "to",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The destination URL path for the redirect rule."
+												}
+											},
+											{
+												"name": "type",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "updated_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date and time the redirect rule was last updated."
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								},
+								{
+									"name": "links",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "self",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "describedby",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "href",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "hreflang",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "Language of the target link"
+															}
+														},
+														{
+															"name": "meta",
+															"single_nested": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "rel",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "title",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "type",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "type",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "organization",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The organization slug"
+						}
+					},
+					{
+						"name": "server",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The server ID"
+						}
+					},
+					{
+						"name": "site",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The site ID"
+						}
+					},
+					{
+						"name": "redirect_rule",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The redirect rule ID"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "region_vpcs",
+			"schema": {
+				"attributes": [
+					{
+						"name": "name",
+						"string": {
+							"computed_optional_required": "required",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.LengthAtMost(255)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "data",
+						"single_nested": {
+							"computed_optional_required": "computed",
+							"attributes": [
+								{
+									"name": "attributes",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "cidr_block",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "name",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The name of the vpc"
+												}
+											},
+											{
+												"name": "region",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "subnets",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								},
+								{
+									"name": "links",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "self",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "describedby",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "href",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "hreflang",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "Language of the target link"
+															}
+														},
+														{
+															"name": "meta",
+															"single_nested": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "rel",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "title",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "type",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "type",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "organization",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The organization slug"
+						}
+					},
+					{
+						"name": "credential",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The credential ID"
+						}
+					},
+					{
+						"name": "region",
+						"string": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "vpc_id",
+						"string": {
+							"computed_optional_required": "computed_optional"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "roles",
+			"schema": {
+				"attributes": [
+					{
+						"name": "name",
+						"string": {
+							"computed_optional_required": "required",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.LengthAtMost(50)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "permissions",
+						"list": {
+							"computed_optional_required": "computed_optional",
+							"element_type": {
+								"string": {}
+							}
+						}
+					},
+					{
+						"name": "data",
+						"single_nested": {
+							"computed_optional_required": "computed",
+							"attributes": [
+								{
+									"name": "attributes",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "created_at",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "name",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "updated_at",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								},
+								{
+									"name": "links",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "self",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "describedby",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "href",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "hreflang",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "Language of the target link"
+															}
+														},
+														{
+															"name": "meta",
+															"single_nested": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "rel",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "title",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "type",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "relationships",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "permissions",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "data",
+															"list_nested": {
+																"computed_optional_required": "computed",
+																"nested_object": {
+																	"attributes": [
+																		{
+																			"name": "id",
+																			"string": {
+																				"computed_optional_required": "computed"
+																			}
+																		},
+																		{
+																			"name": "type",
+																			"string": {
+																				"computed_optional_required": "computed"
+																			}
+																		}
+																	]
+																}
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "type",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "organization",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The organization slug"
+						}
+					},
+					{
+						"name": "role",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The role ID"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "security_rules",
+			"schema": {
+				"attributes": [
+					{
+						"name": "credentials",
+						"list_nested": {
+							"computed_optional_required": "required",
+							"nested_object": {
+								"attributes": [
+									{
+										"name": "password",
+										"string": {
+											"computed_optional_required": "required",
+											"description": "The passwords for the credential."
+										}
+									},
+									{
+										"name": "username",
+										"string": {
+											"computed_optional_required": "required",
+											"description": "The usernames for the credential.",
+											"validators": [
+												{
+													"custom": {
+														"imports": [
+															{
+																"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+															}
+														],
+														"schema_definition": "stringvalidator.LengthAtMost(50)"
+													}
+												}
+											]
+										}
+									}
+								]
+							},
+							"description": "The credentials for the security rule.",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/listvalidator"
+											}
+										],
+										"schema_definition": "listvalidator.SizeAtLeast(1)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "name",
+						"string": {
+							"computed_optional_required": "required",
+							"description": "The name of the security rule.",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.LengthAtMost(255)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "path",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The path for the security rule.",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.LengthAtMost(255)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "data",
+						"single_nested": {
+							"computed_optional_required": "computed",
+							"attributes": [
+								{
+									"name": "attributes",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "created_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date and time the security rule was created."
+												}
+											},
+											{
+												"name": "name",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The name of the security rule."
+												}
+											},
+											{
+												"name": "path",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The path for the security rule."
+												}
+											},
+											{
+												"name": "status",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The status of the security rule."
+												}
+											},
+											{
+												"name": "updated_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date and time the security rule was last updated."
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								},
+								{
+									"name": "links",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "self",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "describedby",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "href",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "hreflang",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "Language of the target link"
+															}
+														},
+														{
+															"name": "meta",
+															"single_nested": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "rel",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "title",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "type",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "type",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "organization",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The organization slug"
+						}
+					},
+					{
+						"name": "server",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The server ID"
+						}
+					},
+					{
+						"name": "site",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The site ID"
+						}
+					},
+					{
+						"name": "security_rule",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The security rule ID"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "server_scheduled_jobs",
+			"schema": {
+				"attributes": [
+					{
+						"name": "command",
+						"string": {
+							"computed_optional_required": "required",
+							"description": "The command to run."
+						}
+					},
+					{
+						"name": "cron",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The cron expression to use for the scheduled job. Only used if frequency is set to Custom."
+						}
+					},
+					{
+						"name": "frequency",
+						"string": {
+							"computed_optional_required": "required",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.OneOf(\n\"minutely\",\n\"hourly\",\n\"nightly\",\n\"weekly\",\n\"monthly\",\n\"reboot\",\n\"custom\",\n)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "grace_period",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The grace period, in minutes, for the heartbeat."
+						}
+					},
+					{
+						"name": "heartbeat",
+						"bool": {
+							"computed_optional_required": "computed_optional",
+							"description": "Whether a heartbeat should be created for the scheduled job."
+						}
+					},
+					{
+						"name": "name",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The name of the command."
+						}
+					},
+					{
+						"name": "user",
+						"string": {
+							"computed_optional_required": "required",
+							"description": "The user to run the scheduled job as."
+						}
+					},
+					{
+						"name": "data",
+						"single_nested": {
+							"computed_optional_required": "computed",
+							"attributes": [
+								{
+									"name": "attributes",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "command",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "created_at",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "cron",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "frequency",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "name",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "next_run_time",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "status",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "updated_at",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "user",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								},
+								{
+									"name": "links",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "self",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "describedby",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "href",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "hreflang",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "Language of the target link"
+															}
+														},
+														{
+															"name": "meta",
+															"single_nested": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "rel",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "title",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "type",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "type",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "organization",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The organization slug"
+						}
+					},
+					{
+						"name": "server",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The server ID"
+						}
+					},
+					{
+						"name": "job",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The job ID"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "servers",
+			"schema": {
+				"attributes": [
+					{
+						"name": "add_key_to_source_control",
+						"bool": {
+							"computed_optional_required": "computed_optional",
+							"default": {
+								"static": true
+							}
+						}
+					},
+					{
+						"name": "akamai",
+						"single_nested": {
+							"computed_optional_required": "computed_optional",
+							"attributes": [
+								{
+									"name": "region_id",
+									"string": {
+										"computed_optional_required": "computed_optional"
+									}
+								},
+								{
+									"name": "size_id",
+									"string": {
+										"computed_optional_required": "computed_optional"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "aws",
+						"single_nested": {
+							"computed_optional_required": "computed_optional",
+							"attributes": [
+								{
+									"name": "disk_size",
+									"string": {
+										"computed_optional_required": "computed_optional"
+									}
+								},
+								{
+									"name": "region_id",
+									"string": {
+										"computed_optional_required": "computed_optional"
+									}
+								},
+								{
+									"name": "size_id",
+									"string": {
+										"computed_optional_required": "computed_optional"
+									}
+								},
+								{
+									"name": "subnet_uuid",
+									"string": {
+										"computed_optional_required": "computed_optional"
+									}
+								},
+								{
+									"name": "vpc_uuid",
+									"string": {
+										"computed_optional_required": "computed_optional"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "credential_id",
+						"string": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "custom",
+						"single_nested": {
+							"computed_optional_required": "computed_optional",
+							"attributes": [
+								{
+									"name": "behind_nat",
+									"string": {
+										"computed_optional_required": "computed_optional"
+									}
+								},
+								{
+									"name": "ip_address",
+									"string": {
+										"computed_optional_required": "computed_optional"
+									}
+								},
+								{
+									"name": "nat_ssh_port",
+									"string": {
+										"computed_optional_required": "computed_optional"
+									}
+								},
+								{
+									"name": "private_ip_address",
+									"string": {
+										"computed_optional_required": "computed_optional"
+									}
+								},
+								{
+									"name": "ssh_port",
+									"string": {
+										"computed_optional_required": "computed_optional"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "database",
+						"string": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "database_type",
+						"string": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "hetzner",
+						"single_nested": {
+							"computed_optional_required": "computed_optional",
+							"attributes": [
+								{
+									"name": "enable_daily_backups",
+									"string": {
+										"computed_optional_required": "computed_optional"
+									}
+								},
+								{
+									"name": "network_id",
+									"string": {
+										"computed_optional_required": "computed_optional"
+									}
+								},
+								{
+									"name": "region_id",
+									"string": {
+										"computed_optional_required": "computed_optional"
+									}
+								},
+								{
+									"name": "size_id",
+									"string": {
+										"computed_optional_required": "computed_optional"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "laravel",
+						"single_nested": {
+							"computed_optional_required": "computed_optional",
+							"attributes": [
+								{
+									"name": "region_id",
+									"string": {
+										"computed_optional_required": "computed_optional"
+									}
+								},
+								{
+									"name": "size_id",
+									"string": {
+										"computed_optional_required": "computed_optional"
+									}
+								},
+								{
+									"name": "vpc_uuid",
+									"string": {
+										"computed_optional_required": "computed_optional"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "name",
+						"string": {
+							"computed_optional_required": "required",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.LengthAtMost(30)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "ocean2",
+						"single_nested": {
+							"computed_optional_required": "computed_optional",
+							"attributes": [
+								{
+									"name": "enable_weekly_backups",
+									"string": {
+										"computed_optional_required": "computed_optional"
+									}
+								},
+								{
+									"name": "region_id",
+									"string": {
+										"computed_optional_required": "computed_optional"
+									}
+								},
+								{
+									"name": "size_id",
+									"string": {
+										"computed_optional_required": "computed_optional"
+									}
+								},
+								{
+									"name": "vpc_uuid",
+									"string": {
+										"computed_optional_required": "computed_optional"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "php_version",
+						"string": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "provider",
+						"string": {
+							"computed_optional_required": "required"
+						}
+					},
+					{
+						"name": "recipe_id",
+						"int64": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "tags",
+						"list": {
+							"computed_optional_required": "computed_optional",
+							"element_type": {
+								"string": {}
+							}
+						}
+					},
+					{
+						"name": "team_id",
+						"int64": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "type",
+						"string": {
+							"computed_optional_required": "required",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.OneOf(\n\"app\",\n\"web\",\n\"loadbalancer\",\n\"database\",\n\"cache\",\n\"worker\",\n\"meilisearch\",\n)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "ubuntu_version",
+						"string": {
+							"computed_optional_required": "required",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.OneOf(\n\"22.04\",\n\"24.04\",\n)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "vultr",
+						"single_nested": {
+							"computed_optional_required": "computed_optional",
+							"attributes": [
+								{
+									"name": "network_id",
+									"string": {
+										"computed_optional_required": "computed_optional"
+									}
+								},
+								{
+									"name": "region_id",
+									"string": {
+										"computed_optional_required": "computed_optional"
+									}
+								},
+								{
+									"name": "size_id",
+									"string": {
+										"computed_optional_required": "computed_optional"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "data",
+						"single_nested": {
+							"computed_optional_required": "computed",
+							"attributes": [
+								{
+									"name": "attributes",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "connection_status",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "created_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date and time the server was created."
+												}
+											},
+											{
+												"name": "credential_id",
+												"int64": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "database_type",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "db_status",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "id",
+												"int64": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "identifier",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "ip_address",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "is_ready",
+												"bool": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "local_public_key",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "name",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "opcache_status",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "php_cli_version",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "php_version",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "private_ip_address",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "provider",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "redis_status",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "region",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "revoked",
+												"bool": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "size",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "ssh_port",
+												"int64": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "timezone",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "type",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "ubuntu_version",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "updated_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date and time the server was last updated."
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								},
+								{
+									"name": "links",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "self",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "describedby",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "href",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "hreflang",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "Language of the target link"
+															}
+														},
+														{
+															"name": "meta",
+															"single_nested": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "rel",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "title",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "type",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "relationships",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "tags",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "data",
+															"list_nested": {
+																"computed_optional_required": "computed",
+																"nested_object": {
+																	"attributes": [
+																		{
+																			"name": "id",
+																			"string": {
+																				"computed_optional_required": "computed"
+																			}
+																		},
+																		{
+																			"name": "type",
+																			"string": {
+																				"computed_optional_required": "computed"
+																			}
+																		}
+																	]
+																}
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "type",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "organization",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The organization slug"
+						}
+					},
+					{
+						"name": "server",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The server ID"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "site_commands",
+			"schema": {
+				"attributes": [
+					{
+						"name": "command",
+						"string": {
+							"computed_optional_required": "required",
+							"description": "The command to run."
+						}
+					},
+					{
+						"name": "data",
+						"single_nested": {
+							"computed_optional_required": "computed",
+							"attributes": [
+								{
+									"name": "attributes",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "opcache_enabled",
+												"bool": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "command",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The command that ran."
+												}
+											},
+											{
+												"name": "created_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date and time the command was created."
+												}
+											},
+											{
+												"name": "duration",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The duration of the command in human-readable format."
+												}
+											},
+											{
+												"name": "status",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "updated_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date and time the command was last updated."
+												}
+											},
+											{
+												"name": "user_id",
+												"int64": {
+													"computed_optional_required": "computed",
+													"description": "The ID of the user who initiated the command."
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								},
+								{
+									"name": "links",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "self",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "describedby",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "href",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "hreflang",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "Language of the target link"
+															}
+														},
+														{
+															"name": "meta",
+															"single_nested": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "rel",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "title",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "type",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "type",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								},
+								{
+									"name": "relationships",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "user",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "data",
+															"single_nested": {
+																"computed_optional_required": "computed",
+																"attributes": [
+																	{
+																		"name": "id",
+																		"string": {
+																			"computed_optional_required": "computed"
+																		}
+																	},
+																	{
+																		"name": "type",
+																		"string": {
+																			"computed_optional_required": "computed"
+																		}
+																	}
+																]
+															}
+														}
+													],
+													"description": "The user who initiated the command."
+												}
+											}
+										]
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "organization",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The organization slug"
+						}
+					},
+					{
+						"name": "server",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The server ID"
+						}
+					},
+					{
+						"name": "site",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The site ID"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "site_domains",
+			"schema": {
+				"attributes": [
+					{
+						"name": "allow_wildcard_subdomains",
+						"bool": {
+							"computed_optional_required": "required",
+							"description": "Whether to allow wildcard subdomains for the domain."
+						}
+					},
+					{
+						"name": "name",
+						"string": {
+							"computed_optional_required": "required",
+							"description": "The name of the domain."
+						}
+					},
+					{
+						"name": "www_redirect_type",
+						"string": {
+							"computed_optional_required": "required",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.OneOf(\n\"from-www\",\n\"to-www\",\n\"none\",\n)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "data",
+						"single_nested": {
+							"computed_optional_required": "computed",
+							"attributes": [
+								{
+									"name": "attributes",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "allow_wildcard_subdomains",
+												"bool": {
+													"computed_optional_required": "computed",
+													"description": "Whether the domain allows wildcard subdomains."
+												}
+											},
+											{
+												"name": "created_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date and time the domain was created."
+												}
+											},
+											{
+												"name": "name",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The name of the domain."
+												}
+											},
+											{
+												"name": "status",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "type",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The type of domain."
+												}
+											},
+											{
+												"name": "updated_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date and time the domain was last updated."
+												}
+											},
+											{
+												"name": "www_redirect_type",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								},
+								{
+									"name": "links",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "self",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "describedby",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "href",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "hreflang",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "Language of the target link"
+															}
+														},
+														{
+															"name": "meta",
+															"single_nested": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "rel",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "title",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "type",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "type",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "organization",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The organization slug"
+						}
+					},
+					{
+						"name": "server",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The server ID"
+						}
+					},
+					{
+						"name": "site",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The site ID"
+						}
+					},
+					{
+						"name": "domain_record",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The domain record ID"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "site_scheduled_jobs",
+			"schema": {
+				"attributes": [
+					{
+						"name": "command",
+						"string": {
+							"computed_optional_required": "required",
+							"description": "The command to run."
+						}
+					},
+					{
+						"name": "cron",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The cron expression to use for the scheduled job. Only used if frequency is set to Custom."
+						}
+					},
+					{
+						"name": "frequency",
+						"string": {
+							"computed_optional_required": "required",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.OneOf(\n\"minutely\",\n\"hourly\",\n\"nightly\",\n\"weekly\",\n\"monthly\",\n\"reboot\",\n\"custom\",\n)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "grace_period",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The grace period, in minutes, for the heartbeat."
+						}
+					},
+					{
+						"name": "heartbeat",
+						"bool": {
+							"computed_optional_required": "computed_optional",
+							"description": "Whether a heartbeat should be created for the scheduled job."
+						}
+					},
+					{
+						"name": "name",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The name of the command."
+						}
+					},
+					{
+						"name": "user",
+						"string": {
+							"computed_optional_required": "required",
+							"description": "The user to run the scheduled job as."
+						}
+					},
+					{
+						"name": "data",
+						"single_nested": {
+							"computed_optional_required": "computed",
+							"attributes": [
+								{
+									"name": "attributes",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "command",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "created_at",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "cron",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "frequency",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "name",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "next_run_time",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "status",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "updated_at",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "user",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								},
+								{
+									"name": "links",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "self",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "describedby",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "href",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "hreflang",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "Language of the target link"
+															}
+														},
+														{
+															"name": "meta",
+															"single_nested": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "rel",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "title",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "type",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "type",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "organization",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The organization slug"
+						}
+					},
+					{
+						"name": "server",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The server ID"
+						}
+					},
+					{
+						"name": "site",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The site ID"
+						}
+					},
+					{
+						"name": "job",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The job ID"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "sites",
+			"schema": {
+				"attributes": [
+					{
+						"name": "allow_wildcard_subdomains",
+						"string": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "branch",
+						"string": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "database_id",
+						"int64": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "database_user_id",
+						"string": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "domain_mode",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.OneOf(\n\"on-forge\",\n\"custom\",\n)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "frontend_build_command",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The build command for frontend assets."
+						}
+					},
+					{
+						"name": "frontend_package_manager",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The package manager for frontend applications."
+						}
+					},
+					{
+						"name": "generate_deploy_key",
+						"bool": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "install_composer_dependencies",
+						"bool": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "is_isolated",
+						"bool": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "isolated_user",
+						"string": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "name",
+						"string": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "nginx_template_id",
+						"int64": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "nuxt_next_mode",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The render mode for Next/Nuxt applications."
+						}
+					},
+					{
+						"name": "nuxt_next_port",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The port used for Next/Nuxt applications."
+						}
+					},
+					{
+						"name": "php_version",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.OneOf(\n\"php5\",\n\"php56-old\",\n\"php56\",\n\"php70\",\n\"php71\",\n\"php72\",\n\"php73\",\n\"php74\",\n\"php80\",\n\"php81\",\n\"php82\",\n\"php83\",\n\"php84\",\n\"php85\",\n)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "private_deploy_key",
+						"string": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "public_deploy_key",
+						"string": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "push_to_deploy",
+						"bool": {
+							"computed_optional_required": "computed_optional",
+							"default": {
+								"static": false
+							},
+							"description": "Automatically trigger a new deployment when changes are pushed to the environment's Git branch."
+						}
+					},
+					{
+						"name": "repository",
+						"string": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "root_directory",
+						"string": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "shared_paths",
+						"list_nested": {
+							"computed_optional_required": "computed_optional",
+							"nested_object": {
+								"attributes": [
+									{
+										"name": "from",
+										"string": {
+											"computed_optional_required": "required",
+											"description": "The path relative to the project's root directory on the server that should be shared between releases."
+										}
+									},
+									{
+										"name": "to",
+										"string": {
+											"computed_optional_required": "required",
+											"description": "The path relative to the deployment's release directory that the shared path should be linked to."
+										}
+									}
+								]
+							},
+							"description": "A list of files or directories to be shared between releases for zero-downtime deployments."
+						}
+					},
+					{
+						"name": "source_control_provider",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "All supported source control providers.\n",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.OneOf(\n\"github\",\n\"gitlab\",\n\"bitbucket\",\n\"gitlab-custom\",\n\"custom\",\n)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "statamic_setup",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The type of setup for Statmic apps."
+						}
+					},
+					{
+						"name": "statamic_starter_kit",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The starter kit for the Statamic app."
+						}
+					},
+					{
+						"name": "statamic_super_user_email",
+						"string": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "statamic_super_user_password",
+						"string": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "tags",
+						"list": {
+							"computed_optional_required": "computed_optional",
+							"element_type": {
+								"string": {}
+							}
+						}
+					},
+					{
+						"name": "type",
+						"string": {
+							"computed_optional_required": "required",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.OneOf(\n\"laravel\",\n\"symfony\",\n\"statamic\",\n\"wordpress\",\n\"phpmyadmin\",\n\"php\",\n\"nextjs\",\n\"nuxtjs\",\n\"static-html\",\n\"other\",\n\"custom\",\n)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "web_directory",
+						"string": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "www_redirect_type",
+						"string": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "zero_downtime_deployments",
+						"bool": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "data",
+						"single_nested": {
+							"computed_optional_required": "computed",
+							"attributes": [
+								{
+									"name": "attributes",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "aliases",
+												"list": {
+													"computed_optional_required": "computed",
+													"element_type": {
+														"string": {}
+													}
+												}
+											},
+											{
+												"name": "app_type",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "created_at",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "database",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "deployment_script",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "deployment_status",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "deployment_url",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "healthcheck_url",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "https",
+												"bool": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "isolated",
+												"bool": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "maintenance_mode",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "enabled",
+															"bool": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "status",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														}
+													]
+												}
+											},
+											{
+												"name": "name",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "php_version",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "quick_deploy",
+												"bool": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "repository",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "branch",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "provider",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "status",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "url",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														}
+													]
+												}
+											},
+											{
+												"name": "root_directory",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "shared_paths",
+												"map": {
+													"computed_optional_required": "computed",
+													"element_type": {
+														"string": {}
+													},
+													"description": "* The linked directories for the site."
+												}
+											},
+											{
+												"name": "status",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "updated_at",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "url",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "user",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "uses_envoyer",
+												"bool": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "web_directory",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "wildcards",
+												"bool": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "zero_downtime_deployments",
+												"bool": {
+													"computed_optional_required": "computed"
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								},
+								{
+									"name": "links",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "self",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "describedby",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "href",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "hreflang",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "Language of the target link"
+															}
+														},
+														{
+															"name": "meta",
+															"single_nested": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "rel",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "title",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "type",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "relationships",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "latest_deployment",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "data",
+															"single_nested": {
+																"computed_optional_required": "computed",
+																"attributes": [
+																	{
+																		"name": "id",
+																		"string": {
+																			"computed_optional_required": "computed"
+																		}
+																	},
+																	{
+																		"name": "type",
+																		"string": {
+																			"computed_optional_required": "computed"
+																		}
+																	}
+																]
+															}
+														}
+													]
+												}
+											},
+											{
+												"name": "redirect_rules",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "data",
+															"list_nested": {
+																"computed_optional_required": "computed",
+																"nested_object": {
+																	"attributes": [
+																		{
+																			"name": "id",
+																			"string": {
+																				"computed_optional_required": "computed"
+																			}
+																		},
+																		{
+																			"name": "type",
+																			"string": {
+																				"computed_optional_required": "computed"
+																			}
+																		}
+																	]
+																}
+															}
+														}
+													]
+												}
+											},
+											{
+												"name": "security_rules",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "data",
+															"list_nested": {
+																"computed_optional_required": "computed",
+																"nested_object": {
+																	"attributes": [
+																		{
+																			"name": "id",
+																			"string": {
+																				"computed_optional_required": "computed"
+																			}
+																		},
+																		{
+																			"name": "type",
+																			"string": {
+																				"computed_optional_required": "computed"
+																			}
+																		}
+																	]
+																}
+															}
+														}
+													]
+												}
+											},
+											{
+												"name": "server",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "data",
+															"single_nested": {
+																"computed_optional_required": "computed",
+																"attributes": [
+																	{
+																		"name": "id",
+																		"string": {
+																			"computed_optional_required": "computed"
+																		}
+																	},
+																	{
+																		"name": "type",
+																		"string": {
+																			"computed_optional_required": "computed"
+																		}
+																	}
+																]
+															}
+														}
+													]
+												}
+											},
+											{
+												"name": "tags",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "data",
+															"list_nested": {
+																"computed_optional_required": "computed",
+																"nested_object": {
+																	"attributes": [
+																		{
+																			"name": "id",
+																			"string": {
+																				"computed_optional_required": "computed"
+																			}
+																		},
+																		{
+																			"name": "type",
+																			"string": {
+																				"computed_optional_required": "computed"
+																			}
+																		}
+																	]
+																}
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "type",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "organization",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The organization slug"
+						}
+					},
+					{
+						"name": "site",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The site ID"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "ssh_keys",
+			"schema": {
+				"attributes": [
+					{
+						"name": "key",
+						"string": {
+							"computed_optional_required": "required",
+							"description": "The public SSH key."
+						}
+					},
+					{
+						"name": "name",
+						"string": {
+							"computed_optional_required": "required",
+							"description": "The name of the SSH key."
+						}
+					},
+					{
+						"name": "user",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"default": {
+								"static": "forge"
+							},
+							"description": "The user associated with the SSH key."
+						}
+					},
+					{
+						"name": "data",
+						"single_nested": {
+							"computed_optional_required": "computed",
+							"attributes": [
+								{
+									"name": "attributes",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "opcache_enabled",
+												"bool": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "created_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date the key was created."
+												}
+											},
+											{
+												"name": "created_by",
+												"int64": {
+													"computed_optional_required": "computed",
+													"description": "The user that created the key."
+												}
+											},
+											{
+												"name": "name",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "status",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "updated_at",
+												"string": {
+													"computed_optional_required": "computed",
+													"description": "The date the key was last updated."
+												}
+											},
+											{
+												"name": "user",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								},
+								{
+									"name": "links",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "self",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "describedby",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "href",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "hreflang",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "Language of the target link"
+															}
+														},
+														{
+															"name": "meta",
+															"single_nested": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "rel",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "title",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "type",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "type",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "organization",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The organization slug"
+						}
+					},
+					{
+						"name": "server",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The server ID"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "team_invites",
+			"schema": {
+				"attributes": [
+					{
+						"name": "email",
+						"string": {
+							"computed_optional_required": "required"
+						}
+					},
+					{
+						"name": "role_id",
+						"int64": {
+							"computed_optional_required": "required"
+						}
+					},
+					{
+						"name": "data",
+						"single_nested": {
+							"computed_optional_required": "computed",
+							"attributes": [
+								{
+									"name": "attributes",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "created_at",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "email",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "updated_at",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								},
+								{
+									"name": "links",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "self",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "describedby",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "href",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "hreflang",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "Language of the target link"
+															}
+														},
+														{
+															"name": "meta",
+															"single_nested": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "rel",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "title",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "type",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "relationships",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "organization",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "data",
+															"single_nested": {
+																"computed_optional_required": "computed",
+																"attributes": [
+																	{
+																		"name": "id",
+																		"string": {
+																			"computed_optional_required": "computed"
+																		}
+																	},
+																	{
+																		"name": "type",
+																		"string": {
+																			"computed_optional_required": "computed"
+																		}
+																	}
+																]
+															}
+														}
+													]
+												}
+											},
+											{
+												"name": "role",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "data",
+															"single_nested": {
+																"computed_optional_required": "computed",
+																"attributes": [
+																	{
+																		"name": "id",
+																		"string": {
+																			"computed_optional_required": "computed"
+																		}
+																	},
+																	{
+																		"name": "type",
+																		"string": {
+																			"computed_optional_required": "computed"
+																		}
+																	}
+																]
+															}
+														}
+													]
+												}
+											},
+											{
+												"name": "team",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "data",
+															"single_nested": {
+																"computed_optional_required": "computed",
+																"attributes": [
+																	{
+																		"name": "id",
+																		"string": {
+																			"computed_optional_required": "computed"
+																		}
+																	},
+																	{
+																		"name": "type",
+																		"string": {
+																			"computed_optional_required": "computed"
+																		}
+																	}
+																]
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "type",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "organization",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The organization slug"
+						}
+					},
+					{
+						"name": "team",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The team ID"
+						}
+					},
+					{
+						"name": "invitation",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The invitation ID"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "teams",
+			"schema": {
+				"attributes": [
+					{
+						"name": "invites",
+						"list_nested": {
+							"computed_optional_required": "computed_optional",
+							"nested_object": {
+								"attributes": [
+									{
+										"name": "email",
+										"string": {
+											"computed_optional_required": "required"
+										}
+									},
+									{
+										"name": "role",
+										"single_nested": {
+											"computed_optional_required": "computed_optional",
+											"attributes": [
+												{
+													"name": "id",
+													"int64": {
+														"computed_optional_required": "required"
+													}
+												}
+											]
+										}
+									}
+								]
+							}
+						}
+					},
+					{
+						"name": "name",
+						"string": {
+							"computed_optional_required": "required",
+							"validators": [
+								{
+									"custom": {
+										"imports": [
+											{
+												"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+											}
+										],
+										"schema_definition": "stringvalidator.LengthAtMost(255)"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "users",
+						"list_nested": {
+							"computed_optional_required": "computed_optional",
+							"nested_object": {
+								"attributes": [
+									{
+										"name": "id",
+										"int64": {
+											"computed_optional_required": "required"
+										}
+									},
+									{
+										"name": "role",
+										"single_nested": {
+											"computed_optional_required": "computed_optional",
+											"attributes": [
+												{
+													"name": "id",
+													"int64": {
+														"computed_optional_required": "required"
+													}
+												}
+											]
+										}
+									}
+								]
+							}
+						}
+					},
+					{
+						"name": "data",
+						"single_nested": {
+							"computed_optional_required": "computed",
+							"attributes": [
+								{
+									"name": "attributes",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "created_at",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "name",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											},
+											{
+												"name": "updated_at",
+												"string": {
+													"computed_optional_required": "computed"
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "id",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								},
+								{
+									"name": "links",
+									"single_nested": {
+										"computed_optional_required": "computed",
+										"attributes": [
+											{
+												"name": "self",
+												"single_nested": {
+													"computed_optional_required": "computed",
+													"attributes": [
+														{
+															"name": "describedby",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "href",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "hreflang",
+															"string": {
+																"computed_optional_required": "computed",
+																"description": "Language of the target link"
+															}
+														},
+														{
+															"name": "meta",
+															"single_nested": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "rel",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "title",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														},
+														{
+															"name": "type",
+															"string": {
+																"computed_optional_required": "computed"
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								},
+								{
+									"name": "type",
+									"string": {
+										"computed_optional_required": "computed"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "organization",
+						"string": {
+							"computed_optional_required": "computed_optional",
+							"description": "The organization slug"
+						}
+					},
+					{
+						"name": "team",
+						"int64": {
+							"computed_optional_required": "computed_optional",
+							"description": "The team ID"
+						}
+					}
+				]
+			}
+		}
+	],
+	"version": "0.1"
+}

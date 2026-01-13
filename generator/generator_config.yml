@@ -1,0 +1,402 @@
+provider:
+  name: laravelforge
+
+resources:
+  servers:
+    create:
+      path: /orgs/{organization}/servers
+      method: POST
+    read:
+      path: /orgs/{organization}/servers/{server}
+      method: GET
+    delete:
+      path: /orgs/{organization}/servers/{server}
+      method: DELETE
+
+#  server_archives:
+#    create:
+#      path: /orgs/{organization}/servers/archives
+#      method: POST
+#    delete:
+#      path: /orgs/{organization}/servers/archives/{server}
+#      method: DELETE
+
+  background_processes:
+    create:
+      path: /orgs/{organization}/servers/{server}/background-processes
+      method: POST
+    read:
+      path: /orgs/{organization}/servers/{server}/background-processes/{backgroundProcess}
+      method: GET
+    update:
+      path: /orgs/{organization}/servers/{server}/background-processes/{backgroundProcess}
+      method: PUT
+    delete:
+      path: /orgs/{organization}/servers/{server}/background-processes/{backgroundProcess}
+      method: DELETE
+
+  database_schemas:
+    create:
+      path: /orgs/{organization}/servers/{server}/database/schemas
+      method: POST
+    read:
+      path: /orgs/{organization}/servers/{server}/database/schemas/{database}
+      method: GET
+    delete:
+      path: /orgs/{organization}/servers/{server}/database/schemas/{database}
+      method: DELETE
+
+  database_users:
+    create:
+      path: /orgs/{organization}/servers/{server}/database/users
+      method: POST
+    read:
+      path: /orgs/{organization}/servers/{server}/database/users/{databaseUser}
+      method: GET
+    update:
+      path: /orgs/{organization}/servers/{server}/database/users/{databaseUser}
+      method: PUT
+    delete:
+      path: /orgs/{organization}/servers/{server}/database/users/{databaseUser}
+      method: DELETE
+
+  firewall_rules:
+    create:
+      path: /orgs/{organization}/servers/{server}/firewall-rules
+      method: POST
+    read:
+      path: /orgs/{organization}/servers/{server}/firewall-rules/{rule}
+      method: GET
+    delete:
+      path: /orgs/{organization}/servers/{server}/firewall-rules/{rule}
+      method: DELETE
+
+  monitors:
+    create:
+      path: /orgs/{organization}/servers/{server}/monitors
+      method: POST
+    read:
+      path: /orgs/{organization}/servers/{server}/monitors/{monitor}
+      method: GET
+    delete:
+      path: /orgs/{organization}/servers/{server}/monitors/{monitor}
+      method: DELETE
+
+  nginx_templates:
+    create:
+      path: /orgs/{organization}/servers/{server}/nginx/templates
+      method: POST
+    read:
+      path: /orgs/{organization}/servers/{server}/nginx/templates/{nginxTemplate}
+      method: GET
+    update:
+      path: /orgs/{organization}/servers/{server}/nginx/templates/{nginxTemplate}
+      method: PUT
+    delete:
+      path: /orgs/{organization}/servers/{server}/nginx/templates/{nginxTemplate}
+      method: DELETE
+
+  ssh_keys:
+    create:
+      path: /orgs/{organization}/servers/{server}/ssh-keys
+      method: POST
+    read:
+      path: /orgs/{organization}/servers/{server}/ssh-keys/{key}
+      method: GET
+    delete:
+      path: /orgs/{organization}/servers/{server}/ssh-keys/{key}
+      method: DELETE
+
+  server_scheduled_jobs:
+    create:
+      path: /orgs/{organization}/servers/{server}/scheduled-jobs
+      method: POST
+    read:
+      path: /orgs/{organization}/servers/{server}/scheduled-jobs/{job}
+      method: GET
+    delete:
+      path: /orgs/{organization}/servers/{server}/scheduled-jobs/{job}
+      method: DELETE
+
+  sites:
+    create:
+      path: /orgs/{organization}/servers/{server}/sites
+      method: POST
+    read:
+      path: /orgs/{organization}/sites/{site}
+      method: GET
+    update:
+      path: /orgs/{organization}/servers/{server}/sites/{site}
+      method: PUT
+    delete:
+      path: /orgs/{organization}/servers/{server}/sites/{site}
+      method: DELETE
+
+  site_domains:
+    create:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/domains
+      method: POST
+    read:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/domains/{domainRecord}
+      method: GET
+    update:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/domains/{domainRecord}
+      method: PATCH
+    delete:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/domains/{domainRecord}
+      method: DELETE
+
+  domain_certificates:
+    create:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/domains/{domainRecord}/certificate
+      method: POST
+    read:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/domains/{domainRecord}/certificate
+      method: GET
+    delete:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/domains/{domainRecord}/certificate
+      method: DELETE
+
+  site_commands:
+    create:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/commands
+      method: POST
+    read:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/commands/{command}
+      method: GET
+    delete:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/commands/{command}
+      method: DELETE
+
+  deployment_webhooks:
+    create:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/webhooks
+      method: POST
+    read:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/webhooks/{deploymentWebhook}
+      method: GET
+    delete:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/webhooks/{deploymentWebhook}
+      method: DELETE
+
+  deployments:
+    create:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/deployments
+      method: POST
+    read:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/deployments/{deployment}
+      method: GET
+
+  redirect_rules:
+    create:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/redirect-rules
+      method: POST
+    read:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/redirect-rules/{redirectRule}
+      method: GET
+    delete:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/redirect-rules/{redirectRule}
+      method: DELETE
+
+  composer_credentials:
+    create:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/composer/credentials
+      method: POST
+    read:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/composer/credentials/{repository}
+      method: GET
+    update:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/composer/credentials/{repository}
+      method: PUT
+    delete:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/composer/credentials/{repository}
+      method: DELETE
+
+  heartbeats:
+    create:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/heartbeats
+      method: POST
+    read:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/heartbeats/{heartbeat}
+      method: GET
+    update:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/heartbeats/{heartbeat}
+      method: PUT
+    delete:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/heartbeats/{heartbeat}
+      method: DELETE
+
+  security_rules:
+    create:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/security-rules
+      method: POST
+    read:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/security-rules/{securityRule}
+      method: GET
+    update:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/security-rules/{securityRule}
+      method: PUT
+    delete:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/security-rules/{securityRule}
+      method: DELETE
+
+  site_scheduled_jobs:
+    create:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/scheduled-jobs
+      method: POST
+    read:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/scheduled-jobs/{job}
+      method: GET
+    delete:
+      path: /orgs/{organization}/servers/{server}/sites/{site}/scheduled-jobs/{job}
+      method: DELETE
+
+  recipes:
+    create:
+      path: /orgs/{organization}/recipes
+      method: POST
+    read:
+      path: /orgs/{organization}/recipes/{recipe}
+      method: GET
+    update:
+      path: /orgs/{organization}/recipes/{recipe}
+      method: PUT
+    delete:
+      path: /orgs/{organization}/recipes/{recipe}
+      method: DELETE
+
+  recipe_runs:
+    create:
+      path: /orgs/{organization}/recipes/{recipe}/runs
+      method: POST
+    read:
+      path: /orgs/{organization}/recipes/{recipe}/runs/{log}
+      method: GET
+
+  roles:
+    create:
+      path: /orgs/{organization}/roles
+      method: POST
+    read:
+      path: /orgs/{organization}/roles/{role}
+      method: GET
+    update:
+      path: /orgs/{organization}/roles/{role}
+      method: PUT
+    delete:
+      path: /orgs/{organization}/roles/{role}
+      method: DELETE
+
+  teams:
+    create:
+      path: /orgs/{organization}/teams
+      method: POST
+    read:
+      path: /orgs/{organization}/teams/{team}
+      method: GET
+    update:
+      path: /orgs/{organization}/teams/{team}
+      method: PUT
+    delete:
+      path: /orgs/{organization}/teams/{team}
+      method: DELETE
+
+  team_invites:
+    create:
+      path: /orgs/{organization}/teams/{team}/invites
+      method: POST
+    read:
+      path: /orgs/{organization}/teams/{team}/invites/{invitation}
+      method: GET
+    delete:
+      path: /orgs/{organization}/teams/{team}/invites/{invitation}
+      method: DELETE
+
+#  team_recipes:
+#    create:
+#      path: /orgs/{organization}/teams/{team}/recipes
+#      method: POST
+#    delete:
+#      path: /orgs/{organization}/teams/{team}/recipes/{recipe}
+#      method: DELETE
+
+#  team_servers:
+#    create:
+#      path: /orgs/{organization}/teams/{team}/servers
+#      method: POST
+#    delete:
+#      path: /orgs/{organization}/teams/{team}/servers/{server}
+#      method: DELETE
+
+#  team_server_credentials:
+#    create:
+#      path: /orgs/{organization}/teams/{team}/server-credentials
+#      method: POST
+#    delete:
+#      path: /orgs/{organization}/teams/{team}/server-credentials/{credential}
+#      method: DELETE
+
+  php_versions:
+    create:
+      path: /orgs/{organization}/servers/{server}/php/versions
+      method: POST
+    read:
+      path: /orgs/{organization}/servers/{server}/php/versions/{phpVersion}
+      method: GET
+    update:
+      path: /orgs/{organization}/servers/{server}/php/versions/{phpVersion}
+      method: PUT
+    delete:
+      path: /orgs/{organization}/servers/{server}/php/versions/{phpVersion}
+      method: DELETE
+
+  php_opcache:
+    create:
+      path: /orgs/{organization}/servers/{server}/php/opcache
+      method: POST
+    read:
+      path: /orgs/{organization}/servers/{server}/php/opcache
+      method: GET
+    delete:
+      path: /orgs/{organization}/servers/{server}/php/opcache
+      method: DELETE
+
+#  php_cli_version:
+#    read:
+#      path: /orgs/{organization}/servers/{server}/php/cli-version
+#      method: GET
+#    update:
+#      path: /orgs/{organization}/servers/{server}/php/cli-version
+#      method: PUT
+
+#  php_site_version:
+#    read:
+#      path: /orgs/{organization}/servers/{server}/php/site-version
+#      method: GET
+#    update:
+#      path: /orgs/{organization}/servers/{server}/php/site-version
+#      method: PUT
+
+#  php_max_upload_size:
+#    read:
+#      path: /orgs/{organization}/servers/{server}/php/max-upload-size
+#      method: GET
+#    update:
+#      path: /orgs/{organization}/servers/{server}/php/max-upload-size
+#      method: PUT
+
+#  php_max_execution_time:
+#    read:
+#      path: /orgs/{organization}/servers/{server}/php/max-execution-time
+#      method: GET
+#    update:
+#      path: /orgs/{organization}/servers/{server}/php/max-execution-time
+#      method: PUT
+
+  region_vpcs:
+    create:
+      path: /orgs/{organization}/server-credentials/{credential}/regions/{region}/vpcs
+      method: POST
+    read:
+      path: /orgs/{organization}/server-credentials/{credential}/regions/{region}/vpcs/{vpcId}
+      method: GET
