@@ -3233,19 +3233,19 @@ func (v PermissionsValue) Type(ctx context.Context) attr.Type {
 func (v PermissionsValue) AttributeTypes(ctx context.Context) map[string]attr.Type {
 	return map[string]attr.Type{
 		"data": basetypes.ListType{
-			ElemType: DataValue{}.Type(ctx),
+			ElemType: PermissionDataValue{}.Type(ctx),
 		},
 	}
 }
 
-var _ basetypes.ObjectTypable = DataType{}
+var _ basetypes.ObjectTypable = PermissionDataType{}
 
-type DataType struct {
+type PermissionDataType struct {
 	basetypes.ObjectType
 }
 
-func (t DataType) Equal(o attr.Type) bool {
-	other, ok := o.(DataType)
+func (t PermissionDataType) Equal(o attr.Type) bool {
+	other, ok := o.(PermissionDataType)
 
 	if !ok {
 		return false
