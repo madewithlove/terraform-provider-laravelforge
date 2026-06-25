@@ -49,6 +49,7 @@ func (r *firewallRulesResource) Schema(ctx context.Context, _ resource.SchemaReq
 	providerutil.RequiresReplace(s.Attributes, "name", "port", "type")
 	providerutil.UseStateForUnknown(s.Attributes, "rule", "id")
 
+	s.MarkdownDescription = "Add a new firewall rule to the server."
 	resp.Schema = s
 }
 

@@ -56,6 +56,7 @@ func (r *securityRulesResource) Schema(ctx context.Context, _ resource.SchemaReq
 		s.Attributes["credentials"] = a
 	}
 
+	s.MarkdownDescription = "Add a new security rule to the site."
 	resp.Schema = s
 }
 

@@ -49,6 +49,7 @@ func (r *teamInvitesResource) Schema(ctx context.Context, _ resource.SchemaReque
 	providerutil.RequiresReplace(s.Attributes, "email", "role_id")
 	providerutil.UseStateForUnknown(s.Attributes, "id", "invitation")
 
+	s.MarkdownDescription = "Invite a new member to the team."
 	resp.Schema = s
 }
 

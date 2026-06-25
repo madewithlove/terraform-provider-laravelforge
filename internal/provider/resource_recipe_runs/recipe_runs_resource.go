@@ -51,6 +51,7 @@ func (r *recipeRunsResource) Schema(ctx context.Context, _ resource.SchemaReques
 	providerutil.RequiresReplace(s.Attributes, "servers", "email")
 	providerutil.UseStateForUnknown(s.Attributes, "id", "log")
 
+	s.MarkdownDescription = "Run a given recipe on a list of servers."
 	resp.Schema = s
 }
 

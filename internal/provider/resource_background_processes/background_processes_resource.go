@@ -49,6 +49,7 @@ func (r *backgroundProcessesResource) Schema(ctx context.Context, _ resource.Sch
 		"startsecs", "stopsignal", "stopwaitsecs", "user")
 	providerutil.UseStateForUnknown(s.Attributes, "background_process", "id")
 
+	s.MarkdownDescription = "Create a new background process from a template."
 	resp.Schema = s
 }
 

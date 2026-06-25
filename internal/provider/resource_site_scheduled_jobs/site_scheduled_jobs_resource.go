@@ -49,6 +49,7 @@ func (r *siteScheduledJobsResource) Schema(ctx context.Context, _ resource.Schem
 	providerutil.RequiresReplace(s.Attributes, "command", "cron", "frequency", "grace_period", "heartbeat", "name", "user")
 	providerutil.UseStateForUnknown(s.Attributes, "id", "job")
 
+	s.MarkdownDescription = "Create a specific scheduled job for the site."
 	resp.Schema = s
 }
 

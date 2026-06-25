@@ -49,6 +49,7 @@ func (r *siteDomainsResource) Schema(ctx context.Context, _ resource.SchemaReque
 	providerutil.RequiresReplace(s.Attributes, "name")
 	providerutil.UseStateForUnknown(s.Attributes, "id", "domain_record")
 
+	s.MarkdownDescription = "Add a new domain to the site"
 	resp.Schema = s
 }
 

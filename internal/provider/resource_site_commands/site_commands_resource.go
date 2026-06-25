@@ -65,6 +65,7 @@ func (r *siteCommandsResource) Schema(ctx context.Context, _ resource.SchemaRequ
 
 	providerutil.UseStateForUnknown(s.Attributes, "id")
 
+	s.MarkdownDescription = "Run a command on the site."
 	resp.Schema = s
 }
 

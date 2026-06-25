@@ -54,6 +54,7 @@ func (r *phpOpcacheResource) Schema(ctx context.Context, _ resource.SchemaReques
 	}
 	providerutil.UseStateForUnknown(s.Attributes, "id")
 
+	s.MarkdownDescription = "Enable PHP OPcache for the server."
 	resp.Schema = s
 }
 

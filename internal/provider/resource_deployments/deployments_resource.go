@@ -50,6 +50,7 @@ func (r *deploymentsResource) Schema(ctx context.Context, _ resource.SchemaReque
 	providerutil.Required(s.Attributes, "site")
 	providerutil.UseStateForUnknown(s.Attributes, "id", "deployment")
 
+	s.MarkdownDescription = "Trigger a new deployment for the site."
 	resp.Schema = s
 }
 

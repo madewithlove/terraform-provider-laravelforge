@@ -48,6 +48,7 @@ func (r *phpVersionsResource) Schema(ctx context.Context, _ resource.SchemaReque
 	providerutil.RequiresReplace(s.Attributes, "version")
 	providerutil.UseStateForUnknown(s.Attributes, "php_version", "id")
 
+	s.MarkdownDescription = "Install a new PHP version on the server"
 	resp.Schema = s
 }
 

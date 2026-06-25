@@ -50,6 +50,7 @@ func (r *databaseSchemasResource) Schema(ctx context.Context, _ resource.SchemaR
 	providerutil.RequiresReplace(s.Attributes, "name", "user", "password")
 	providerutil.UseStateForUnknown(s.Attributes, "id", "database")
 
+	s.MarkdownDescription = "Add a new database schema to the server."
 	resp.Schema = s
 }
 

@@ -81,6 +81,7 @@ func (r *sitesResource) Schema(ctx context.Context, _ resource.SchemaRequest, re
 	providerutil.Sensitive(s.Attributes, "private_deploy_key", "statamic_super_user_password")
 	providerutil.UseStateForUnknown(s.Attributes, "id", "site")
 
+	s.MarkdownDescription = "Add a new site to the server."
 	resp.Schema = s
 }
 

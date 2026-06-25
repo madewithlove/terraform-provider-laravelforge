@@ -48,6 +48,7 @@ func (r *recipesResource) Schema(ctx context.Context, _ resource.SchemaRequest, 
 	providerutil.RequiresReplace(s.Attributes, "team_id")
 	providerutil.UseStateForUnknown(s.Attributes, "id", "recipe")
 
+	s.MarkdownDescription = "Create a new recipe for the organization."
 	resp.Schema = s
 }
 

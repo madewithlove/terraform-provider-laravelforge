@@ -51,6 +51,7 @@ func (r *regionVpcsResource) Schema(ctx context.Context, _ resource.SchemaReques
 	providerutil.RequiresReplace(s.Attributes, "name")
 	providerutil.UseStateForUnknown(s.Attributes, "id", "vpc_id")
 
+	s.MarkdownDescription = "Create a private network for the provider."
 	resp.Schema = s
 }
 
