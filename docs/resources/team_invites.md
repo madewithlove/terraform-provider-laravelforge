@@ -46,6 +46,8 @@ resource "laravelforge_team_invites" "example" {
 
 Import is supported using the following syntax:
 
+The [`terraform import` command](https://developer.hashicorp.com/terraform/cli/commands/import) can be used, for example:
+
 ```shell
 terraform import laravelforge_team_invites.example my-org/example-team/123
 ```

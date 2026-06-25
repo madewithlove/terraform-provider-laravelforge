@@ -45,6 +45,8 @@ resource "laravelforge_deployment_webhooks" "example" {
 
 Import is supported using the following syntax:
 
+The [`terraform import` command](https://developer.hashicorp.com/terraform/cli/commands/import) can be used, for example:
+
 ```shell
 terraform import laravelforge_deployment_webhooks.example my-org/123456/123456/123
 ```
