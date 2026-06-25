@@ -3,8 +3,10 @@
 issues:
   max-per-linter: 0
   max-same-issues: 0
-  exclude-dirs:
-    - internal/provider/resource_.*
+  # The *_resource_gen.go files carry the standard "// Code generated ... DO NOT
+  # EDIT." header and are skipped automatically (exclude-generated: lax). The
+  # hand-written *_resource.go CRUD in the same packages is still linted.
+  exclude-generated: lax
 
 linters:
   disable-all: true
