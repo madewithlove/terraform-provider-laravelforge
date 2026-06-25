@@ -3,12 +3,12 @@
 page_title: "laravelforge_database_schemas Resource - laravelforge"
 subcategory: ""
 description: |-
-  
+  Add a new database schema to the server.
 ---
 
 # laravelforge_database_schemas (Resource)
 
-
+Add a new database schema to the server.
 
 ## Example Usage
 
@@ -49,4 +49,10 @@ variable "database_password" {
 - `status` (String) The status of the database schema.
 - `updated_at` (String) The date and time the database schema was last updated.
 
+## Import
 
+Import is supported using the following syntax:
+
+```shell
+terraform import laravelforge_database_schemas.example my-org/123456/123
+```

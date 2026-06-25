@@ -3,12 +3,12 @@
 page_title: "laravelforge_recipes Resource - laravelforge"
 subcategory: ""
 description: |-
-  
+  Create a new recipe for the organization.
 ---
 
 # laravelforge_recipes (Resource)
 
-
+Create a new recipe for the organization.
 
 ## Example Usage
 
@@ -45,4 +45,10 @@ resource "laravelforge_recipes" "deploy_tooling" {
 - `id` (String) The ID of this resource.
 - `updated_at` (String) The date the Recipe was last updated.
 
+## Import
 
+Import is supported using the following syntax:
+
+```shell
+terraform import laravelforge_recipes.example my-org/123
+```

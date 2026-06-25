@@ -3,12 +3,12 @@
 page_title: "laravelforge_ssh_keys Resource - laravelforge"
 subcategory: ""
 description: |-
-  
+  Add a new SSH key to the server.
 ---
 
 # laravelforge_ssh_keys (Resource)
 
-
+Add a new SSH key to the server.
 
 ## Example Usage
 
@@ -44,4 +44,10 @@ resource "laravelforge_ssh_keys" "deploy" {
 - `status` (String)
 - `updated_at` (String) The date the key was last updated.
 
+## Import
 
+Import is supported using the following syntax:
+
+```shell
+terraform import laravelforge_ssh_keys.example my-org/123456/123
+```

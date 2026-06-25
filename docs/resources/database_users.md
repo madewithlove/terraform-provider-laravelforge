@@ -3,12 +3,12 @@
 page_title: "laravelforge_database_users Resource - laravelforge"
 subcategory: ""
 description: |-
-  
+  Add a new database user to the server.
 ---
 
 # laravelforge_database_users (Resource)
 
-
+Add a new database user to the server.
 
 ## Example Usage
 
@@ -51,4 +51,10 @@ variable "database_user_password" {
 - `status` (String) The status of the database user.
 - `updated_at` (String) The date and time the database user was last updated.
 
+## Import
 
+Import is supported using the following syntax:
+
+```shell
+terraform import laravelforge_database_users.example my-org/123456/123
+```
