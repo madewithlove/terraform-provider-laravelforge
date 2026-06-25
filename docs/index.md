@@ -3,18 +3,36 @@
 page_title: "laravelforge Provider"
 subcategory: ""
 description: |-
-  
+  Manage Laravel Forge https://forge.laravel.com resources.
 ---
 
 # laravelforge Provider
 
-
+Manage [Laravel Forge](https://forge.laravel.com) resources.
 
 ## Example Usage
 
 ```terraform
+terraform {
+  required_providers {
+    laravelforge = {
+      source = "madewithlove/laravelforge"
+    }
+  }
+}
+
 provider "laravelforge" {
-  token = "API_TOKEN"
+  # The API token can also be supplied via the FORGE_API_TOKEN environment
+  # variable, which is the recommended approach for secrets.
+  api_token = var.forge_api_token
+
+  # endpoint is optional and defaults to https://forge.laravel.com/api
+  # endpoint = "https://forge.laravel.com/api"
+}
+
+variable "forge_api_token" {
+  type      = string
+  sensitive = true
 }
 ```
 
@@ -23,4 +41,5 @@ provider "laravelforge" {
 
 ### Optional
 
-- `token` (String) Laravel Forge API token.
+- `api_token` (String, Sensitive) Forge API token. May also be set via the `FORGE_API_TOKEN` environment variable.
+- `endpoint` (String) Base URL of the Forge API. Defaults to `https://forge.laravel.com/api`. May also be set via the `FORGE_ENDPOINT` environment variable.
