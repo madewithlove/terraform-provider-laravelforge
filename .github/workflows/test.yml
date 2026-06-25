@@ -44,6 +44,10 @@ jobs:
           cache: true
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
+        with:
+          # Disable the wrapper so tfplugindocs can read `terraform ... -json`
+          # output without the wrapper script corrupting it.
+          terraform_wrapper: false
       - run: go generate ./...
       - name: git diff
         run: |
