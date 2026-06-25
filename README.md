@@ -4,13 +4,17 @@ A Terraform provider for [Laravel Forge](https://forge.laravel.com), with
 resource schemas generated from the official Forge OpenAPI document using the
 [HashiCorp OpenAPI provider code generators](https://developer.hashicorp.com/terraform/plugin/code-generation/openapi-generator).
 
+> ⚠️ **`1.0.0` is a breaking rewrite** against Forge's organization API and is
+> not compatible with `0.1.x`. See the [CHANGELOG](CHANGELOG.md).
+
 ## Usage
 
 ```hcl
 terraform {
   required_providers {
     laravelforge = {
-      source = "madewithlove/laravelforge"
+      source  = "madewithlove/laravelforge"
+      version = "~> 1.0"
     }
   }
 }
