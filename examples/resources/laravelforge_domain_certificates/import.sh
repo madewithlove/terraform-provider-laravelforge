@@ -1,0 +1,1 @@
+terraform import laravelforge_domain_certificates.example my-org/123456/123456/example-domainRecord

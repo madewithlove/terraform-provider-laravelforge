@@ -33,3 +33,11 @@ website/vendor
 
 # Keep windows files with windows line endings
 *.winfile eol=crlf
+
+# Generated intermediate: preprocessed OpenAPI spec (derived from docs.openapi.json)
+generator/docs.openapi.processed.json
+
+# Local Forge credentials for live validation
+.forge_token
+.terraform.lock.hcl
+examples/validate/

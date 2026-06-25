@@ -112,73 +112,23 @@
 						}
 					},
 					{
-						"name": "data",
-						"single_nested": {
+						"name": "created_at",
+						"string": {
 							"computed_optional_required": "computed",
-							"attributes": [
-								{
-									"name": "attributes",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "command",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The command that the background process is running."
-												}
-											},
-											{
-												"name": "created_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date and time the background process was created."
-												}
-											},
-											{
-												"name": "directory",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The directory that the background process is running in."
-												}
-											},
-											{
-												"name": "processes",
-												"int64": {
-													"computed_optional_required": "computed",
-													"description": "The number of processes that the background process is running."
-												}
-											},
-											{
-												"name": "status",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The status of the background process."
-												}
-											},
-											{
-												"name": "user",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The user that the background process is running as."
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "id",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								},
-								{
-									"name": "type",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								}
-							]
+							"description": "The date and time the background process was created."
+						}
+					},
+					{
+						"name": "id",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "status",
+						"string": {
+							"computed_optional_required": "computed",
+							"description": "The status of the background process."
 						}
 					},
 					{
@@ -228,108 +178,9 @@
 						}
 					},
 					{
-						"name": "data",
-						"single_nested": {
-							"computed_optional_required": "computed",
-							"attributes": [
-								{
-									"name": "attributes",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "password",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "repository",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "username",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "id",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								},
-								{
-									"name": "links",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "self",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "describedby",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "href",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "hreflang",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "Language of the target link"
-															}
-														},
-														{
-															"name": "meta",
-															"single_nested": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "rel",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "title",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "type",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "type",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								}
-							]
+						"name": "id",
+						"string": {
+							"computed_optional_required": "computed"
 						}
 					},
 					{
@@ -406,118 +257,30 @@
 						}
 					},
 					{
-						"name": "data",
-						"single_nested": {
+						"name": "created_at",
+						"string": {
 							"computed_optional_required": "computed",
-							"attributes": [
-								{
-									"name": "attributes",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "created_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date and time the database schema was created."
-												}
-											},
-											{
-												"name": "name",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The name of the database schema."
-												}
-											},
-											{
-												"name": "status",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The status of the database schema."
-												}
-											},
-											{
-												"name": "updated_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date and time the database schema was last updated."
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "id",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								},
-								{
-									"name": "links",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "self",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "describedby",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "href",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "hreflang",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "Language of the target link"
-															}
-														},
-														{
-															"name": "meta",
-															"single_nested": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "rel",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "title",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "type",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "type",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								}
-							]
+							"description": "The date and time the database schema was created."
+						}
+					},
+					{
+						"name": "id",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "status",
+						"string": {
+							"computed_optional_required": "computed",
+							"description": "The status of the database schema."
+						}
+					},
+					{
+						"name": "updated_at",
+						"string": {
+							"computed_optional_required": "computed",
+							"description": "The date and time the database schema was last updated."
 						}
 					},
 					{
@@ -592,118 +355,30 @@
 						}
 					},
 					{
-						"name": "data",
-						"single_nested": {
+						"name": "created_at",
+						"string": {
 							"computed_optional_required": "computed",
-							"attributes": [
-								{
-									"name": "attributes",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "created_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date and time the database user was created."
-												}
-											},
-											{
-												"name": "name",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The name of the database user."
-												}
-											},
-											{
-												"name": "status",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The status of the database user."
-												}
-											},
-											{
-												"name": "updated_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date and time the database user was last updated."
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "id",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								},
-								{
-									"name": "links",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "self",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "describedby",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "href",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "hreflang",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "Language of the target link"
-															}
-														},
-														{
-															"name": "meta",
-															"single_nested": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "rel",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "title",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "type",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "type",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								}
-							]
+							"description": "The date and time the database user was created."
+						}
+					},
+					{
+						"name": "id",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "status",
+						"string": {
+							"computed_optional_required": "computed",
+							"description": "The status of the database user."
+						}
+					},
+					{
+						"name": "updated_at",
+						"string": {
+							"computed_optional_required": "computed",
+							"description": "The date and time the database user was last updated."
 						}
 					},
 					{
@@ -737,115 +412,28 @@
 					{
 						"name": "url",
 						"string": {
-							"computed_optional_required": "required"
+							"computed_optional_required": "required",
+							"description": "The URL of the deployment webhook."
 						}
 					},
 					{
-						"name": "data",
-						"single_nested": {
+						"name": "created_at",
+						"string": {
 							"computed_optional_required": "computed",
-							"attributes": [
-								{
-									"name": "attributes",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "created_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date and time the deployment webhook was created."
-												}
-											},
-											{
-												"name": "updated_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date and time the deployment webhook was last updated."
-												}
-											},
-											{
-												"name": "url",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The URL of the deployment webhook."
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "id",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								},
-								{
-									"name": "links",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "self",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "describedby",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "href",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "hreflang",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "Language of the target link"
-															}
-														},
-														{
-															"name": "meta",
-															"single_nested": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "rel",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "title",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "type",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "type",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								}
-							]
+							"description": "The date and time the deployment webhook was created."
+						}
+					},
+					{
+						"name": "id",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "updated_at",
+						"string": {
+							"computed_optional_required": "computed",
+							"description": "The date and time the deployment webhook was last updated."
 						}
 					},
 					{
@@ -884,108 +472,80 @@
 			"schema": {
 				"attributes": [
 					{
-						"name": "data",
+						"name": "commit",
 						"single_nested": {
 							"computed_optional_required": "computed",
 							"attributes": [
 								{
-									"name": "attributes",
-									"single_nested": {
+									"name": "author",
+									"string": {
 										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "commit",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "author",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "The commit author."
-															}
-														},
-														{
-															"name": "branch",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "The commit branch."
-															}
-														},
-														{
-															"name": "hash",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "The commit hash."
-															}
-														},
-														{
-															"name": "message",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "The commit message."
-															}
-														}
-													],
-													"description": "The commit information for the deployment."
-												}
-											},
-											{
-												"name": "created_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date and time the deployment was created."
-												}
-											},
-											{
-												"name": "ended_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date and time the deployment ended."
-												}
-											},
-											{
-												"name": "started_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date and time the deployment started."
-												}
-											},
-											{
-												"name": "status",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "type",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "updated_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date and time the deployment was last updated."
-												}
-											}
-										]
+										"description": "The commit author."
 									}
 								},
 								{
-									"name": "id",
+									"name": "branch",
 									"string": {
-										"computed_optional_required": "computed"
+										"computed_optional_required": "computed",
+										"description": "The commit branch."
 									}
 								},
 								{
-									"name": "type",
+									"name": "hash",
 									"string": {
-										"computed_optional_required": "computed"
+										"computed_optional_required": "computed",
+										"description": "The commit hash."
+									}
+								},
+								{
+									"name": "message",
+									"string": {
+										"computed_optional_required": "computed",
+										"description": "The commit message."
 									}
 								}
-							]
+							],
+							"description": "The commit information for the deployment."
+						}
+					},
+					{
+						"name": "created_at",
+						"string": {
+							"computed_optional_required": "computed",
+							"description": "The date and time the deployment was created."
+						}
+					},
+					{
+						"name": "ended_at",
+						"string": {
+							"computed_optional_required": "computed",
+							"description": "The date and time the deployment ended."
+						}
+					},
+					{
+						"name": "id",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "started_at",
+						"string": {
+							"computed_optional_required": "computed",
+							"description": "The date and time the deployment started."
+						}
+					},
+					{
+						"name": "status",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "updated_at",
+						"string": {
+							"computed_optional_required": "computed",
+							"description": "The date and time the deployment was last updated."
 						}
 					},
 					{
@@ -1203,141 +763,54 @@
 						}
 					},
 					{
-						"name": "data",
-						"single_nested": {
+						"name": "created_at",
+						"string": {
 							"computed_optional_required": "computed",
-							"attributes": [
-								{
-									"name": "attributes",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "created_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date and time the certificate was created."
-												}
-											},
-											{
-												"name": "key_type",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "preferred_chain",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The preferred chain for Let's Encrypt certificates."
-												}
-											},
-											{
-												"name": "request_status",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "status",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "type",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "updated_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date and time the certificate was last updated."
-												}
-											},
-											{
-												"name": "verification_method",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "id",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								},
-								{
-									"name": "links",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "self",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "describedby",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "href",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "hreflang",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "Language of the target link"
-															}
-														},
-														{
-															"name": "meta",
-															"single_nested": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "rel",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "title",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "type",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "type",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								}
-							]
+							"description": "The date and time the certificate was created."
+						}
+					},
+					{
+						"name": "id",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "key_type",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "preferred_chain",
+						"string": {
+							"computed_optional_required": "computed",
+							"description": "The preferred chain for Let's Encrypt certificates."
+						}
+					},
+					{
+						"name": "request_status",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "status",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "updated_at",
+						"string": {
+							"computed_optional_required": "computed",
+							"description": "The date and time the certificate was last updated."
+						}
+					},
+					{
+						"name": "verification_method",
+						"string": {
+							"computed_optional_required": "computed"
 						}
 					},
 					{
@@ -1385,6 +858,7 @@
 						"name": "name",
 						"string": {
 							"computed_optional_required": "computed_optional",
+							"description": "The name of the firewall rule.",
 							"validators": [
 								{
 									"custom": {
@@ -1402,7 +876,8 @@
 					{
 						"name": "port",
 						"string": {
-							"computed_optional_required": "computed_optional"
+							"computed_optional_required": "computed_optional",
+							"description": "The port or port range for the firewall rule."
 						}
 					},
 					{
@@ -1424,139 +899,30 @@
 						}
 					},
 					{
-						"name": "data",
-						"single_nested": {
+						"name": "created_at",
+						"string": {
 							"computed_optional_required": "computed",
-							"attributes": [
-								{
-									"name": "attributes",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "created_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date and time the firewall rule was created."
-												}
-											},
-											{
-												"name": "ip_address",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The IP address or subnet for the firewall rule."
-												}
-											},
-											{
-												"name": "name",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The name of the firewall rule."
-												}
-											},
-											{
-												"name": "port",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The port or port range for the firewall rule."
-												}
-											},
-											{
-												"name": "status",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The status of the firewall rule."
-												}
-											},
-											{
-												"name": "type",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The type of the firewall rule."
-												}
-											},
-											{
-												"name": "updated_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date and time the firewall rule was last updated."
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "id",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								},
-								{
-									"name": "links",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "self",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "describedby",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "href",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "hreflang",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "Language of the target link"
-															}
-														},
-														{
-															"name": "meta",
-															"single_nested": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "rel",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "title",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "type",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "type",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								}
-							]
+							"description": "The date and time the firewall rule was created."
+						}
+					},
+					{
+						"name": "id",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "status",
+						"string": {
+							"computed_optional_required": "computed",
+							"description": "The status of the firewall rule."
+						}
+					},
+					{
+						"name": "updated_at",
+						"string": {
+							"computed_optional_required": "computed",
+							"description": "The date and time the firewall rule was last updated."
 						}
 					},
 					{
@@ -1650,127 +1016,21 @@
 						}
 					},
 					{
-						"name": "data",
-						"single_nested": {
-							"computed_optional_required": "computed",
-							"attributes": [
-								{
-									"name": "attributes",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "custom_frequency",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "frequency",
-												"int64": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "grace_period",
-												"int64": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "name",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The name of the heartbeat."
-												}
-											},
-											{
-												"name": "ping_url",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "status",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "id",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								},
-								{
-									"name": "links",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "self",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "describedby",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "href",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "hreflang",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "Language of the target link"
-															}
-														},
-														{
-															"name": "meta",
-															"single_nested": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "rel",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "title",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "type",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "type",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								}
-							]
+						"name": "id",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "ping_url",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "status",
+						"string": {
+							"computed_optional_required": "computed"
 						}
 					},
 					{
@@ -1878,156 +1138,42 @@
 						}
 					},
 					{
-						"name": "data",
-						"single_nested": {
+						"name": "created_at",
+						"string": {
 							"computed_optional_required": "computed",
-							"attributes": [
-								{
-									"name": "attributes",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "created_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date and time the monitor was created."
-												}
-											},
-											{
-												"name": "minutes",
-												"int64": {
-													"computed_optional_required": "computed",
-													"description": "The frequency in minutes to evaluate the monitor."
-												}
-											},
-											{
-												"name": "notify",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The email address to notify when the monitor is in an alert state."
-												}
-											},
-											{
-												"name": "operator",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "state",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "state_changed_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date and time the monitor state was last changed."
-												}
-											},
-											{
-												"name": "status",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "threshold",
-												"number": {
-													"computed_optional_required": "computed",
-													"description": "The threshold to alert on once breached."
-												}
-											},
-											{
-												"name": "type",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "updated_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date and time the monitor was last updated."
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "id",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								},
-								{
-									"name": "links",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "self",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "describedby",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "href",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "hreflang",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "Language of the target link"
-															}
-														},
-														{
-															"name": "meta",
-															"single_nested": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "rel",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "title",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "type",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "type",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								}
-							]
+							"description": "The date and time the monitor was created."
+						}
+					},
+					{
+						"name": "id",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "state",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "state_changed_at",
+						"string": {
+							"computed_optional_required": "computed",
+							"description": "The date and time the monitor state was last changed."
+						}
+					},
+					{
+						"name": "status",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "updated_at",
+						"string": {
+							"computed_optional_required": "computed",
+							"description": "The date and time the monitor was last updated."
 						}
 					},
 					{
@@ -2073,114 +1219,21 @@
 						}
 					},
 					{
-						"name": "data",
-						"single_nested": {
-							"computed_optional_required": "computed",
-							"attributes": [
-								{
-									"name": "attributes",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "content",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "created_at",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "name",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "updated_at",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "id",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								},
-								{
-									"name": "links",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "self",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "describedby",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "href",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "hreflang",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "Language of the target link"
-															}
-														},
-														{
-															"name": "meta",
-															"single_nested": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "rel",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "title",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "type",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "type",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								}
-							]
+						"name": "created_at",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "id",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "updated_at",
+						"string": {
+							"computed_optional_required": "computed"
 						}
 					},
 					{
@@ -2212,108 +1265,15 @@
 			"schema": {
 				"attributes": [
 					{
-						"name": "data",
-						"single_nested": {
-							"computed_optional_required": "required",
-							"attributes": [
-								{
-									"name": "attributes",
-									"single_nested": {
-										"computed_optional_required": "required",
-										"attributes": [
-											{
-												"name": "opcache_enabled",
-												"bool": {
-													"computed_optional_required": "required"
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "type",
-									"string": {
-										"computed_optional_required": "required",
-										"validators": [
-											{
-												"custom": {
-													"imports": [
-														{
-															"path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
-														}
-													],
-													"schema_definition": "stringvalidator.OneOf(\n\"phpOpcaches\",\n)"
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "id",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								},
-								{
-									"name": "links",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "self",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "describedby",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "href",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "hreflang",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "Language of the target link"
-															}
-														},
-														{
-															"name": "meta",
-															"single_nested": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "rel",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "title",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "type",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								}
-							]
+						"name": "opcache_enabled",
+						"bool": {
+							"computed_optional_required": "required"
+						}
+					},
+					{
+						"name": "id",
+						"string": {
+							"computed_optional_required": "computed"
 						}
 					},
 					{
@@ -2368,120 +1328,33 @@
 						}
 					},
 					{
-						"name": "data",
-						"single_nested": {
-							"computed_optional_required": "computed",
-							"attributes": [
-								{
-									"name": "attributes",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "binary_name",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "created_at",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "status",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "updated_at",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "version",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "id",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								},
-								{
-									"name": "links",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "self",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "describedby",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "href",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "hreflang",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "Language of the target link"
-															}
-														},
-														{
-															"name": "meta",
-															"single_nested": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "rel",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "title",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "type",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "type",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								}
-							]
+						"name": "binary_name",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "created_at",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "id",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "status",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "updated_at",
+						"string": {
+							"computed_optional_required": "computed"
 						}
 					},
 					{
@@ -2530,132 +1403,51 @@
 						}
 					},
 					{
-						"name": "data",
-						"single_nested": {
-							"computed_optional_required": "computed",
-							"attributes": [
-								{
-									"name": "attributes",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "executed_by",
-												"int64": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "finished_at",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "output",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "recipe_id",
-												"int64": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "server_id",
-												"int64": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "started_at",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "status",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "id",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								},
-								{
-									"name": "links",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "self",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "describedby",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "href",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "hreflang",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "Language of the target link"
-															}
-														},
-														{
-															"name": "meta",
-															"single_nested": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "rel",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "title",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "type",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "type",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								}
-							]
+						"name": "executed_by",
+						"int64": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "finished_at",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "id",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "output",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "recipe_id",
+						"int64": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "server_id",
+						"int64": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "started_at",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "status",
+						"string": {
+							"computed_optional_required": "computed"
 						}
 					},
 					{
@@ -2690,6 +1482,7 @@
 						"name": "name",
 						"string": {
 							"computed_optional_required": "required",
+							"description": "The name of the Recipe.",
 							"validators": [
 								{
 									"custom": {
@@ -2707,7 +1500,8 @@
 					{
 						"name": "script",
 						"string": {
-							"computed_optional_required": "required"
+							"computed_optional_required": "required",
+							"description": "The script that should be executed."
 						}
 					},
 					{
@@ -2720,6 +1514,7 @@
 						"name": "user",
 						"string": {
 							"computed_optional_required": "required",
+							"description": "The user that the Recipe should be executed as.",
 							"validators": [
 								{
 									"custom": {
@@ -2735,125 +1530,23 @@
 						}
 					},
 					{
-						"name": "data",
-						"single_nested": {
+						"name": "created_at",
+						"string": {
 							"computed_optional_required": "computed",
-							"attributes": [
-								{
-									"name": "attributes",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "created_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date the Recipe was created."
-												}
-											},
-											{
-												"name": "name",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The name of the Recipe."
-												}
-											},
-											{
-												"name": "script",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The script that should be executed."
-												}
-											},
-											{
-												"name": "updated_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date the Recipe was last updated."
-												}
-											},
-											{
-												"name": "user",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The user that the Recipe should be executed as."
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "id",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								},
-								{
-									"name": "links",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "self",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "describedby",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "href",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "hreflang",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "Language of the target link"
-															}
-														},
-														{
-															"name": "meta",
-															"single_nested": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "rel",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "title",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "type",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "type",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								}
-							]
+							"description": "The date the Recipe was created."
+						}
+					},
+					{
+						"name": "id",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "updated_at",
+						"string": {
+							"computed_optional_required": "computed",
+							"description": "The date the Recipe was last updated."
 						}
 					},
 					{
@@ -2934,131 +1627,30 @@
 						}
 					},
 					{
-						"name": "data",
-						"single_nested": {
+						"name": "created_at",
+						"string": {
 							"computed_optional_required": "computed",
-							"attributes": [
-								{
-									"name": "attributes",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "created_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date and time the redirect rule was created."
-												}
-											},
-											{
-												"name": "from",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The source URL path for the redirect rule."
-												}
-											},
-											{
-												"name": "status",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The status of the redirect rule."
-												}
-											},
-											{
-												"name": "to",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The destination URL path for the redirect rule."
-												}
-											},
-											{
-												"name": "type",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "updated_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date and time the redirect rule was last updated."
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "id",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								},
-								{
-									"name": "links",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "self",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "describedby",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "href",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "hreflang",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "Language of the target link"
-															}
-														},
-														{
-															"name": "meta",
-															"single_nested": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "rel",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "title",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "type",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "type",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								}
-							]
+							"description": "The date and time the redirect rule was created."
+						}
+					},
+					{
+						"name": "id",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "status",
+						"string": {
+							"computed_optional_required": "computed",
+							"description": "The status of the redirect rule."
+						}
+					},
+					{
+						"name": "updated_at",
+						"string": {
+							"computed_optional_required": "computed",
+							"description": "The date and time the redirect rule was last updated."
 						}
 					},
 					{
@@ -3100,6 +1692,7 @@
 						"name": "name",
 						"string": {
 							"computed_optional_required": "required",
+							"description": "The name of the vpc",
 							"validators": [
 								{
 									"custom": {
@@ -3115,115 +1708,27 @@
 						}
 					},
 					{
-						"name": "data",
-						"single_nested": {
-							"computed_optional_required": "computed",
-							"attributes": [
-								{
-									"name": "attributes",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "cidr_block",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "name",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The name of the vpc"
-												}
-											},
-											{
-												"name": "region",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "subnets",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "id",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								},
-								{
-									"name": "links",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "self",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "describedby",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "href",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "hreflang",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "Language of the target link"
-															}
-														},
-														{
-															"name": "meta",
-															"single_nested": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "rel",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "title",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "type",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "type",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								}
-							]
+						"name": "cidr_block",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "id",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "region",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "subnets",
+						"string": {
+							"computed_optional_required": "computed"
 						}
 					},
 					{
@@ -3238,12 +1743,6 @@
 						"int64": {
 							"computed_optional_required": "computed_optional",
 							"description": "The credential ID"
-						}
-					},
-					{
-						"name": "region",
-						"string": {
-							"computed_optional_required": "computed_optional"
 						}
 					},
 					{
@@ -3287,146 +1786,21 @@
 						}
 					},
 					{
-						"name": "data",
-						"single_nested": {
-							"computed_optional_required": "computed",
-							"attributes": [
-								{
-									"name": "attributes",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "created_at",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "name",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "updated_at",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "id",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								},
-								{
-									"name": "links",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "self",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "describedby",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "href",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "hreflang",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "Language of the target link"
-															}
-														},
-														{
-															"name": "meta",
-															"single_nested": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "rel",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "title",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "type",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "relationships",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "permissions",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "data",
-															"list_nested": {
-																"computed_optional_required": "computed",
-																"nested_object": {
-																	"attributes": [
-																		{
-																			"name": "id",
-																			"string": {
-																				"computed_optional_required": "computed"
-																			}
-																		},
-																		{
-																			"name": "type",
-																			"string": {
-																				"computed_optional_required": "computed"
-																			}
-																		}
-																	]
-																}
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "type",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								}
-							]
+						"name": "created_at",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "id",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "updated_at",
+						"string": {
+							"computed_optional_required": "computed"
 						}
 					},
 					{
@@ -3538,125 +1912,30 @@
 						}
 					},
 					{
-						"name": "data",
-						"single_nested": {
+						"name": "created_at",
+						"string": {
 							"computed_optional_required": "computed",
-							"attributes": [
-								{
-									"name": "attributes",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "created_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date and time the security rule was created."
-												}
-											},
-											{
-												"name": "name",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The name of the security rule."
-												}
-											},
-											{
-												"name": "path",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The path for the security rule."
-												}
-											},
-											{
-												"name": "status",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The status of the security rule."
-												}
-											},
-											{
-												"name": "updated_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date and time the security rule was last updated."
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "id",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								},
-								{
-									"name": "links",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "self",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "describedby",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "href",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "hreflang",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "Language of the target link"
-															}
-														},
-														{
-															"name": "meta",
-															"single_nested": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "rel",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "title",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "type",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "type",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								}
-							]
+							"description": "The date and time the security rule was created."
+						}
+					},
+					{
+						"name": "id",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "status",
+						"string": {
+							"computed_optional_required": "computed",
+							"description": "The status of the security rule."
+						}
+					},
+					{
+						"name": "updated_at",
+						"string": {
+							"computed_optional_required": "computed",
+							"description": "The date and time the security rule was last updated."
 						}
 					},
 					{
@@ -3755,144 +2034,33 @@
 						}
 					},
 					{
-						"name": "data",
-						"single_nested": {
-							"computed_optional_required": "computed",
-							"attributes": [
-								{
-									"name": "attributes",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "command",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "created_at",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "cron",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "frequency",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "name",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "next_run_time",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "status",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "updated_at",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "user",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "id",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								},
-								{
-									"name": "links",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "self",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "describedby",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "href",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "hreflang",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "Language of the target link"
-															}
-														},
-														{
-															"name": "meta",
-															"single_nested": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "rel",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "title",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "type",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "type",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								}
-							]
+						"name": "created_at",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "id",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "next_run_time",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "status",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "updated_at",
+						"string": {
+							"computed_optional_required": "computed"
 						}
 					},
 					{
@@ -3988,6 +2156,12 @@
 									}
 								}
 							]
+						}
+					},
+					{
+						"name": "cloud_provider",
+						"string": {
+							"computed_optional_required": "required"
 						}
 					},
 					{
@@ -4161,12 +2335,6 @@
 						}
 					},
 					{
-						"name": "provider",
-						"string": {
-							"computed_optional_required": "required"
-						}
-					},
-					{
 						"name": "recipe_id",
 						"int64": {
 							"computed_optional_required": "computed_optional"
@@ -4250,280 +2418,113 @@
 						}
 					},
 					{
-						"name": "data",
-						"single_nested": {
+						"name": "connection_status",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "created_at",
+						"string": {
 							"computed_optional_required": "computed",
-							"attributes": [
-								{
-									"name": "attributes",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "connection_status",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "created_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date and time the server was created."
-												}
-											},
-											{
-												"name": "credential_id",
-												"int64": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "database_type",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "db_status",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "id",
-												"int64": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "identifier",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "ip_address",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "is_ready",
-												"bool": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "local_public_key",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "name",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "opcache_status",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "php_cli_version",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "php_version",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "private_ip_address",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "provider",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "redis_status",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "region",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "revoked",
-												"bool": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "size",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "ssh_port",
-												"int64": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "timezone",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "type",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "ubuntu_version",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "updated_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date and time the server was last updated."
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "id",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								},
-								{
-									"name": "links",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "self",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "describedby",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "href",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "hreflang",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "Language of the target link"
-															}
-														},
-														{
-															"name": "meta",
-															"single_nested": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "rel",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "title",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "type",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "relationships",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "tags",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "data",
-															"list_nested": {
-																"computed_optional_required": "computed",
-																"nested_object": {
-																	"attributes": [
-																		{
-																			"name": "id",
-																			"string": {
-																				"computed_optional_required": "computed"
-																			}
-																		},
-																		{
-																			"name": "type",
-																			"string": {
-																				"computed_optional_required": "computed"
-																			}
-																		}
-																	]
-																}
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "type",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								}
-							]
+							"description": "The date and time the server was created."
+						}
+					},
+					{
+						"name": "db_status",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "id",
+						"int64": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "identifier",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "ip_address",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "is_ready",
+						"bool": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "local_public_key",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "opcache_status",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "php_cli_version",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "private_ip_address",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "redis_status",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "region",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "revoked",
+						"bool": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "size",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "ssh_port",
+						"int64": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "timezone",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "updated_at",
+						"string": {
+							"computed_optional_required": "computed",
+							"description": "The date and time the server was last updated."
 						}
 					},
 					{
@@ -4548,181 +2549,62 @@
 			"schema": {
 				"attributes": [
 					{
-						"name": "command",
-						"string": {
-							"computed_optional_required": "required",
-							"description": "The command to run."
+						"name": "opcache_enabled",
+						"bool": {
+							"computed_optional_required": "required"
 						}
 					},
 					{
-						"name": "data",
-						"single_nested": {
+						"name": "command",
+						"string": {
 							"computed_optional_required": "computed",
-							"attributes": [
-								{
-									"name": "attributes",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "opcache_enabled",
-												"bool": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "command",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The command that ran."
-												}
-											},
-											{
-												"name": "created_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date and time the command was created."
-												}
-											},
-											{
-												"name": "duration",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The duration of the command in human-readable format."
-												}
-											},
-											{
-												"name": "status",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "updated_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date and time the command was last updated."
-												}
-											},
-											{
-												"name": "user_id",
-												"int64": {
-													"computed_optional_required": "computed",
-													"description": "The ID of the user who initiated the command."
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "id",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								},
-								{
-									"name": "links",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "self",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "describedby",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "href",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "hreflang",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "Language of the target link"
-															}
-														},
-														{
-															"name": "meta",
-															"single_nested": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "rel",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "title",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "type",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "type",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								},
-								{
-									"name": "relationships",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "user",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "data",
-															"single_nested": {
-																"computed_optional_required": "computed",
-																"attributes": [
-																	{
-																		"name": "id",
-																		"string": {
-																			"computed_optional_required": "computed"
-																		}
-																	},
-																	{
-																		"name": "type",
-																		"string": {
-																			"computed_optional_required": "computed"
-																		}
-																	}
-																]
-															}
-														}
-													],
-													"description": "The user who initiated the command."
-												}
-											}
-										]
-									}
-								}
-							]
+							"description": "The command that ran."
+						}
+					},
+					{
+						"name": "created_at",
+						"string": {
+							"computed_optional_required": "computed",
+							"description": "The date and time the command was created."
+						}
+					},
+					{
+						"name": "duration",
+						"string": {
+							"computed_optional_required": "computed",
+							"description": "The duration of the command in human-readable format."
+						}
+					},
+					{
+						"name": "id",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "status",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "updated_at",
+						"string": {
+							"computed_optional_required": "computed",
+							"description": "The date and time the command was last updated."
+						}
+					},
+					{
+						"name": "user",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "user_id",
+						"int64": {
+							"computed_optional_required": "computed",
+							"description": "The ID of the user who initiated the command."
 						}
 					},
 					{
@@ -4786,137 +2668,29 @@
 						}
 					},
 					{
-						"name": "data",
-						"single_nested": {
+						"name": "created_at",
+						"string": {
 							"computed_optional_required": "computed",
-							"attributes": [
-								{
-									"name": "attributes",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "allow_wildcard_subdomains",
-												"bool": {
-													"computed_optional_required": "computed",
-													"description": "Whether the domain allows wildcard subdomains."
-												}
-											},
-											{
-												"name": "created_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date and time the domain was created."
-												}
-											},
-											{
-												"name": "name",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The name of the domain."
-												}
-											},
-											{
-												"name": "status",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "type",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The type of domain."
-												}
-											},
-											{
-												"name": "updated_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date and time the domain was last updated."
-												}
-											},
-											{
-												"name": "www_redirect_type",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "id",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								},
-								{
-									"name": "links",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "self",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "describedby",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "href",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "hreflang",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "Language of the target link"
-															}
-														},
-														{
-															"name": "meta",
-															"single_nested": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "rel",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "title",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "type",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "type",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								}
-							]
+							"description": "The date and time the domain was created."
+						}
+					},
+					{
+						"name": "id",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "status",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "updated_at",
+						"string": {
+							"computed_optional_required": "computed",
+							"description": "The date and time the domain was last updated."
 						}
 					},
 					{
@@ -5015,144 +2789,33 @@
 						}
 					},
 					{
-						"name": "data",
-						"single_nested": {
-							"computed_optional_required": "computed",
-							"attributes": [
-								{
-									"name": "attributes",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "command",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "created_at",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "cron",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "frequency",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "name",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "next_run_time",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "status",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "updated_at",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "user",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "id",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								},
-								{
-									"name": "links",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "self",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "describedby",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "href",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "hreflang",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "Language of the target link"
-															}
-														},
-														{
-															"name": "meta",
-															"single_nested": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "rel",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "title",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "type",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "type",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								}
-							]
+						"name": "created_at",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "id",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "next_run_time",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "status",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "updated_at",
+						"string": {
+							"computed_optional_required": "computed"
 						}
 					},
 					{
@@ -5464,441 +3127,164 @@
 						}
 					},
 					{
-						"name": "data",
+						"name": "aliases",
+						"list": {
+							"computed_optional_required": "computed",
+							"element_type": {
+								"string": {}
+							}
+						}
+					},
+					{
+						"name": "app_type",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "created_at",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "database",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "deployment_script",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "deployment_status",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "deployment_url",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "healthcheck_url",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "https",
+						"bool": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "id",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "isolated",
+						"bool": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "latest_deployment",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "maintenance_mode",
 						"single_nested": {
 							"computed_optional_required": "computed",
 							"attributes": [
 								{
-									"name": "attributes",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "aliases",
-												"list": {
-													"computed_optional_required": "computed",
-													"element_type": {
-														"string": {}
-													}
-												}
-											},
-											{
-												"name": "app_type",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "created_at",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "database",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "deployment_script",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "deployment_status",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "deployment_url",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "healthcheck_url",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "https",
-												"bool": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "isolated",
-												"bool": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "maintenance_mode",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "enabled",
-															"bool": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "status",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														}
-													]
-												}
-											},
-											{
-												"name": "name",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "php_version",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "quick_deploy",
-												"bool": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "repository",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "branch",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "provider",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "status",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "url",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														}
-													]
-												}
-											},
-											{
-												"name": "root_directory",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "shared_paths",
-												"map": {
-													"computed_optional_required": "computed",
-													"element_type": {
-														"string": {}
-													},
-													"description": "* The linked directories for the site."
-												}
-											},
-											{
-												"name": "status",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "updated_at",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "url",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "user",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "uses_envoyer",
-												"bool": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "web_directory",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "wildcards",
-												"bool": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "zero_downtime_deployments",
-												"bool": {
-													"computed_optional_required": "computed"
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "id",
-									"string": {
+									"name": "enabled",
+									"bool": {
 										"computed_optional_required": "computed"
 									}
 								},
 								{
-									"name": "links",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "self",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "describedby",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "href",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "hreflang",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "Language of the target link"
-															}
-														},
-														{
-															"name": "meta",
-															"single_nested": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "rel",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "title",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "type",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "relationships",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "latest_deployment",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "data",
-															"single_nested": {
-																"computed_optional_required": "computed",
-																"attributes": [
-																	{
-																		"name": "id",
-																		"string": {
-																			"computed_optional_required": "computed"
-																		}
-																	},
-																	{
-																		"name": "type",
-																		"string": {
-																			"computed_optional_required": "computed"
-																		}
-																	}
-																]
-															}
-														}
-													]
-												}
-											},
-											{
-												"name": "redirect_rules",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "data",
-															"list_nested": {
-																"computed_optional_required": "computed",
-																"nested_object": {
-																	"attributes": [
-																		{
-																			"name": "id",
-																			"string": {
-																				"computed_optional_required": "computed"
-																			}
-																		},
-																		{
-																			"name": "type",
-																			"string": {
-																				"computed_optional_required": "computed"
-																			}
-																		}
-																	]
-																}
-															}
-														}
-													]
-												}
-											},
-											{
-												"name": "security_rules",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "data",
-															"list_nested": {
-																"computed_optional_required": "computed",
-																"nested_object": {
-																	"attributes": [
-																		{
-																			"name": "id",
-																			"string": {
-																				"computed_optional_required": "computed"
-																			}
-																		},
-																		{
-																			"name": "type",
-																			"string": {
-																				"computed_optional_required": "computed"
-																			}
-																		}
-																	]
-																}
-															}
-														}
-													]
-												}
-											},
-											{
-												"name": "server",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "data",
-															"single_nested": {
-																"computed_optional_required": "computed",
-																"attributes": [
-																	{
-																		"name": "id",
-																		"string": {
-																			"computed_optional_required": "computed"
-																		}
-																	},
-																	{
-																		"name": "type",
-																		"string": {
-																			"computed_optional_required": "computed"
-																		}
-																	}
-																]
-															}
-														}
-													]
-												}
-											},
-											{
-												"name": "tags",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "data",
-															"list_nested": {
-																"computed_optional_required": "computed",
-																"nested_object": {
-																	"attributes": [
-																		{
-																			"name": "id",
-																			"string": {
-																				"computed_optional_required": "computed"
-																			}
-																		},
-																		{
-																			"name": "type",
-																			"string": {
-																				"computed_optional_required": "computed"
-																			}
-																		}
-																	]
-																}
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "type",
+									"name": "status",
 									"string": {
 										"computed_optional_required": "computed"
 									}
 								}
 							]
+						}
+					},
+					{
+						"name": "quick_deploy",
+						"bool": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "redirect_rules",
+						"list": {
+							"computed_optional_required": "computed",
+							"element_type": {
+								"string": {}
+							}
+						}
+					},
+					{
+						"name": "security_rules",
+						"list": {
+							"computed_optional_required": "computed",
+							"element_type": {
+								"string": {}
+							}
+						}
+					},
+					{
+						"name": "server",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "status",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "updated_at",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "url",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "user",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "uses_envoyer",
+						"bool": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "wildcards",
+						"bool": {
+							"computed_optional_required": "computed"
 						}
 					},
 					{
@@ -5947,135 +3333,36 @@
 						}
 					},
 					{
-						"name": "data",
-						"single_nested": {
+						"name": "created_at",
+						"string": {
 							"computed_optional_required": "computed",
-							"attributes": [
-								{
-									"name": "attributes",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "opcache_enabled",
-												"bool": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "created_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date the key was created."
-												}
-											},
-											{
-												"name": "created_by",
-												"int64": {
-													"computed_optional_required": "computed",
-													"description": "The user that created the key."
-												}
-											},
-											{
-												"name": "name",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "status",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "updated_at",
-												"string": {
-													"computed_optional_required": "computed",
-													"description": "The date the key was last updated."
-												}
-											},
-											{
-												"name": "user",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "id",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								},
-								{
-									"name": "links",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "self",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "describedby",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "href",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "hreflang",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "Language of the target link"
-															}
-														},
-														{
-															"name": "meta",
-															"single_nested": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "rel",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "title",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "type",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "type",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								}
-							]
+							"description": "The date the key was created."
+						}
+					},
+					{
+						"name": "created_by",
+						"int64": {
+							"computed_optional_required": "computed",
+							"description": "The user that created the key."
+						}
+					},
+					{
+						"name": "id",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "status",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "updated_at",
+						"string": {
+							"computed_optional_required": "computed",
+							"description": "The date the key was last updated."
 						}
 					},
 					{
@@ -6112,214 +3399,40 @@
 						}
 					},
 					{
-						"name": "data",
-						"single_nested": {
-							"computed_optional_required": "computed",
-							"attributes": [
-								{
-									"name": "attributes",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "created_at",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "email",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "updated_at",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "id",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								},
-								{
-									"name": "links",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "self",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "describedby",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "href",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "hreflang",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "Language of the target link"
-															}
-														},
-														{
-															"name": "meta",
-															"single_nested": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "rel",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "title",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "type",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "relationships",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "organization",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "data",
-															"single_nested": {
-																"computed_optional_required": "computed",
-																"attributes": [
-																	{
-																		"name": "id",
-																		"string": {
-																			"computed_optional_required": "computed"
-																		}
-																	},
-																	{
-																		"name": "type",
-																		"string": {
-																			"computed_optional_required": "computed"
-																		}
-																	}
-																]
-															}
-														}
-													]
-												}
-											},
-											{
-												"name": "role",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "data",
-															"single_nested": {
-																"computed_optional_required": "computed",
-																"attributes": [
-																	{
-																		"name": "id",
-																		"string": {
-																			"computed_optional_required": "computed"
-																		}
-																	},
-																	{
-																		"name": "type",
-																		"string": {
-																			"computed_optional_required": "computed"
-																		}
-																	}
-																]
-															}
-														}
-													]
-												}
-											},
-											{
-												"name": "team",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "data",
-															"single_nested": {
-																"computed_optional_required": "computed",
-																"attributes": [
-																	{
-																		"name": "id",
-																		"string": {
-																			"computed_optional_required": "computed"
-																		}
-																	},
-																	{
-																		"name": "type",
-																		"string": {
-																			"computed_optional_required": "computed"
-																		}
-																	}
-																]
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "type",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								}
-							]
+						"name": "created_at",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "id",
+						"string": {
+							"computed_optional_required": "computed"
 						}
 					},
 					{
 						"name": "organization",
 						"string": {
-							"computed_optional_required": "computed_optional",
+							"computed_optional_required": "computed",
 							"description": "The organization slug"
 						}
 					},
 					{
+						"name": "role",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
 						"name": "team",
-						"int64": {
-							"computed_optional_required": "computed_optional",
-							"description": "The team ID"
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "updated_at",
+						"string": {
+							"computed_optional_required": "computed"
 						}
 					},
 					{
@@ -6350,16 +3463,8 @@
 									},
 									{
 										"name": "role",
-										"single_nested": {
-											"computed_optional_required": "computed_optional",
-											"attributes": [
-												{
-													"name": "id",
-													"int64": {
-														"computed_optional_required": "required"
-													}
-												}
-											]
+										"string": {
+											"computed_optional_required": "computed_optional"
 										}
 									}
 								]
@@ -6398,16 +3503,8 @@
 									},
 									{
 										"name": "role",
-										"single_nested": {
-											"computed_optional_required": "computed_optional",
-											"attributes": [
-												{
-													"name": "id",
-													"int64": {
-														"computed_optional_required": "required"
-													}
-												}
-											]
+										"string": {
+											"computed_optional_required": "computed_optional"
 										}
 									}
 								]
@@ -6415,108 +3512,21 @@
 						}
 					},
 					{
-						"name": "data",
-						"single_nested": {
-							"computed_optional_required": "computed",
-							"attributes": [
-								{
-									"name": "attributes",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "created_at",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "name",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											},
-											{
-												"name": "updated_at",
-												"string": {
-													"computed_optional_required": "computed"
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "id",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								},
-								{
-									"name": "links",
-									"single_nested": {
-										"computed_optional_required": "computed",
-										"attributes": [
-											{
-												"name": "self",
-												"single_nested": {
-													"computed_optional_required": "computed",
-													"attributes": [
-														{
-															"name": "describedby",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "href",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "hreflang",
-															"string": {
-																"computed_optional_required": "computed",
-																"description": "Language of the target link"
-															}
-														},
-														{
-															"name": "meta",
-															"single_nested": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "rel",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "title",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														},
-														{
-															"name": "type",
-															"string": {
-																"computed_optional_required": "computed"
-															}
-														}
-													]
-												}
-											}
-										]
-									}
-								},
-								{
-									"name": "type",
-									"string": {
-										"computed_optional_required": "computed"
-									}
-								}
-							]
+						"name": "created_at",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "id",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "updated_at",
+						"string": {
+							"computed_optional_required": "computed"
 						}
 					},
 					{
