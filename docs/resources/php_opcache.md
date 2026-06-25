@@ -3,12 +3,12 @@
 page_title: "laravelforge_php_opcache Resource - laravelforge"
 subcategory: ""
 description: |-
-  Enable PHP OPcache for the server.
+  Manages PHP OPcache on a Forge server.
 ---
 
 # laravelforge_php_opcache (Resource)
 
-Enable PHP OPcache for the server.
+Manages PHP OPcache on a Forge server.
 
 ## Example Usage
 

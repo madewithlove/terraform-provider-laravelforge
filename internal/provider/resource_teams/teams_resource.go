@@ -47,7 +47,7 @@ func (r *teamsResource) Schema(ctx context.Context, _ resource.SchemaRequest, re
 	providerutil.RequiresReplace(s.Attributes, "invites")
 	providerutil.UseStateForUnknown(s.Attributes, "id", "team")
 
-	s.MarkdownDescription = "Create a new team for the organization."
+	s.MarkdownDescription = "Manages a team in the organization."
 	resp.Schema = s
 }
 

@@ -3,12 +3,12 @@
 page_title: "laravelforge_servers Resource - laravelforge"
 subcategory: ""
 description: |-
-  Create a new server in the organization. Supports both standard cloud providers and custom VPS configurations.
+  Manages a Forge server. Supports both standard cloud providers and custom VPS configurations.
 ---
 
 # laravelforge_servers (Resource)
 
-Create a new server in the organization. Supports both standard cloud providers and custom VPS configurations.
+Manages a Forge server. Supports both standard cloud providers and custom VPS configurations.
 
 ## Example Usage
 

@@ -3,12 +3,12 @@
 page_title: "laravelforge_monitors Resource - laravelforge"
 subcategory: ""
 description: |-
-  Add a new monitor to the server.
+  Manages a resource monitor on a Forge server.
 ---
 
 # laravelforge_monitors (Resource)
 
-Add a new monitor to the server.
+Manages a resource monitor on a Forge server.
 
 ## Example Usage
 

@@ -48,7 +48,7 @@ func (r *heartbeatsResource) Schema(ctx context.Context, _ resource.SchemaReques
 	// place via the API's PUT endpoint, so none of them force replacement.
 	providerutil.UseStateForUnknown(s.Attributes, "id", "heartbeat")
 
-	s.MarkdownDescription = "Create a new heartbeat for the site."
+	s.MarkdownDescription = "Manages a heartbeat monitor for a site."
 	resp.Schema = s
 }
 

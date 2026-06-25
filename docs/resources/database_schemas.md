@@ -3,12 +3,12 @@
 page_title: "laravelforge_database_schemas Resource - laravelforge"
 subcategory: ""
 description: |-
-  Add a new database schema to the server.
+  Manages a database schema on a Forge server.
 ---
 
 # laravelforge_database_schemas (Resource)
 
-Add a new database schema to the server.
+Manages a database schema on a Forge server.
 
 ## Example Usage
 

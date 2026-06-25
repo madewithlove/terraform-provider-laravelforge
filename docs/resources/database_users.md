@@ -3,12 +3,12 @@
 page_title: "laravelforge_database_users Resource - laravelforge"
 subcategory: ""
 description: |-
-  Add a new database user to the server.
+  Manages a database user on a Forge server.
 ---
 
 # laravelforge_database_users (Resource)
 
-Add a new database user to the server.
+Manages a database user on a Forge server.
 
 ## Example Usage
 

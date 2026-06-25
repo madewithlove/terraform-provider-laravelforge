@@ -3,12 +3,12 @@
 page_title: "laravelforge_recipe_runs Resource - laravelforge"
 subcategory: ""
 description: |-
-  Run a given recipe on a list of servers.
+  Runs a recipe on one or more servers.
 ---
 
 # laravelforge_recipe_runs (Resource)
 
-Run a given recipe on a list of servers.
+Runs a recipe on one or more servers.
 
 ## Example Usage
 

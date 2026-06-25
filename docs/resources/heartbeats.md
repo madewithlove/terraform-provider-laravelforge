@@ -3,12 +3,12 @@
 page_title: "laravelforge_heartbeats Resource - laravelforge"
 subcategory: ""
 description: |-
-  Create a new heartbeat for the site.
+  Manages a heartbeat monitor for a site.
 ---
 
 # laravelforge_heartbeats (Resource)
 
-Create a new heartbeat for the site.
+Manages a heartbeat monitor for a site.
 
 ## Example Usage
 

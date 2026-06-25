@@ -52,7 +52,7 @@ func (r *databaseUsersResource) Schema(ctx context.Context, _ resource.SchemaReq
 	providerutil.Sensitive(s.Attributes, "password")
 	providerutil.UseStateForUnknown(s.Attributes, "id", "database_user")
 
-	s.MarkdownDescription = "Add a new database user to the server."
+	s.MarkdownDescription = "Manages a database user on a Forge server."
 	resp.Schema = s
 }
 

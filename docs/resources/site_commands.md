@@ -3,12 +3,12 @@
 page_title: "laravelforge_site_commands Resource - laravelforge"
 subcategory: ""
 description: |-
-  Run a command on the site.
+  Runs a command in a site's directory.
 ---
 
 # laravelforge_site_commands (Resource)
 
-Run a command on the site.
+Runs a command in a site's directory.
 
 ## Example Usage
 

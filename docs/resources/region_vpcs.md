@@ -3,12 +3,12 @@
 page_title: "laravelforge_region_vpcs Resource - laravelforge"
 subcategory: ""
 description: |-
-  Create a private network for the provider.
+  Manages a VPC (private network) in a provider region.
 ---
 
 # laravelforge_region_vpcs (Resource)
 
-Create a private network for the provider.
+Manages a VPC (private network) in a provider region.
 
 ## Example Usage
 

@@ -49,7 +49,7 @@ func (r *monitorsResource) Schema(ctx context.Context, _ resource.SchemaRequest,
 	providerutil.RequiresReplace(s.Attributes, "minutes", "notify", "operator", "threshold", "type")
 	providerutil.UseStateForUnknown(s.Attributes, "monitor", "id")
 
-	s.MarkdownDescription = "Add a new monitor to the server."
+	s.MarkdownDescription = "Manages a resource monitor on a Forge server."
 	resp.Schema = s
 }
 

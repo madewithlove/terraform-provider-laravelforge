@@ -3,12 +3,12 @@
 page_title: "laravelforge_background_processes Resource - laravelforge"
 subcategory: ""
 description: |-
-  Create a new background process from a template.
+  Manages a background process on a Forge server.
 ---
 
 # laravelforge_background_processes (Resource)
 
-Create a new background process from a template.
+Manages a background process on a Forge server.
 
 ## Example Usage
 

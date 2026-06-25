@@ -46,7 +46,7 @@ func (r *nginxTemplatesResource) Schema(ctx context.Context, _ resource.SchemaRe
 	// name and content are both updatable in place via the API's PUT endpoint.
 	providerutil.UseStateForUnknown(s.Attributes, "nginx_template", "id")
 
-	s.MarkdownDescription = "Create a new nginx template on the server."
+	s.MarkdownDescription = "Manages an Nginx template on a Forge server."
 	resp.Schema = s
 }
 

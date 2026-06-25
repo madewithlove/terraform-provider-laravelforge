@@ -3,12 +3,12 @@
 page_title: "laravelforge_recipes Resource - laravelforge"
 subcategory: ""
 description: |-
-  Create a new recipe for the organization.
+  Manages a recipe in the organization.
 ---
 
 # laravelforge_recipes (Resource)
 
-Create a new recipe for the organization.
+Manages a recipe in the organization.
 
 ## Example Usage
 

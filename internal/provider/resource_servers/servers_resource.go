@@ -58,7 +58,7 @@ func (r *serversResource) Schema(ctx context.Context, _ resource.SchemaRequest, 
 
 	providerutil.UseStateForUnknown(s.Attributes, "id", "server")
 
-	s.MarkdownDescription = "Create a new server in the organization. Supports both standard cloud providers and custom VPS configurations."
+	s.MarkdownDescription = "Manages a Forge server. Supports both standard cloud providers and custom VPS configurations."
 	resp.Schema = s
 }
 

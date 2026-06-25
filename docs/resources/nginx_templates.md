@@ -3,12 +3,12 @@
 page_title: "laravelforge_nginx_templates Resource - laravelforge"
 subcategory: ""
 description: |-
-  Create a new nginx template on the server.
+  Manages an Nginx template on a Forge server.
 ---
 
 # laravelforge_nginx_templates (Resource)
 
-Create a new nginx template on the server.
+Manages an Nginx template on a Forge server.
 
 ## Example Usage
 

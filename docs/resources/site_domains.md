@@ -3,12 +3,12 @@
 page_title: "laravelforge_site_domains Resource - laravelforge"
 subcategory: ""
 description: |-
-  Add a new domain to the site
+  Manages a domain for a site.
 ---
 
 # laravelforge_site_domains (Resource)
 
-Add a new domain to the site
+Manages a domain for a site.
 
 ## Example Usage
 

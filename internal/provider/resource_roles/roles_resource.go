@@ -47,7 +47,7 @@ func (r *rolesResource) Schema(ctx context.Context, _ resource.SchemaRequest, re
 	providerutil.Required(s.Attributes, "organization")
 	providerutil.UseStateForUnknown(s.Attributes, "id", "role")
 
-	s.MarkdownDescription = "Create a new role for the organization."
+	s.MarkdownDescription = "Manages a custom role in the organization."
 	resp.Schema = s
 }
 

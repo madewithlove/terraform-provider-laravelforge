@@ -51,7 +51,7 @@ func (r *composerCredentialsResource) Schema(ctx context.Context, _ resource.Sch
 	providerutil.Sensitive(s.Attributes, "password")
 	providerutil.UseStateForUnknown(s.Attributes, "id")
 
-	s.MarkdownDescription = "Create composer credentials for the site"
+	s.MarkdownDescription = "Manages Composer credentials for a site."
 	resp.Schema = s
 }
 

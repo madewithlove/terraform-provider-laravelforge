@@ -3,12 +3,12 @@
 page_title: "laravelforge_domain_certificates Resource - laravelforge"
 subcategory: ""
 description: |-
-  Create a new certificate for a given domain.
+  Manages the SSL certificate for a site domain.
 ---
 
 # laravelforge_domain_certificates (Resource)
 
-Create a new certificate for a given domain.
+Manages the SSL certificate for a site domain.
 
 ## Example Usage
 

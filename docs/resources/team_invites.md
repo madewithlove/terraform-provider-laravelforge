@@ -3,12 +3,12 @@
 page_title: "laravelforge_team_invites Resource - laravelforge"
 subcategory: ""
 description: |-
-  Invite a new member to the team.
+  Manages a team invitation.
 ---
 
 # laravelforge_team_invites (Resource)
 
-Invite a new member to the team.
+Manages a team invitation.
 
 ## Example Usage
 

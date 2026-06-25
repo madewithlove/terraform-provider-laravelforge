@@ -3,12 +3,12 @@
 page_title: "laravelforge_security_rules Resource - laravelforge"
 subcategory: ""
 description: |-
-  Add a new security rule to the site.
+  Manages a security rule (HTTP basic authentication) for a site.
 ---
 
 # laravelforge_security_rules (Resource)
 
-Add a new security rule to the site.
+Manages a security rule (HTTP basic authentication) for a site.
 
 ## Example Usage
 

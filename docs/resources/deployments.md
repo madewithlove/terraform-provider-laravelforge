@@ -3,12 +3,12 @@
 page_title: "laravelforge_deployments Resource - laravelforge"
 subcategory: ""
 description: |-
-  Trigger a new deployment for the site.
+  Triggers a deployment of a site.
 ---
 
 # laravelforge_deployments (Resource)
 
-Trigger a new deployment for the site.
+Triggers a deployment of a site.
 
 ## Example Usage
 

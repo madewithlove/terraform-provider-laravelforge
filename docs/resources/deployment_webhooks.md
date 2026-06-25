@@ -3,12 +3,12 @@
 page_title: "laravelforge_deployment_webhooks Resource - laravelforge"
 subcategory: ""
 description: |-
-  Create a new webhook for the site.
+  Manages a deployment webhook for a site.
 ---
 
 # laravelforge_deployment_webhooks (Resource)
 
-Create a new webhook for the site.
+Manages a deployment webhook for a site.
 
 ## Example Usage
 

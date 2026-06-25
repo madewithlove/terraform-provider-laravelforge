@@ -3,12 +3,12 @@
 page_title: "laravelforge_php_versions Resource - laravelforge"
 subcategory: ""
 description: |-
-  Install a new PHP version on the server
+  Manages a PHP version installed on a Forge server.
 ---
 
 # laravelforge_php_versions (Resource)
 
-Install a new PHP version on the server
+Manages a PHP version installed on a Forge server.
 
 ## Example Usage
 

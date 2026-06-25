@@ -49,7 +49,7 @@ func (r *redirectRulesResource) Schema(ctx context.Context, _ resource.SchemaReq
 	providerutil.RequiresReplace(s.Attributes, "from", "to", "type")
 	providerutil.UseStateForUnknown(s.Attributes, "id", "redirect_rule")
 
-	s.MarkdownDescription = "Add a new redirect rule to the site."
+	s.MarkdownDescription = "Manages a redirect rule for a site."
 	resp.Schema = s
 }
 

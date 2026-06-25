@@ -3,12 +3,12 @@
 page_title: "laravelforge_site_scheduled_jobs Resource - laravelforge"
 subcategory: ""
 description: |-
-  Create a specific scheduled job for the site.
+  Manages a scheduled job (cron) for a site.
 ---
 
 # laravelforge_site_scheduled_jobs (Resource)
 
-Create a specific scheduled job for the site.
+Manages a scheduled job (cron) for a site.
 
 ## Example Usage
 

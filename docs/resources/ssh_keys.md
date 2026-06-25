@@ -3,12 +3,12 @@
 page_title: "laravelforge_ssh_keys Resource - laravelforge"
 subcategory: ""
 description: |-
-  Add a new SSH key to the server.
+  Manages an SSH key on a Forge server.
 ---
 
 # laravelforge_ssh_keys (Resource)
 
-Add a new SSH key to the server.
+Manages an SSH key on a Forge server.
 
 ## Example Usage
 

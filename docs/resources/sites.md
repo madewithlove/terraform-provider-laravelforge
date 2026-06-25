@@ -3,12 +3,12 @@
 page_title: "laravelforge_sites Resource - laravelforge"
 subcategory: ""
 description: |-
-  Add a new site to the server.
+  Manages a site on a Forge server.
 ---
 
 # laravelforge_sites (Resource)
 
-Add a new site to the server.
+Manages a site on a Forge server.
 
 ## Example Usage
 

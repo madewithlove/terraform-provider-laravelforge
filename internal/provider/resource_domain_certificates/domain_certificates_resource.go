@@ -52,7 +52,7 @@ func (r *domainCertificatesResource) Schema(ctx context.Context, _ resource.Sche
 	providerutil.RequiresReplace(s.Attributes, "type", "clone", "csr", "existing", "letsencrypt")
 	providerutil.UseStateForUnknown(s.Attributes, "id")
 
-	s.MarkdownDescription = "Create a new certificate for a given domain."
+	s.MarkdownDescription = "Manages the SSL certificate for a site domain."
 	resp.Schema = s
 }
 

@@ -50,7 +50,7 @@ func (r *sshKeysResource) Schema(ctx context.Context, _ resource.SchemaRequest, 
 	providerutil.RequiresReplace(s.Attributes, "name", "key", "user")
 	providerutil.UseStateForUnknown(s.Attributes, "id")
 
-	s.MarkdownDescription = "Add a new SSH key to the server."
+	s.MarkdownDescription = "Manages an SSH key on a Forge server."
 	resp.Schema = s
 }
 

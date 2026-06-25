@@ -49,7 +49,7 @@ func (r *serverScheduledJobsResource) Schema(ctx context.Context, _ resource.Sch
 		"grace_period", "heartbeat", "name", "user")
 	providerutil.UseStateForUnknown(s.Attributes, "job", "id")
 
-	s.MarkdownDescription = "Create a specific scheduled job."
+	s.MarkdownDescription = "Manages a scheduled job (cron) on a Forge server."
 	resp.Schema = s
 }
 

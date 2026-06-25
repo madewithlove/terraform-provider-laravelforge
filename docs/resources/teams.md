@@ -3,12 +3,12 @@
 page_title: "laravelforge_teams Resource - laravelforge"
 subcategory: ""
 description: |-
-  Create a new team for the organization.
+  Manages a team in the organization.
 ---
 
 # laravelforge_teams (Resource)
 
-Create a new team for the organization.
+Manages a team in the organization.
 
 ## Example Usage
 

@@ -3,12 +3,12 @@
 page_title: "laravelforge_roles Resource - laravelforge"
 subcategory: ""
 description: |-
-  Create a new role for the organization.
+  Manages a custom role in the organization.
 ---
 
 # laravelforge_roles (Resource)
 
-Create a new role for the organization.
+Manages a custom role in the organization.
 
 ## Example Usage
 

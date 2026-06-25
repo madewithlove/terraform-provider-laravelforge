@@ -3,12 +3,12 @@
 page_title: "laravelforge_composer_credentials Resource - laravelforge"
 subcategory: ""
 description: |-
-  Create composer credentials for the site
+  Manages Composer credentials for a site.
 ---
 
 # laravelforge_composer_credentials (Resource)
 
-Create composer credentials for the site
+Manages Composer credentials for a site.
 
 ## Example Usage
 

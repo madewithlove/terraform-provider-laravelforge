@@ -3,12 +3,12 @@
 page_title: "laravelforge_firewall_rules Resource - laravelforge"
 subcategory: ""
 description: |-
-  Add a new firewall rule to the server.
+  Manages a firewall rule on a Forge server.
 ---
 
 # laravelforge_firewall_rules (Resource)
 
-Add a new firewall rule to the server.
+Manages a firewall rule on a Forge server.
 
 ## Example Usage
 

@@ -3,12 +3,12 @@
 page_title: "laravelforge_redirect_rules Resource - laravelforge"
 subcategory: ""
 description: |-
-  Add a new redirect rule to the site.
+  Manages a redirect rule for a site.
 ---
 
 # laravelforge_redirect_rules (Resource)
 
-Add a new redirect rule to the site.
+Manages a redirect rule for a site.
 
 ## Example Usage
 

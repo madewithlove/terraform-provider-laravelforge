@@ -50,7 +50,7 @@ func (r *deploymentWebhooksResource) Schema(ctx context.Context, _ resource.Sche
 	providerutil.RequiresReplace(s.Attributes, "url")
 	providerutil.UseStateForUnknown(s.Attributes, "id", "deployment_webhook")
 
-	s.MarkdownDescription = "Create a new webhook for the site."
+	s.MarkdownDescription = "Manages a deployment webhook for a site."
 	resp.Schema = s
 }
 
