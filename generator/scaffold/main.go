@@ -131,10 +131,12 @@ func main() {
 			log.Fatalf("creating %s: %v", implPath, err)
 		}
 		if err := tmpl.Execute(f, info); err != nil {
-			f.Close()
+			_ = f.Close()
 			log.Fatalf("writing %s: %v", implPath, err)
 		}
-		f.Close()
+		if err := f.Close(); err != nil {
+			log.Fatalf("closing %s: %v", implPath, err)
+		}
 		created++
 	}
 

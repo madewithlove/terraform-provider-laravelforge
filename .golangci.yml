@@ -1,22 +1,14 @@
 # Visit https://golangci-lint.run/ for usage documentation
 # and information on other useful linters
-issues:
-  max-per-linter: 0
-  max-same-issues: 0
-  # The *_resource_gen.go files carry the standard "// Code generated ... DO NOT
-  # EDIT." header and are skipped automatically (exclude-generated: lax). The
-  # hand-written *_resource.go CRUD in the same packages is still linted.
-  exclude-generated: lax
+version: "2"
 
 linters:
-  disable-all: true
+  default: none
   enable:
     - durationcheck
     - errcheck
     - forcetypeassert
     - godot
-    - gofmt
-    - gosimple
     - ineffassign
     - makezero
     - misspell
@@ -27,3 +19,16 @@ linters:
     - unparam
     - unused
     - govet
+  exclusions:
+    # The *_resource_gen.go files carry the standard "// Code generated ... DO
+    # NOT EDIT." header and are skipped; the hand-written *_resource.go CRUD in
+    # the same packages is still linted.
+    generated: lax
+
+formatters:
+  enable:
+    - gofmt
+
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0
