@@ -9,18 +9,18 @@ import (
 // An imported site gets its type and in-place settings from Forge's answer, in
 // the form the inputs accept, so the first plan after an import changes nothing.
 func TestApplyImportedFillsTheInputsFromForge(t *testing.T) {
-	d := siteData{ID: "1503324", Attributes: map[string]any{
+	d := siteData{ID: "12345", Attributes: map[string]any{
 		"app_type":       "Custom",
 		"php_version":    "PHP 8.5",
-		"name":           "audits.madewithlovehq.com",
+		"name":           "example.com",
 		"quick_deploy":   true,
 		"repository":     map[string]any{"provider": "GitHub", "branch": "main"},
-		"root_directory": "/home/forge/audits.madewithlovehq.com",
+		"root_directory": "/home/forge/example.com",
 	}}
 	var m SitesModel
 	d.applyImported(&m)
 
-	want := map[string]types.String{"type": types.StringValue("custom"), "php_version": types.StringValue("php85"), "name": types.StringValue("audits.madewithlovehq.com"), "branch": types.StringValue("main")}
+	want := map[string]types.String{"type": types.StringValue("custom"), "php_version": types.StringValue("php85"), "name": types.StringValue("example.com"), "branch": types.StringValue("main")}
 	got := map[string]types.String{"type": m.Type, "php_version": m.PhpVersion, "name": m.Name, "branch": m.Branch}
 	for k, v := range want {
 		if !got[k].Equal(v) {
