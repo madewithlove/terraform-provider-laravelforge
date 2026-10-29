@@ -6,6 +6,8 @@ on [Keep a Changelog](https://keepachangelog.com/), and the provider follows
 
 ## [Unreleased]
 
+## [1.0.1] — 2026-10-29
+
 ### Fixed
 
 - Importing a `laravelforge_sites` reads its `type`, `php_version`, `name`,
