@@ -4,7 +4,16 @@ All notable changes to this provider are documented here. The format is based
 on [Keep a Changelog](https://keepachangelog.com/), and the provider follows
 [Semantic Versioning](https://semver.org/).
 
-## [Unreleased] — 1.0.0
+## [Unreleased]
+
+### Fixed
+
+- Importing a `laravelforge_sites` reads its `type`, `php_version`, `name`,
+  `branch` and `push_to_deploy` back from Forge. Before, they stayed null, so
+  `terraform plan -generate-config-out` wrote `type = null`, which the schema
+  refuses, and the first plan after an import wanted to update the site.
+
+## [1.0.0]
 
 > ⚠️ **BREAKING CHANGE — this release is not backward compatible with `0.1.x`.**
 >
