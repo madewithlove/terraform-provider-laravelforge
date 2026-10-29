@@ -6,6 +6,14 @@ on [Keep a Changelog](https://keepachangelog.com/), and the provider follows
 
 ## [Unreleased]
 
+## [1.0.2] — 2026-10-29
+
+### Changed
+
+- Built and released with newer GitHub Actions: checkout 7.0.1, setup-go 7.0.0,
+  golangci-lint-action 9.3.0 and goreleaser-action 7.2.3. The provider itself
+  is unchanged from 1.0.1.
+
 ## [1.0.1] — 2026-10-29
 
 ### Fixed
