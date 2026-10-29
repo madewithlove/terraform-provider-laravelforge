@@ -7,6 +7,8 @@ import (
 	"context"
 	"fmt"
 	"net/http"
+	"slices"
+	"strings"
 
 	"github.com/hashicorp/terraform-plugin-framework/path"
 	"github.com/hashicorp/terraform-plugin-framework/resource"
@@ -180,6 +182,10 @@ func (r *sitesResource) Read(ctx context.Context, req resource.ReadRequest, resp
 		return
 	}
 
+	// type is required, so it is only ever null right after an import.
+	if state.Type.IsNull() {
+		data.applyImported(&state)
+	}
 	data.apply(&state)
 	resp.Diagnostics.Append(resp.State.Set(ctx, &state)...)
 }
@@ -327,6 +333,55 @@ func (d *siteData) apply(m *SitesModel) {
 	// Computed-only single-nested output. Use the generated null constructor so
 	// the value is known rather than "(known after apply)".
 	m.MaintenanceMode = NewMaintenanceModeValueNull()
+}
+
+// applyImported fills the inputs an imported site has no value for yet: type,
+// which is required, and the settings the update endpoint changes in place, so
+// that `terraform plan -generate-config-out` writes what Forge runs and the
+// first plan after an import changes nothing. A value Forge returns in a form
+// the schema doesn't accept is left null. The directories stay null: Forge
+// returns them as absolute paths, while the inputs take them relative to the site.
+func (d *siteData) applyImported(m *SitesModel) {
+	attrs := d.Attributes
+	if v := siteType(attrs["app_type"]); v != "" {
+		m.Type = types.StringValue(v)
+	}
+	if v := phpVersion(attrs["php_version"]); v != "" {
+		m.PhpVersion = types.StringValue(v)
+	}
+	m.Name = getStr(attrs, "name")
+	m.PushToDeploy = getBool(attrs, "quick_deploy")
+	if repo, ok := attrs["repository"].(map[string]any); ok {
+		m.Branch = getStr(repo, "branch")
+	}
+}
+
+// siteTypes are the values the type input accepts.
+var siteTypes = []string{"laravel", "symfony", "statamic", "wordpress", "phpmyadmin", "php", "nextjs", "nuxtjs", "static-html", "other", "custom"}
+
+// siteType turns the app_type Forge shows ("Laravel", "Static HTML", "Next.js")
+// into the type input ("laravel", "static-html", "nextjs"), or "".
+func siteType(v any) string {
+	s, _ := v.(string)
+	t := strings.ReplaceAll(strings.ReplaceAll(strings.ToLower(strings.TrimSpace(s)), ".", ""), " ", "-")
+	if slices.Contains(siteTypes, t) {
+		return t
+	}
+	return ""
+}
+
+// phpVersions are the values the php_version input accepts.
+var phpVersions = []string{"php5", "php56-old", "php56", "php70", "php71", "php72", "php73", "php74", "php80", "php81", "php82", "php83", "php84", "php85"}
+
+// phpVersion turns the php_version Forge shows ("PHP 8.5") into the input's
+// form ("php85"), or "".
+func phpVersion(v any) string {
+	s, _ := v.(string)
+	p := strings.ReplaceAll(strings.ReplaceAll(strings.ToLower(s), " ", ""), ".", "")
+	if slices.Contains(phpVersions, p) {
+		return p
+	}
+	return ""
 }
 
 // getStr returns attrs[key] as a known string value, or null when absent or not
