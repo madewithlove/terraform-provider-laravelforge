@@ -1,0 +1,3 @@
+Request: resync madewithlove/laravelforge from https://github.com/madewithlove/terraform-provider-laravelforge (its resync returns 404), and remove the outdated duplicate madewithlove/forge, which points to the same repository under its old name
+Registry Link: https://registry.terraform.io/providers/madewithlove/laravelforge
+Request by: andreas@madewithlove.com
