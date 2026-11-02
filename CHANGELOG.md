@@ -6,6 +6,24 @@ on [Keep a Changelog](https://keepachangelog.com/), and the provider follows
 
 ## [Unreleased]
 
+### Fixed
+
+- Planning an imported `laravelforge_sites` no longer replaces the site. The
+  create-only settings an import leaves unset (`repository`, `domain_mode`,
+  `tags`, …) were planned as "(known after apply)" as soon as anything else
+  changed, and each forced a replacement. They now keep their value, and only
+  setting one to something other than what the site has forces a replacement.
+  `branch`, `php_version`, `push_to_deploy`, `root_directory` and
+  `web_directory` likewise keep their value when left unset.
+- Importing a `laravelforge_sites` also reads `source_control_provider`,
+  `repository` (GitHub, GitLab and Bitbucket), `is_isolated`, `isolated_user`
+  and `zero_downtime_deployments` back from Forge.
+
+### Changed
+
+- `laravelforge_sites.deployment_url` is sensitive: it carries the deploy
+  token. An output that refers to it now needs `sensitive = true`.
+
 ## [1.0.2] — 2026-10-29
 
 ### Changed
