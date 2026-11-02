@@ -6,6 +6,8 @@ on [Keep a Changelog](https://keepachangelog.com/), and the provider follows
 
 ## [Unreleased]
 
+## [1.1.0] — 2026-11-02
+
 ### Fixed
 
 - Planning an imported `laravelforge_sites` no longer replaces the site. The
