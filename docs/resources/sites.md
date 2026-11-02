@@ -72,7 +72,7 @@ resource "laravelforge_sites" "example" {
 - `database` (String)
 - `deployment_script` (String)
 - `deployment_status` (String)
-- `deployment_url` (String)
+- `deployment_url` (String, Sensitive)
 - `healthcheck_url` (String)
 - `https` (Boolean)
 - `id` (String) The ID of this resource.

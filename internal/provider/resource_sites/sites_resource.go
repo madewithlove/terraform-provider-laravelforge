@@ -50,8 +50,9 @@ func (r *sitesResource) Schema(ctx context.Context, _ resource.SchemaRequest, re
 
 	// Only root_directory, web_directory, branch, php_version, push_to_deploy
 	// and type can be changed in place via the PUT endpoint. Every other
-	// create-input field is immutable and forces replacement on change.
-	providerutil.RequiresReplace(s.Attributes,
+	// create-input field is immutable: setting it to something else forces
+	// replacement, leaving it unset keeps what the site has (null after an import).
+	providerutil.CreateOnly(s.Attributes,
 		"allow_wildcard_subdomains",
 		"database_id",
 		"database_user_id",
@@ -80,8 +81,10 @@ func (r *sitesResource) Schema(ctx context.Context, _ resource.SchemaRequest, re
 		"zero_downtime_deployments",
 	)
 
-	providerutil.Sensitive(s.Attributes, "private_deploy_key", "statamic_super_user_password")
-	providerutil.UseStateForUnknown(s.Attributes, "id", "site")
+	// deployment_url carries the deploy token in its query string.
+	providerutil.Sensitive(s.Attributes, "deployment_url", "private_deploy_key", "statamic_super_user_password")
+	providerutil.UseStateForUnknown(s.Attributes, "id", "site",
+		"branch", "php_version", "push_to_deploy", "root_directory", "web_directory")
 
 	s.MarkdownDescription = "Manages a site on a Forge server."
 	resp.Schema = s
@@ -336,7 +339,8 @@ func (d *siteData) apply(m *SitesModel) {
 }
 
 // applyImported fills the inputs an imported site has no value for yet: type,
-// which is required, and the settings the update endpoint changes in place, so
+// which is required, the settings the update endpoint changes in place, and the
+// create-only settings Forge shows (repository, isolation, zero downtime), so
 // that `terraform plan -generate-config-out` writes what Forge runs and the
 // first plan after an import changes nothing. A value Forge returns in a form
 // the schema doesn't accept is left null. The directories stay null: Forge
@@ -353,7 +357,38 @@ func (d *siteData) applyImported(m *SitesModel) {
 	m.PushToDeploy = getBool(attrs, "quick_deploy")
 	if repo, ok := attrs["repository"].(map[string]any); ok {
 		m.Branch = getStr(repo, "branch")
+		if provider, repository := sourceControl(repo); provider != "" {
+			m.SourceControlProvider = types.StringValue(provider)
+			m.Repository = types.StringValue(repository)
+		}
 	}
+	m.IsIsolated = getBool(attrs, "isolated")
+	if m.IsIsolated.ValueBool() {
+		m.IsolatedUser = getStr(attrs, "user")
+	}
+	m.ZeroDowntimeDeployments = getBool(attrs, "zero_downtime_deployments")
+}
+
+// sourceControlHosts maps the source control providers whose repository input
+// is "owner/name" to the host Forge's repository url points at.
+var sourceControlHosts = map[string]string{"github": "github.com", "gitlab": "gitlab.com", "bitbucket": "bitbucket.org"}
+
+// sourceControl turns the repository Forge shows ({"provider": "GitHub", "url":
+// "https://github.com/owner/name"}) into the source_control_provider and
+// repository inputs ("github", "owner/name"), or "" for anything else.
+func sourceControl(repo map[string]any) (string, string) {
+	provider, _ := repo["provider"].(string)
+	provider = strings.ToLower(provider)
+	host, ok := sourceControlHosts[provider]
+	if !ok {
+		return "", ""
+	}
+	url, _ := repo["url"].(string)
+	name, ok := strings.CutPrefix(strings.TrimSuffix(url, ".git"), "https://"+host+"/")
+	if !ok || strings.Count(name, "/") != 1 {
+		return "", ""
+	}
+	return provider, name
 }
 
 // siteTypes are the values the type input accepts.

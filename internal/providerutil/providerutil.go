@@ -129,6 +129,34 @@ func RequiresReplace(attrs map[string]schema.Attribute, names ...string) {
 	}
 }
 
+// CreateOnly marks Optional+Computed attributes that can only be set when the
+// resource is created. An unset attribute keeps its prior value (also when that
+// is null, as after an import) instead of becoming "(known after apply)", and
+// only a configured value that differs from the state forces replacement.
+// RequiresReplace would replace an imported resource on its first change, since
+// every unset attribute would plan from null to unknown.
+func CreateOnly(attrs map[string]schema.Attribute, names ...string) {
+	for _, name := range names {
+		switch a := attrs[name].(type) {
+		case schema.StringAttribute:
+			a.PlanModifiers = append(a.PlanModifiers, stringplanmodifier.UseStateForUnknown(), stringplanmodifier.RequiresReplaceIfConfigured())
+			attrs[name] = a
+		case schema.Int64Attribute:
+			a.PlanModifiers = append(a.PlanModifiers, int64planmodifier.UseStateForUnknown(), int64planmodifier.RequiresReplaceIfConfigured())
+			attrs[name] = a
+		case schema.BoolAttribute:
+			a.PlanModifiers = append(a.PlanModifiers, boolplanmodifier.UseStateForUnknown(), boolplanmodifier.RequiresReplaceIfConfigured())
+			attrs[name] = a
+		case schema.ListAttribute:
+			a.PlanModifiers = append(a.PlanModifiers, listplanmodifier.UseStateForUnknown(), listplanmodifier.RequiresReplaceIfConfigured())
+			attrs[name] = a
+		case schema.ListNestedAttribute:
+			a.PlanModifiers = append(a.PlanModifiers, listplanmodifier.UseStateForUnknown(), listplanmodifier.RequiresReplaceIfConfigured())
+			attrs[name] = a
+		}
+	}
+}
+
 // UseStateForUnknown keeps a computed attribute's prior value during planning
 // instead of showing "(known after apply)".
 func UseStateForUnknown(attrs map[string]schema.Attribute, names ...string) {
@@ -139,6 +167,9 @@ func UseStateForUnknown(attrs map[string]schema.Attribute, names ...string) {
 			attrs[name] = a
 		case schema.Int64Attribute:
 			a.PlanModifiers = append(a.PlanModifiers, int64planmodifier.UseStateForUnknown())
+			attrs[name] = a
+		case schema.BoolAttribute:
+			a.PlanModifiers = append(a.PlanModifiers, boolplanmodifier.UseStateForUnknown())
 			attrs[name] = a
 		}
 	}
